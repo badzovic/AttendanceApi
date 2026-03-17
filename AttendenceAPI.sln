@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36915.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendenceAPI", "AttendenceAPI\AttendenceAPI.csproj", "{5447C206-7324-4A08-A346-BDFF5F6FBD43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{40783759-2F7D-40DC-90CE-F780B25E94DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5447C206-7324-4A08-A346-BDFF5F6FBD43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5447C206-7324-4A08-A346-BDFF5F6FBD43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5447C206-7324-4A08-A346-BDFF5F6FBD43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5447C206-7324-4A08-A346-BDFF5F6FBD43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40783759-2F7D-40DC-90CE-F780B25E94DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40783759-2F7D-40DC-90CE-F780B25E94DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40783759-2F7D-40DC-90CE-F780B25E94DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40783759-2F7D-40DC-90CE-F780B25E94DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9089692E-6C13-4DDF-8134-3B2A27A9B8A0}
+	EndGlobalSection
+EndGlobal

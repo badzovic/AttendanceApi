@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ac2b0fec4bf447bfb6620b61f20f70e7" Name="Diagram1">
+        <EntityTypeShape EntityType="HRMModel.AttendanceEvents" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HRMModel.AttendoSyncStatus" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HRMModel.BRACNI_STATUS" Width="1.5" PointX="3.75" PointY="71.875" />
+        <EntityTypeShape EntityType="HRMModel.DANI_GODISNJEG_ODMORA" Width="1.5" PointX="8.25" PointY="133.125" />
+        <EntityTypeShape EntityType="HRMModel.DODATNA_PRAVA_IZ_RADNOG_ODNOSA" Width="1.5" PointX="6" PointY="55.375" />
+        <EntityTypeShape EntityType="HRMModel.DODATNI_POTPISNIK" Width="1.5" PointX="19.5" PointY="65.25" />
+        <EntityTypeShape EntityType="HRMModel.DODATNO_OBRAZOVANJE" Width="1.5" PointX="3" PointY="64.375" />
+        <EntityTypeShape EntityType="HRMModel.DOKUMENT" Width="1.5" PointX="0.75" PointY="64.625" />
+        <EntityTypeShape EntityType="HRMModel.DRZAVA" Width="1.5" PointX="1.5" PointY="73.375" />
+        <EntityTypeShape EntityType="HRMModel.DRZAVLJANSTVO" Width="1.5" PointX="14.25" PointY="57.875" />
+        <EntityTypeShape EntityType="HRMModel.DRZAVNI_PRAZNICI" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HRMModel.EXPORT_PRISUSTVO_POINT" Width="1.5" PointX="8.25" PointY="139.375" />
+        <EntityTypeShape EntityType="HRMModel.HR_GRUPA" Width="1.5" PointX="6" PointY="75.25" />
+        <EntityTypeShape EntityType="HRMModel.HR_KORISNIK" Width="1.5" PointX="6" PointY="58.5" />
+        <EntityTypeShape EntityType="HRMModel.HR_KORISNIK_DODATNA_PRAVA" Width="1.5" PointX="8.25" PointY="64.5" />
+        <EntityTypeShape EntityType="HRMModel.HR_KORISNIK_FILTER" Width="1.5" PointX="8.25" PointY="142.5" />
+        <EntityTypeShape EntityType="HRMModel.HR_KORISNIK_FILTER_UPOSLENIK" Width="1.5" PointX="10.5" PointY="100.625" />
+        <EntityTypeShape EntityType="HRMModel.HR_KORISNIK_HR_GRUPA" Width="1.5" PointX="8.25" PointY="61.125" />
+        <EntityTypeShape EntityType="HRMModel.HR_KORISNIK_LOKACIJE_MAS" Width="1.5" PointX="8.25" PointY="73.125" />
+        <EntityTypeShape EntityType="HRMModel.HR_KORISNIK_PRERASPODJELA_SATI" Width="1.5" PointX="8.25" PointY="94.375" />
+        <EntityTypeShape EntityType="HRMModel.HR_KORISNIK_PRISUSTVO" Width="1.5" PointX="14.25" PointY="71.25" />
+        <EntityTypeShape EntityType="HRMModel.HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Width="1.5" PointX="11.25" PointY="59.5" />
+        <EntityTypeShape EntityType="HRMModel.HR_KORISNIK_RADNO_MJESTO" Width="1.5" PointX="14.25" PointY="61.875" />
+        <EntityTypeShape EntityType="HRMModel.HR_LOG" Width="1.5" PointX="8.25" PointY="126.375" />
+        <EntityTypeShape EntityType="HRMModel.HRMDocStore" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HRMModel.JUBILARNI_STAZ" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HRMModel.KANDIDAT" Width="1.5" PointX="16.5" PointY="66.5" />
+        <EntityTypeShape EntityType="HRMModel.KANDIDAT_ODGOVOR" Width="1.5" PointX="19.75" PointY="72.375" />
+        <EntityTypeShape EntityType="HRMModel.KANTON" Width="1.5" PointX="6" PointY="52" />
+        <EntityTypeShape EntityType="HRMModel.KONFIGURACIJA" Width="1.5" PointX="8.25" PointY="49.875" />
+        <EntityTypeShape EntityType="HRMModel.KONFIGURACIJA_VRSTA_PRISUSTVA" Width="1.5" PointX="8.25" PointY="68.875" />
+        <EntityTypeShape EntityType="HRMModel.LICNI_DOKUMENTI" Width="1.5" PointX="8.25" PointY="56.25" />
+        <EntityTypeShape EntityType="HRMModel.LOKACIJE_MAS" Width="1.5" PointX="6" PointY="86.875" />
+        <EntityTypeShape EntityType="HRMModel.MENI" Width="1.5" PointX="9" PointY="82.375" />
+        <EntityTypeShape EntityType="HRMModel.MIROVANJE_RADNOG_ODNOSA" Width="1.5" PointX="8.25" PointY="145.375" />
+        <EntityTypeShape EntityType="HRMModel.NARODNOST" Width="1.5" PointX="3.75" PointY="74.375" />
+        <EntityTypeShape EntityType="HRMModel.OBJEKTI_MAS" Width="1.5" PointX="3.75" PointY="87.25" />
+        <EntityTypeShape EntityType="HRMModel.OBUKA" Width="1.5" PointX="9" PointY="78.875" />
+        <EntityTypeShape EntityType="HRMModel.OPSTINA" Width="1.5" PointX="0.75" PointY="69.125" />
+        <EntityTypeShape EntityType="HRMModel.ORGANIZACIONA_JEDINICA" Width="1.5" PointX="17.25" PointY="59.25" />
+        <EntityTypeShape EntityType="HRMModel.PRAVA_PRISTUPA" Width="1.5" PointX="11.25" PointY="74.875" />
+        <EntityTypeShape EntityType="HRMModel.PRAVO_GODISNJI_ODMOR" Width="1.5" PointX="8.25" PointY="130" />
+        <EntityTypeShape EntityType="HRMModel.PREBIVALISTE_BORAVISTE" Width="1.5" PointX="14.25" PointY="66.5" />
+        <EntityTypeShape EntityType="HRMModel.PRESTANAK_RADNOG_ODNOSA" Width="1.5" PointX="8.25" PointY="136.125" />
+        <EntityTypeShape EntityType="HRMModel.RAD_U_INOSTRANSTVU" Width="1.5" PointX="11.25" PointY="64.5" />
+        <EntityTypeShape EntityType="HRMModel.RADNI_STAZ" Width="1.5" PointX="17.25" PointY="71.25" />
+        <EntityTypeShape EntityType="HRMModel.RADNO_ISKUSTVO" Width="1.5" PointX="8.25" PointY="104.375" />
+        <EntityTypeShape EntityType="HRMModel.RADNO_MJESTO" Width="1.5" PointX="19.5" PointY="58" />
+        <EntityTypeShape EntityType="HRMModel.RADNO_MJESTO_SKOLSKA_SPREMA" Width="1.5" PointX="21.75" PointY="59.875" />
+        <EntityTypeShape EntityType="HRMModel.REZULTAT_TESTA" Width="1.5" PointX="21.75" PointY="68.625" />
+        <EntityTypeShape EntityType="HRMModel.SIHT_LISTA_PRINT" Width="1.5" PointX="19.5" PointY="68.75" />
+        <EntityTypeShape EntityType="HRMModel.SISTEMATIZACIJA" Width="1.5" PointX="15" PointY="51.375" />
+        <EntityTypeShape EntityType="HRMModel.SKOLSKA_SPREMA" Width="1.5" PointX="3.75" PointY="54.25" />
+        <EntityTypeShape EntityType="HRMModel.SPOL" Width="1.5" PointX="3.75" PointY="69.125" />
+        <EntityTypeShape EntityType="HRMModel.sysdiagrams" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HRMModel.TEST" Width="1.5" PointX="11.25" PointY="69.125" />
+        <EntityTypeShape EntityType="HRMModel.TEST_ODGOVOR" Width="1.5" PointX="15.75" PointY="75.875" />
+        <EntityTypeShape EntityType="HRMModel.TEST_PITANJE" Width="1.5" PointX="13.5" PointY="76" />
+        <EntityTypeShape EntityType="HRMModel.test_preraspodjela" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HRMModel.TIP_OBUKE" Width="1.5" PointX="6.75" PointY="79.375" />
+        <EntityTypeShape EntityType="HRMModel.TIP_ORGANIZACIONE_JEDINICE" Width="1.5" PointX="15" PointY="55" />
+        <EntityTypeShape EntityType="HRMModel.TIP_PONAVLJANJA_TESTA" Width="1.5" PointX="14.25" PointY="79.625" />
+        <EntityTypeShape EntityType="HRMModel.tmp_pbroj_opstina" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HRMModel.UGOVOR_O_RADU" Width="1.5" PointX="3" PointY="57.5" />
+        <EntityTypeShape EntityType="HRMModel.VRSTA_ANGAZMANA" Width="1.5" PointX="0.75" PointY="58.75" />
+        <EntityTypeShape EntityType="HRMModel.VRSTA_DODATNOG_OBRAZOVANJA" Width="1.5" PointX="0.75" PointY="62" />
+        <EntityTypeShape EntityType="HRMModel.VRSTA_LICNOG_DOKUMENTA" Width="1.5" PointX="6" PointY="48.625" />
+        <EntityTypeShape EntityType="HRMModel.VRSTA_PRAVA_PRISTUPA" Width="1.5" PointX="9" PointY="76.5" />
+        <EntityTypeShape EntityType="HRMModel.VRSTA_PRISUSTVA_ODSUSTVA" Width="1.5" PointX="6" PointY="82.75" />
+        <EntityTypeShape EntityType="HRMModel.VRSTA_RADNOG_ODNOSA" Width="1.5" PointX="0.75" PointY="56.375" />
+        <EntityTypeShape EntityType="HRMModel.VRSTA_RADNOG_STAZA" Width="1.5" PointX="15" PointY="82.375" />
+        <EntityTypeShape EntityType="HRMModel.ZAKLJUCAVANJE_EVIDENCIJE" Width="1.5" PointX="22.5" PointY="63.875" />
+        <AssociationConnector Association="HRMModel.BRACNI_STATUS_HR_KORISNIK_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_DANI_GODISNJEG_ODMORA_fk" />
+        <AssociationConnector Association="HRMModel.DODATNA_PRAVA_IZ_RADNOG_ODNOSA_HR_KORISNIK_DODATNA_PRAVA_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_DODATNI_POTPISNIK_fk" />
+        <AssociationConnector Association="HRMModel.ORGANIZACIONA_JEDINICA_DODATNI_POTPISNIK_fk" />
+        <AssociationConnector Association="HRMModel.DOKUMENT_DODATNO_OBRAZOVANJE_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_DODATNO_OBRAZOVANJE_fk" />
+        <AssociationConnector Association="HRMModel.VSRTA_DODATNOG_OBRAZOVANJA_DODATNO_OBRAZOVANJE_fk" />
+        <AssociationConnector Association="HRMModel.DOKUMENT_HR_KORISNIK_DODATNA_PRAVA_fk" />
+        <AssociationConnector Association="HRMModel.DOKUMENT_HR_KORISNIK_fk" />
+        <AssociationConnector Association="HRMModel.DOKUMENT_LICNI_DOKUMENTI_fk" />
+        <AssociationConnector Association="HRMModel.DOKUMENT_UGOVOR_O_RADU_fk" />
+        <AssociationConnector Association="HRMModel.DRZAVA_DRZAVLJANSTVO_fk" />
+        <AssociationConnector Association="HRMModel.DRZAVA_OPSTINA_fk" />
+        <AssociationConnector Association="HRMModel.DRZAVA_RAD_U_INOSTRANSTVU_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_DRZAVLJANSTVO_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_EXPORT_PRISUSTVO_POINT_fk" />
+        <AssociationConnector Association="HRMModel.HR_GRUPA_HR_KORISNIK_HR_GRUPA_fk" />
+        <AssociationConnector Association="HRMModel.HR_GRUPA_PRAVA_PRISTUPA_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_HR_KORISNIK_DODATNA_PRAVA_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_HR_KORISNIK_FILTER_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_HR_KORISNIK_FILTER_UPOSLENIK_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_HR_KORISNIK_HR_GRUPA_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_HR_KORISNIK_LOKACIJE_MAS_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk1" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk1" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk1" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_HR_KORISNIK_RADNO_MJESTO_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_HR_LOG_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_KANDIDAT_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_KONFIGURACIA_VRSTA_PRISUSTVA_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_KONFIGURACIJA_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_KONFIGURACIJA_fk1" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_LICNI_DOKUMENTI_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_MIROVANJE_RADNOG_ODNOSA_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_ORGANIZACIONA_JEDINICA_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_PRAVO_GODISNI_ODMOR_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_PREBIVALISTE_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_PRESTANAK_RADNOG_ODNOSA_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_RAD_U_INOSTRANSTVU_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_RADNI_STAZ_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_RADNO_ISKUSTVO_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_TEST_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_ZAKLJUCAVANJE_EVIDENCIJE_fk" />
+        <AssociationConnector Association="HRMModel.NARODNOST_HR_KORISNIK_fk" />
+        <AssociationConnector Association="HRMModel.OPSTINA_HR_KORISNIK_fk" />
+        <AssociationConnector Association="HRMModel.SKOLSKA_SPREMA_HR_KORISNIK_fk" />
+        <AssociationConnector Association="HRMModel.SPOL_HR_KORISNIK_fk" />
+        <AssociationConnector Association="HRMModel.HR_KORISNIK_FILTER_HR_KORISNIK_FILTER_UPOSLENIK_fk" />
+        <AssociationConnector Association="HRMModel.LOKACIJE_MAS_HR_KORISNIK_LOKACIJE_MAS_fk" />
+        <AssociationConnector Association="HRMModel.VRSTA_PRISUSTVA_ODSUSTVA_HR_KORISNIK_PRISUSTVO_fk" />
+        <AssociationConnector Association="HRMModel.ORGANIZACIONA_JEDINICA_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk" />
+        <AssociationConnector Association="HRMModel.RADNO_MJESTO_HR_KORISNIK_RADNO_MJESTO_fk" />
+        <AssociationConnector Association="HRMModel.UGOVOR_O_RADU_HR_KORISNIK_RADNO_MJESTO_fk" />
+        <AssociationConnector Association="HRMModel.FK__HRMDocSto__paren__114A936A" />
+        <AssociationConnector Association="HRMModel.KANDIDAT_KANDIDAT_ODGOVOR_fk" />
+        <AssociationConnector Association="HRMModel.KANDIDAT_REZULTAT_TESTA_fk" />
+        <AssociationConnector Association="HRMModel.TEST_KANDIDAT_fk" />
+        <AssociationConnector Association="HRMModel.TIP_PONAVLJANJA_TESTA_KANDIDAT_fk" />
+        <AssociationConnector Association="HRMModel.TEST_ODGOVOR_KANDIDAT_ODGOVOR_fk" />
+        <AssociationConnector Association="HRMModel.FK_LICNI_DOKUMENTI_KANTON" />
+        <AssociationConnector Association="HRMModel.FK_PREBIVALISTE_BORAVISTE_KANTON" />
+        <AssociationConnector Association="HRMModel.VRSTA_PRISUSTVA_ODSUSTVA_KONFIGURACIA_VRSTA_PRISUSTVA_fk" />
+        <AssociationConnector Association="HRMModel.FK_LICNI_DOKUMENTI_OPSTINA" />
+        <AssociationConnector Association="HRMModel.VRSTA_LICNOG_DOKUMENTA_LICNI_DOKUMENTI_fk" />
+        <AssociationConnector Association="HRMModel.OBJAKTI_MAS_LOKACIJE_MAS_fk" />
+        <AssociationConnector Association="HRMModel.MENI_PRAVA_PRISTUPA_fk" />
+        <AssociationConnector Association="HRMModel.OBUKA_TEST_fk" />
+        <AssociationConnector Association="HRMModel.TIP_OBUKE_OBUKA_fk" />
+        <AssociationConnector Association="HRMModel.OPSTINA_PREBIVALISTE_fk" />
+        <AssociationConnector Association="HRMModel.OPSTINA_UGOVOR_O_RADU_fk" />
+        <AssociationConnector Association="HRMModel.ORGANIZACIONA_JEDINICA_ORGANIZACIONA_JEDINICA_fk" />
+        <AssociationConnector Association="HRMModel.ORGANIZACIONA_JEDINICA_RADNO_MJESTO_fk" />
+        <AssociationConnector Association="HRMModel.ORGANIZACIONA_JEDINICA_SIHT_LISTA_PRINT_fk" />
+        <AssociationConnector Association="HRMModel.ORGANIZACIONA_JEDINICA_ZAKLJUCAVANJE_EVIDENCIJE_fk" />
+        <AssociationConnector Association="HRMModel.SISTEMATIZACIJA_ORGANIZACIONA_JEDINICA_fk" />
+        <AssociationConnector Association="HRMModel.TIP_ORGANIZACIONE_JEDINICE_ORGANIZACIONA_JEDINICA_fk" />
+        <AssociationConnector Association="HRMModel.VRSTA_PRAVA_PRISTUPA_PRAVA_PRISTUPA_fk" />
+        <AssociationConnector Association="HRMModel.VRSTA_RADNOG_STAZA_RADNI_STAZ_fk" />
+        <AssociationConnector Association="HRMModel.RADNO_MJESTO_RADNO_MJESTO_fk" />
+        <AssociationConnector Association="HRMModel.RADNO_MJESTO_RADNO_MJESTO_SKOLSKA_SPREMA_fk" />
+        <AssociationConnector Association="HRMModel.SKOLSKA_SPREMA_RADNO_MJESTO_SKOLSKA_SPREMA_fk" />
+        <AssociationConnector Association="HRMModel.TEST_REZULTAT_TESTA_fk" />
+        <AssociationConnector Association="HRMModel.TEST_TEST_PITANJE_fk" />
+        <AssociationConnector Association="HRMModel.TEST_PITANJE_TEST_ODGOVOR_fk" />
+        <AssociationConnector Association="HRMModel.VRSTA_ANGAZMANA_UGOVOR_O_RADU_fk" />
+        <AssociationConnector Association="HRMModel.VRSTA_RADNOG_ODNOSA_UGOVOR_O_RADU_fk" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

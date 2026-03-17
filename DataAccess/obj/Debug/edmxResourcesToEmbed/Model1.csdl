@@ -1,0 +1,2555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HRMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AttendanceEvents" EntityType="HRMModel.AttendanceEvents" />
+    <EntitySet Name="AttendoSyncStatus" EntityType="HRMModel.AttendoSyncStatus" />
+    <EntitySet Name="BRACNI_STATUS" EntityType="HRMModel.BRACNI_STATUS" />
+    <EntitySet Name="DANI_GODISNJEG_ODMORA" EntityType="HRMModel.DANI_GODISNJEG_ODMORA" />
+    <EntitySet Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA" EntityType="HRMModel.DODATNA_PRAVA_IZ_RADNOG_ODNOSA" />
+    <EntitySet Name="DODATNI_POTPISNIK" EntityType="HRMModel.DODATNI_POTPISNIK" />
+    <EntitySet Name="DODATNO_OBRAZOVANJE" EntityType="HRMModel.DODATNO_OBRAZOVANJE" />
+    <EntitySet Name="DOKUMENT" EntityType="HRMModel.DOKUMENT" />
+    <EntitySet Name="DRZAVA" EntityType="HRMModel.DRZAVA" />
+    <EntitySet Name="DRZAVLJANSTVO" EntityType="HRMModel.DRZAVLJANSTVO" />
+    <EntitySet Name="DRZAVNI_PRAZNICI" EntityType="HRMModel.DRZAVNI_PRAZNICI" />
+    <EntitySet Name="EXPORT_PRISUSTVO_POINT" EntityType="HRMModel.EXPORT_PRISUSTVO_POINT" />
+    <EntitySet Name="HR_GRUPA" EntityType="HRMModel.HR_GRUPA" />
+    <EntitySet Name="HR_KORISNIK" EntityType="HRMModel.HR_KORISNIK" />
+    <EntitySet Name="HR_KORISNIK_DODATNA_PRAVA" EntityType="HRMModel.HR_KORISNIK_DODATNA_PRAVA" />
+    <EntitySet Name="HR_KORISNIK_FILTER" EntityType="HRMModel.HR_KORISNIK_FILTER" />
+    <EntitySet Name="HR_KORISNIK_FILTER_UPOSLENIK" EntityType="HRMModel.HR_KORISNIK_FILTER_UPOSLENIK" />
+    <EntitySet Name="HR_KORISNIK_HR_GRUPA" EntityType="HRMModel.HR_KORISNIK_HR_GRUPA" />
+    <EntitySet Name="HR_KORISNIK_LOKACIJE_MAS" EntityType="HRMModel.HR_KORISNIK_LOKACIJE_MAS" />
+    <EntitySet Name="HR_KORISNIK_PRERASPODJELA_SATI" EntityType="HRMModel.HR_KORISNIK_PRERASPODJELA_SATI" />
+    <EntitySet Name="HR_KORISNIK_PRISUSTVO" EntityType="HRMModel.HR_KORISNIK_PRISUSTVO" />
+    <EntitySet Name="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" EntityType="HRMModel.HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" />
+    <EntitySet Name="HR_KORISNIK_RADNO_MJESTO" EntityType="HRMModel.HR_KORISNIK_RADNO_MJESTO" />
+    <EntitySet Name="HR_LOG" EntityType="HRMModel.HR_LOG" />
+    <EntitySet Name="HRMDocStore" EntityType="HRMModel.HRMDocStore" />
+    <EntitySet Name="JUBILARNI_STAZ" EntityType="HRMModel.JUBILARNI_STAZ" />
+    <EntitySet Name="KANDIDAT" EntityType="HRMModel.KANDIDAT" />
+    <EntitySet Name="KANDIDAT_ODGOVOR" EntityType="HRMModel.KANDIDAT_ODGOVOR" />
+    <EntitySet Name="KANTON" EntityType="HRMModel.KANTON" />
+    <EntitySet Name="KONFIGURACIJA" EntityType="HRMModel.KONFIGURACIJA" />
+    <EntitySet Name="KONFIGURACIJA_VRSTA_PRISUSTVA" EntityType="HRMModel.KONFIGURACIJA_VRSTA_PRISUSTVA" />
+    <EntitySet Name="LICNI_DOKUMENTI" EntityType="HRMModel.LICNI_DOKUMENTI" />
+    <EntitySet Name="LOKACIJE_MAS" EntityType="HRMModel.LOKACIJE_MAS" />
+    <EntitySet Name="MENI" EntityType="HRMModel.MENI" />
+    <EntitySet Name="MIROVANJE_RADNOG_ODNOSA" EntityType="HRMModel.MIROVANJE_RADNOG_ODNOSA" />
+    <EntitySet Name="NARODNOST" EntityType="HRMModel.NARODNOST" />
+    <EntitySet Name="OBJEKTI_MAS" EntityType="HRMModel.OBJEKTI_MAS" />
+    <EntitySet Name="OBUKA" EntityType="HRMModel.OBUKA" />
+    <EntitySet Name="OPSTINA" EntityType="HRMModel.OPSTINA" />
+    <EntitySet Name="ORGANIZACIONA_JEDINICA" EntityType="HRMModel.ORGANIZACIONA_JEDINICA" />
+    <EntitySet Name="PRAVA_PRISTUPA" EntityType="HRMModel.PRAVA_PRISTUPA" />
+    <EntitySet Name="PRAVO_GODISNJI_ODMOR" EntityType="HRMModel.PRAVO_GODISNJI_ODMOR" />
+    <EntitySet Name="PREBIVALISTE_BORAVISTE" EntityType="HRMModel.PREBIVALISTE_BORAVISTE" />
+    <EntitySet Name="PRESTANAK_RADNOG_ODNOSA" EntityType="HRMModel.PRESTANAK_RADNOG_ODNOSA" />
+    <EntitySet Name="RAD_U_INOSTRANSTVU" EntityType="HRMModel.RAD_U_INOSTRANSTVU" />
+    <EntitySet Name="RADNI_STAZ" EntityType="HRMModel.RADNI_STAZ" />
+    <EntitySet Name="RADNO_ISKUSTVO" EntityType="HRMModel.RADNO_ISKUSTVO" />
+    <EntitySet Name="RADNO_MJESTO" EntityType="HRMModel.RADNO_MJESTO" />
+    <EntitySet Name="RADNO_MJESTO_SKOLSKA_SPREMA" EntityType="HRMModel.RADNO_MJESTO_SKOLSKA_SPREMA" />
+    <EntitySet Name="REZULTAT_TESTA" EntityType="HRMModel.REZULTAT_TESTA" />
+    <EntitySet Name="SIHT_LISTA_PRINT" EntityType="HRMModel.SIHT_LISTA_PRINT" />
+    <EntitySet Name="SISTEMATIZACIJA" EntityType="HRMModel.SISTEMATIZACIJA" />
+    <EntitySet Name="SKOLSKA_SPREMA" EntityType="HRMModel.SKOLSKA_SPREMA" />
+    <EntitySet Name="SPOL" EntityType="HRMModel.SPOL" />
+    <EntitySet Name="sysdiagrams" EntityType="HRMModel.sysdiagrams" />
+    <EntitySet Name="TEST" EntityType="HRMModel.TEST" />
+    <EntitySet Name="TEST_ODGOVOR" EntityType="HRMModel.TEST_ODGOVOR" />
+    <EntitySet Name="TEST_PITANJE" EntityType="HRMModel.TEST_PITANJE" />
+    <EntitySet Name="test_preraspodjela" EntityType="HRMModel.test_preraspodjela" />
+    <EntitySet Name="TIP_OBUKE" EntityType="HRMModel.TIP_OBUKE" />
+    <EntitySet Name="TIP_ORGANIZACIONE_JEDINICE" EntityType="HRMModel.TIP_ORGANIZACIONE_JEDINICE" />
+    <EntitySet Name="TIP_PONAVLJANJA_TESTA" EntityType="HRMModel.TIP_PONAVLJANJA_TESTA" />
+    <EntitySet Name="tmp_pbroj_opstina" EntityType="HRMModel.tmp_pbroj_opstina" />
+    <EntitySet Name="UGOVOR_O_RADU" EntityType="HRMModel.UGOVOR_O_RADU" />
+    <EntitySet Name="VRSTA_ANGAZMANA" EntityType="HRMModel.VRSTA_ANGAZMANA" />
+    <EntitySet Name="VRSTA_DODATNOG_OBRAZOVANJA" EntityType="HRMModel.VRSTA_DODATNOG_OBRAZOVANJA" />
+    <EntitySet Name="VRSTA_LICNOG_DOKUMENTA" EntityType="HRMModel.VRSTA_LICNOG_DOKUMENTA" />
+    <EntitySet Name="VRSTA_PRAVA_PRISTUPA" EntityType="HRMModel.VRSTA_PRAVA_PRISTUPA" />
+    <EntitySet Name="VRSTA_PRISUSTVA_ODSUSTVA" EntityType="HRMModel.VRSTA_PRISUSTVA_ODSUSTVA" />
+    <EntitySet Name="VRSTA_RADNOG_ODNOSA" EntityType="HRMModel.VRSTA_RADNOG_ODNOSA" />
+    <EntitySet Name="VRSTA_RADNOG_STAZA" EntityType="HRMModel.VRSTA_RADNOG_STAZA" />
+    <EntitySet Name="ZAKLJUCAVANJE_EVIDENCIJE" EntityType="HRMModel.ZAKLJUCAVANJE_EVIDENCIJE" />
+    <AssociationSet Name="BRACNI_STATUS_HR_KORISNIK_fk" Association="HRMModel.BRACNI_STATUS_HR_KORISNIK_fk">
+      <End Role="BRACNI_STATUS" EntitySet="BRACNI_STATUS" />
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_DANI_GODISNJEG_ODMORA_fk" Association="HRMModel.HR_KORISNIK_DANI_GODISNJEG_ODMORA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="DANI_GODISNJEG_ODMORA" EntitySet="DANI_GODISNJEG_ODMORA" />
+    </AssociationSet>
+    <AssociationSet Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA_HR_KORISNIK_DODATNA_PRAVA_fk" Association="HRMModel.DODATNA_PRAVA_IZ_RADNOG_ODNOSA_HR_KORISNIK_DODATNA_PRAVA_fk">
+      <End Role="DODATNA_PRAVA_IZ_RADNOG_ODNOSA" EntitySet="DODATNA_PRAVA_IZ_RADNOG_ODNOSA" />
+      <End Role="HR_KORISNIK_DODATNA_PRAVA" EntitySet="HR_KORISNIK_DODATNA_PRAVA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_DODATNI_POTPISNIK_fk" Association="HRMModel.HR_KORISNIK_DODATNI_POTPISNIK_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="DODATNI_POTPISNIK" EntitySet="DODATNI_POTPISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="ORGANIZACIONA_JEDINICA_DODATNI_POTPISNIK_fk" Association="HRMModel.ORGANIZACIONA_JEDINICA_DODATNI_POTPISNIK_fk">
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+      <End Role="DODATNI_POTPISNIK" EntitySet="DODATNI_POTPISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="DOKUMENT_DODATNO_OBRAZOVANJE_fk" Association="HRMModel.DOKUMENT_DODATNO_OBRAZOVANJE_fk">
+      <End Role="DOKUMENT" EntitySet="DOKUMENT" />
+      <End Role="DODATNO_OBRAZOVANJE" EntitySet="DODATNO_OBRAZOVANJE" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_DODATNO_OBRAZOVANJE_fk" Association="HRMModel.HR_KORISNIK_DODATNO_OBRAZOVANJE_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="DODATNO_OBRAZOVANJE" EntitySet="DODATNO_OBRAZOVANJE" />
+    </AssociationSet>
+    <AssociationSet Name="VSRTA_DODATNOG_OBRAZOVANJA_DODATNO_OBRAZOVANJE_fk" Association="HRMModel.VSRTA_DODATNOG_OBRAZOVANJA_DODATNO_OBRAZOVANJE_fk">
+      <End Role="VRSTA_DODATNOG_OBRAZOVANJA" EntitySet="VRSTA_DODATNOG_OBRAZOVANJA" />
+      <End Role="DODATNO_OBRAZOVANJE" EntitySet="DODATNO_OBRAZOVANJE" />
+    </AssociationSet>
+    <AssociationSet Name="DOKUMENT_HR_KORISNIK_DODATNA_PRAVA_fk" Association="HRMModel.DOKUMENT_HR_KORISNIK_DODATNA_PRAVA_fk">
+      <End Role="DOKUMENT" EntitySet="DOKUMENT" />
+      <End Role="HR_KORISNIK_DODATNA_PRAVA" EntitySet="HR_KORISNIK_DODATNA_PRAVA" />
+    </AssociationSet>
+    <AssociationSet Name="DOKUMENT_HR_KORISNIK_fk" Association="HRMModel.DOKUMENT_HR_KORISNIK_fk">
+      <End Role="DOKUMENT" EntitySet="DOKUMENT" />
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="DOKUMENT_LICNI_DOKUMENTI_fk" Association="HRMModel.DOKUMENT_LICNI_DOKUMENTI_fk">
+      <End Role="DOKUMENT" EntitySet="DOKUMENT" />
+      <End Role="LICNI_DOKUMENTI" EntitySet="LICNI_DOKUMENTI" />
+    </AssociationSet>
+    <AssociationSet Name="DOKUMENT_UGOVOR_O_RADU_fk" Association="HRMModel.DOKUMENT_UGOVOR_O_RADU_fk">
+      <End Role="DOKUMENT" EntitySet="DOKUMENT" />
+      <End Role="UGOVOR_O_RADU" EntitySet="UGOVOR_O_RADU" />
+    </AssociationSet>
+    <AssociationSet Name="DRZAVA_DRZAVLJANSTVO_fk" Association="HRMModel.DRZAVA_DRZAVLJANSTVO_fk">
+      <End Role="DRZAVA" EntitySet="DRZAVA" />
+      <End Role="DRZAVLJANSTVO" EntitySet="DRZAVLJANSTVO" />
+    </AssociationSet>
+    <AssociationSet Name="DRZAVA_OPSTINA_fk" Association="HRMModel.DRZAVA_OPSTINA_fk">
+      <End Role="DRZAVA" EntitySet="DRZAVA" />
+      <End Role="OPSTINA" EntitySet="OPSTINA" />
+    </AssociationSet>
+    <AssociationSet Name="DRZAVA_RAD_U_INOSTRANSTVU_fk" Association="HRMModel.DRZAVA_RAD_U_INOSTRANSTVU_fk">
+      <End Role="DRZAVA" EntitySet="DRZAVA" />
+      <End Role="RAD_U_INOSTRANSTVU" EntitySet="RAD_U_INOSTRANSTVU" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_DRZAVLJANSTVO_fk" Association="HRMModel.HR_KORISNIK_DRZAVLJANSTVO_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="DRZAVLJANSTVO" EntitySet="DRZAVLJANSTVO" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_EXPORT_PRISUSTVO_POINT_fk" Association="HRMModel.HR_KORISNIK_EXPORT_PRISUSTVO_POINT_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="EXPORT_PRISUSTVO_POINT" EntitySet="EXPORT_PRISUSTVO_POINT" />
+    </AssociationSet>
+    <AssociationSet Name="HR_GRUPA_HR_KORISNIK_HR_GRUPA_fk" Association="HRMModel.HR_GRUPA_HR_KORISNIK_HR_GRUPA_fk">
+      <End Role="HR_GRUPA" EntitySet="HR_GRUPA" />
+      <End Role="HR_KORISNIK_HR_GRUPA" EntitySet="HR_KORISNIK_HR_GRUPA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_GRUPA_PRAVA_PRISTUPA_fk" Association="HRMModel.HR_GRUPA_PRAVA_PRISTUPA_fk">
+      <End Role="HR_GRUPA" EntitySet="HR_GRUPA" />
+      <End Role="PRAVA_PRISTUPA" EntitySet="PRAVA_PRISTUPA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_DODATNA_PRAVA_fk" Association="HRMModel.HR_KORISNIK_HR_KORISNIK_DODATNA_PRAVA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_DODATNA_PRAVA" EntitySet="HR_KORISNIK_DODATNA_PRAVA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_FILTER_fk" Association="HRMModel.HR_KORISNIK_HR_KORISNIK_FILTER_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_FILTER" EntitySet="HR_KORISNIK_FILTER" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_FILTER_UPOSLENIK_fk" Association="HRMModel.HR_KORISNIK_HR_KORISNIK_FILTER_UPOSLENIK_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_FILTER_UPOSLENIK" EntitySet="HR_KORISNIK_FILTER_UPOSLENIK" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_HR_GRUPA_fk" Association="HRMModel.HR_KORISNIK_HR_KORISNIK_HR_GRUPA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_HR_GRUPA" EntitySet="HR_KORISNIK_HR_GRUPA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_LOKACIJE_MAS_fk" Association="HRMModel.HR_KORISNIK_HR_KORISNIK_LOKACIJE_MAS_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_LOKACIJE_MAS" EntitySet="HR_KORISNIK_LOKACIJE_MAS" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk" Association="HRMModel.HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_PRERASPODJELA_SATI" EntitySet="HR_KORISNIK_PRERASPODJELA_SATI" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk1" Association="HRMModel.HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk1">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_PRERASPODJELA_SATI" EntitySet="HR_KORISNIK_PRERASPODJELA_SATI" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk" Association="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_PRISUSTVO" EntitySet="HR_KORISNIK_PRISUSTVO" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk1" Association="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk1">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_PRISUSTVO" EntitySet="HR_KORISNIK_PRISUSTVO" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk" Association="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" EntitySet="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk1" Association="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk1">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" EntitySet="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_RADNO_MJESTO_fk" Association="HRMModel.HR_KORISNIK_HR_KORISNIK_RADNO_MJESTO_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_RADNO_MJESTO" EntitySet="HR_KORISNIK_RADNO_MJESTO" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_LOG_fk" Association="HRMModel.HR_KORISNIK_HR_LOG_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_LOG" EntitySet="HR_LOG" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_KANDIDAT_fk" Association="HRMModel.HR_KORISNIK_KANDIDAT_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="KANDIDAT" EntitySet="KANDIDAT" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_KONFIGURACIA_VRSTA_PRISUSTVA_fk" Association="HRMModel.HR_KORISNIK_KONFIGURACIA_VRSTA_PRISUSTVA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="KONFIGURACIJA_VRSTA_PRISUSTVA" EntitySet="KONFIGURACIJA_VRSTA_PRISUSTVA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_KONFIGURACIJA_fk" Association="HRMModel.HR_KORISNIK_KONFIGURACIJA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="KONFIGURACIJA" EntitySet="KONFIGURACIJA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_KONFIGURACIJA_fk1" Association="HRMModel.HR_KORISNIK_KONFIGURACIJA_fk1">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="KONFIGURACIJA" EntitySet="KONFIGURACIJA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_LICNI_DOKUMENTI_fk" Association="HRMModel.HR_KORISNIK_LICNI_DOKUMENTI_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="LICNI_DOKUMENTI" EntitySet="LICNI_DOKUMENTI" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_MIROVANJE_RADNOG_ODNOSA_fk" Association="HRMModel.HR_KORISNIK_MIROVANJE_RADNOG_ODNOSA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="MIROVANJE_RADNOG_ODNOSA" EntitySet="MIROVANJE_RADNOG_ODNOSA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_ORGANIZACIONA_JEDINICA_fk" Association="HRMModel.HR_KORISNIK_ORGANIZACIONA_JEDINICA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_PRAVO_GODISNI_ODMOR_fk" Association="HRMModel.HR_KORISNIK_PRAVO_GODISNI_ODMOR_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="PRAVO_GODISNJI_ODMOR" EntitySet="PRAVO_GODISNJI_ODMOR" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_PREBIVALISTE_fk" Association="HRMModel.HR_KORISNIK_PREBIVALISTE_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="PREBIVALISTE_BORAVISTE" EntitySet="PREBIVALISTE_BORAVISTE" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_PRESTANAK_RADNOG_ODNOSA_fk" Association="HRMModel.HR_KORISNIK_PRESTANAK_RADNOG_ODNOSA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="PRESTANAK_RADNOG_ODNOSA" EntitySet="PRESTANAK_RADNOG_ODNOSA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_RAD_U_INOSTRANSTVU_fk" Association="HRMModel.HR_KORISNIK_RAD_U_INOSTRANSTVU_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="RAD_U_INOSTRANSTVU" EntitySet="RAD_U_INOSTRANSTVU" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_RADNI_STAZ_fk" Association="HRMModel.HR_KORISNIK_RADNI_STAZ_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="RADNI_STAZ" EntitySet="RADNI_STAZ" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_RADNO_ISKUSTVO_fk" Association="HRMModel.HR_KORISNIK_RADNO_ISKUSTVO_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="RADNO_ISKUSTVO" EntitySet="RADNO_ISKUSTVO" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_TEST_fk" Association="HRMModel.HR_KORISNIK_TEST_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="TEST" EntitySet="TEST" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_ZAKLJUCAVANJE_EVIDENCIJE_fk" Association="HRMModel.HR_KORISNIK_ZAKLJUCAVANJE_EVIDENCIJE_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="ZAKLJUCAVANJE_EVIDENCIJE" EntitySet="ZAKLJUCAVANJE_EVIDENCIJE" />
+    </AssociationSet>
+    <AssociationSet Name="NARODNOST_HR_KORISNIK_fk" Association="HRMModel.NARODNOST_HR_KORISNIK_fk">
+      <End Role="NARODNOST" EntitySet="NARODNOST" />
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="OPSTINA_HR_KORISNIK_fk" Association="HRMModel.OPSTINA_HR_KORISNIK_fk">
+      <End Role="OPSTINA" EntitySet="OPSTINA" />
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="SKOLSKA_SPREMA_HR_KORISNIK_fk" Association="HRMModel.SKOLSKA_SPREMA_HR_KORISNIK_fk">
+      <End Role="SKOLSKA_SPREMA" EntitySet="SKOLSKA_SPREMA" />
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="SPOL_HR_KORISNIK_fk" Association="HRMModel.SPOL_HR_KORISNIK_fk">
+      <End Role="SPOL" EntitySet="SPOL" />
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_FILTER_HR_KORISNIK_FILTER_UPOSLENIK_fk" Association="HRMModel.HR_KORISNIK_FILTER_HR_KORISNIK_FILTER_UPOSLENIK_fk">
+      <End Role="HR_KORISNIK_FILTER" EntitySet="HR_KORISNIK_FILTER" />
+      <End Role="HR_KORISNIK_FILTER_UPOSLENIK" EntitySet="HR_KORISNIK_FILTER_UPOSLENIK" />
+    </AssociationSet>
+    <AssociationSet Name="LOKACIJE_MAS_HR_KORISNIK_LOKACIJE_MAS_fk" Association="HRMModel.LOKACIJE_MAS_HR_KORISNIK_LOKACIJE_MAS_fk">
+      <End Role="LOKACIJE_MAS" EntitySet="LOKACIJE_MAS" />
+      <End Role="HR_KORISNIK_LOKACIJE_MAS" EntitySet="HR_KORISNIK_LOKACIJE_MAS" />
+    </AssociationSet>
+    <AssociationSet Name="VRSTA_PRISUSTVA_ODSUSTVA_HR_KORISNIK_PRISUSTVO_fk" Association="HRMModel.VRSTA_PRISUSTVA_ODSUSTVA_HR_KORISNIK_PRISUSTVO_fk">
+      <End Role="VRSTA_PRISUSTVA_ODSUSTVA" EntitySet="VRSTA_PRISUSTVA_ODSUSTVA" />
+      <End Role="HR_KORISNIK_PRISUSTVO" EntitySet="HR_KORISNIK_PRISUSTVO" />
+    </AssociationSet>
+    <AssociationSet Name="ORGANIZACIONA_JEDINICA_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk" Association="HRMModel.ORGANIZACIONA_JEDINICA_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk">
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+      <End Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" EntitySet="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" />
+    </AssociationSet>
+    <AssociationSet Name="RADNO_MJESTO_HR_KORISNIK_RADNO_MJESTO_fk" Association="HRMModel.RADNO_MJESTO_HR_KORISNIK_RADNO_MJESTO_fk">
+      <End Role="RADNO_MJESTO" EntitySet="RADNO_MJESTO" />
+      <End Role="HR_KORISNIK_RADNO_MJESTO" EntitySet="HR_KORISNIK_RADNO_MJESTO" />
+    </AssociationSet>
+    <AssociationSet Name="UGOVOR_O_RADU_HR_KORISNIK_RADNO_MJESTO_fk" Association="HRMModel.UGOVOR_O_RADU_HR_KORISNIK_RADNO_MJESTO_fk">
+      <End Role="UGOVOR_O_RADU" EntitySet="UGOVOR_O_RADU" />
+      <End Role="HR_KORISNIK_RADNO_MJESTO" EntitySet="HR_KORISNIK_RADNO_MJESTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HRMDocSto__paren__114A936A" Association="HRMModel.FK__HRMDocSto__paren__114A936A">
+      <End Role="HRMDocStore" EntitySet="HRMDocStore" />
+      <End Role="HRMDocStore1" EntitySet="HRMDocStore" />
+    </AssociationSet>
+    <AssociationSet Name="KANDIDAT_KANDIDAT_ODGOVOR_fk" Association="HRMModel.KANDIDAT_KANDIDAT_ODGOVOR_fk">
+      <End Role="KANDIDAT" EntitySet="KANDIDAT" />
+      <End Role="KANDIDAT_ODGOVOR" EntitySet="KANDIDAT_ODGOVOR" />
+    </AssociationSet>
+    <AssociationSet Name="KANDIDAT_REZULTAT_TESTA_fk" Association="HRMModel.KANDIDAT_REZULTAT_TESTA_fk">
+      <End Role="KANDIDAT" EntitySet="KANDIDAT" />
+      <End Role="REZULTAT_TESTA" EntitySet="REZULTAT_TESTA" />
+    </AssociationSet>
+    <AssociationSet Name="TEST_KANDIDAT_fk" Association="HRMModel.TEST_KANDIDAT_fk">
+      <End Role="TEST" EntitySet="TEST" />
+      <End Role="KANDIDAT" EntitySet="KANDIDAT" />
+    </AssociationSet>
+    <AssociationSet Name="TIP_PONAVLJANJA_TESTA_KANDIDAT_fk" Association="HRMModel.TIP_PONAVLJANJA_TESTA_KANDIDAT_fk">
+      <End Role="TIP_PONAVLJANJA_TESTA" EntitySet="TIP_PONAVLJANJA_TESTA" />
+      <End Role="KANDIDAT" EntitySet="KANDIDAT" />
+    </AssociationSet>
+    <AssociationSet Name="TEST_ODGOVOR_KANDIDAT_ODGOVOR_fk" Association="HRMModel.TEST_ODGOVOR_KANDIDAT_ODGOVOR_fk">
+      <End Role="TEST_ODGOVOR" EntitySet="TEST_ODGOVOR" />
+      <End Role="KANDIDAT_ODGOVOR" EntitySet="KANDIDAT_ODGOVOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LICNI_DOKUMENTI_KANTON" Association="HRMModel.FK_LICNI_DOKUMENTI_KANTON">
+      <End Role="KANTON" EntitySet="KANTON" />
+      <End Role="LICNI_DOKUMENTI" EntitySet="LICNI_DOKUMENTI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PREBIVALISTE_BORAVISTE_KANTON" Association="HRMModel.FK_PREBIVALISTE_BORAVISTE_KANTON">
+      <End Role="KANTON" EntitySet="KANTON" />
+      <End Role="PREBIVALISTE_BORAVISTE" EntitySet="PREBIVALISTE_BORAVISTE" />
+    </AssociationSet>
+    <AssociationSet Name="VRSTA_PRISUSTVA_ODSUSTVA_KONFIGURACIA_VRSTA_PRISUSTVA_fk" Association="HRMModel.VRSTA_PRISUSTVA_ODSUSTVA_KONFIGURACIA_VRSTA_PRISUSTVA_fk">
+      <End Role="VRSTA_PRISUSTVA_ODSUSTVA" EntitySet="VRSTA_PRISUSTVA_ODSUSTVA" />
+      <End Role="KONFIGURACIJA_VRSTA_PRISUSTVA" EntitySet="KONFIGURACIJA_VRSTA_PRISUSTVA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LICNI_DOKUMENTI_OPSTINA" Association="HRMModel.FK_LICNI_DOKUMENTI_OPSTINA">
+      <End Role="OPSTINA" EntitySet="OPSTINA" />
+      <End Role="LICNI_DOKUMENTI" EntitySet="LICNI_DOKUMENTI" />
+    </AssociationSet>
+    <AssociationSet Name="VRSTA_LICNOG_DOKUMENTA_LICNI_DOKUMENTI_fk" Association="HRMModel.VRSTA_LICNOG_DOKUMENTA_LICNI_DOKUMENTI_fk">
+      <End Role="VRSTA_LICNOG_DOKUMENTA" EntitySet="VRSTA_LICNOG_DOKUMENTA" />
+      <End Role="LICNI_DOKUMENTI" EntitySet="LICNI_DOKUMENTI" />
+    </AssociationSet>
+    <AssociationSet Name="OBJAKTI_MAS_LOKACIJE_MAS_fk" Association="HRMModel.OBJAKTI_MAS_LOKACIJE_MAS_fk">
+      <End Role="OBJEKTI_MAS" EntitySet="OBJEKTI_MAS" />
+      <End Role="LOKACIJE_MAS" EntitySet="LOKACIJE_MAS" />
+    </AssociationSet>
+    <AssociationSet Name="MENI_PRAVA_PRISTUPA_fk" Association="HRMModel.MENI_PRAVA_PRISTUPA_fk">
+      <End Role="MENI" EntitySet="MENI" />
+      <End Role="PRAVA_PRISTUPA" EntitySet="PRAVA_PRISTUPA" />
+    </AssociationSet>
+    <AssociationSet Name="OBUKA_TEST_fk" Association="HRMModel.OBUKA_TEST_fk">
+      <End Role="OBUKA" EntitySet="OBUKA" />
+      <End Role="TEST" EntitySet="TEST" />
+    </AssociationSet>
+    <AssociationSet Name="TIP_OBUKE_OBUKA_fk" Association="HRMModel.TIP_OBUKE_OBUKA_fk">
+      <End Role="TIP_OBUKE" EntitySet="TIP_OBUKE" />
+      <End Role="OBUKA" EntitySet="OBUKA" />
+    </AssociationSet>
+    <AssociationSet Name="OPSTINA_PREBIVALISTE_fk" Association="HRMModel.OPSTINA_PREBIVALISTE_fk">
+      <End Role="OPSTINA" EntitySet="OPSTINA" />
+      <End Role="PREBIVALISTE_BORAVISTE" EntitySet="PREBIVALISTE_BORAVISTE" />
+    </AssociationSet>
+    <AssociationSet Name="OPSTINA_UGOVOR_O_RADU_fk" Association="HRMModel.OPSTINA_UGOVOR_O_RADU_fk">
+      <End Role="OPSTINA" EntitySet="OPSTINA" />
+      <End Role="UGOVOR_O_RADU" EntitySet="UGOVOR_O_RADU" />
+    </AssociationSet>
+    <AssociationSet Name="ORGANIZACIONA_JEDINICA_ORGANIZACIONA_JEDINICA_fk" Association="HRMModel.ORGANIZACIONA_JEDINICA_ORGANIZACIONA_JEDINICA_fk">
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+      <End Role="ORGANIZACIONA_JEDINICA1" EntitySet="ORGANIZACIONA_JEDINICA" />
+    </AssociationSet>
+    <AssociationSet Name="ORGANIZACIONA_JEDINICA_RADNO_MJESTO_fk" Association="HRMModel.ORGANIZACIONA_JEDINICA_RADNO_MJESTO_fk">
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+      <End Role="RADNO_MJESTO" EntitySet="RADNO_MJESTO" />
+    </AssociationSet>
+    <AssociationSet Name="ORGANIZACIONA_JEDINICA_SIHT_LISTA_PRINT_fk" Association="HRMModel.ORGANIZACIONA_JEDINICA_SIHT_LISTA_PRINT_fk">
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+      <End Role="SIHT_LISTA_PRINT" EntitySet="SIHT_LISTA_PRINT" />
+    </AssociationSet>
+    <AssociationSet Name="ORGANIZACIONA_JEDINICA_ZAKLJUCAVANJE_EVIDENCIJE_fk" Association="HRMModel.ORGANIZACIONA_JEDINICA_ZAKLJUCAVANJE_EVIDENCIJE_fk">
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+      <End Role="ZAKLJUCAVANJE_EVIDENCIJE" EntitySet="ZAKLJUCAVANJE_EVIDENCIJE" />
+    </AssociationSet>
+    <AssociationSet Name="SISTEMATIZACIJA_ORGANIZACIONA_JEDINICA_fk" Association="HRMModel.SISTEMATIZACIJA_ORGANIZACIONA_JEDINICA_fk">
+      <End Role="SISTEMATIZACIJA" EntitySet="SISTEMATIZACIJA" />
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+    </AssociationSet>
+    <AssociationSet Name="TIP_ORGANIZACIONE_JEDINICE_ORGANIZACIONA_JEDINICA_fk" Association="HRMModel.TIP_ORGANIZACIONE_JEDINICE_ORGANIZACIONA_JEDINICA_fk">
+      <End Role="TIP_ORGANIZACIONE_JEDINICE" EntitySet="TIP_ORGANIZACIONE_JEDINICE" />
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+    </AssociationSet>
+    <AssociationSet Name="VRSTA_PRAVA_PRISTUPA_PRAVA_PRISTUPA_fk" Association="HRMModel.VRSTA_PRAVA_PRISTUPA_PRAVA_PRISTUPA_fk">
+      <End Role="VRSTA_PRAVA_PRISTUPA" EntitySet="VRSTA_PRAVA_PRISTUPA" />
+      <End Role="PRAVA_PRISTUPA" EntitySet="PRAVA_PRISTUPA" />
+    </AssociationSet>
+    <AssociationSet Name="VRSTA_RADNOG_STAZA_RADNI_STAZ_fk" Association="HRMModel.VRSTA_RADNOG_STAZA_RADNI_STAZ_fk">
+      <End Role="VRSTA_RADNOG_STAZA" EntitySet="VRSTA_RADNOG_STAZA" />
+      <End Role="RADNI_STAZ" EntitySet="RADNI_STAZ" />
+    </AssociationSet>
+    <AssociationSet Name="RADNO_MJESTO_RADNO_MJESTO_fk" Association="HRMModel.RADNO_MJESTO_RADNO_MJESTO_fk">
+      <End Role="RADNO_MJESTO" EntitySet="RADNO_MJESTO" />
+      <End Role="RADNO_MJESTO1" EntitySet="RADNO_MJESTO" />
+    </AssociationSet>
+    <AssociationSet Name="RADNO_MJESTO_RADNO_MJESTO_SKOLSKA_SPREMA_fk" Association="HRMModel.RADNO_MJESTO_RADNO_MJESTO_SKOLSKA_SPREMA_fk">
+      <End Role="RADNO_MJESTO" EntitySet="RADNO_MJESTO" />
+      <End Role="RADNO_MJESTO_SKOLSKA_SPREMA" EntitySet="RADNO_MJESTO_SKOLSKA_SPREMA" />
+    </AssociationSet>
+    <AssociationSet Name="SKOLSKA_SPREMA_RADNO_MJESTO_SKOLSKA_SPREMA_fk" Association="HRMModel.SKOLSKA_SPREMA_RADNO_MJESTO_SKOLSKA_SPREMA_fk">
+      <End Role="SKOLSKA_SPREMA" EntitySet="SKOLSKA_SPREMA" />
+      <End Role="RADNO_MJESTO_SKOLSKA_SPREMA" EntitySet="RADNO_MJESTO_SKOLSKA_SPREMA" />
+    </AssociationSet>
+    <AssociationSet Name="TEST_REZULTAT_TESTA_fk" Association="HRMModel.TEST_REZULTAT_TESTA_fk">
+      <End Role="TEST" EntitySet="TEST" />
+      <End Role="REZULTAT_TESTA" EntitySet="REZULTAT_TESTA" />
+    </AssociationSet>
+    <AssociationSet Name="TEST_TEST_PITANJE_fk" Association="HRMModel.TEST_TEST_PITANJE_fk">
+      <End Role="TEST" EntitySet="TEST" />
+      <End Role="TEST_PITANJE" EntitySet="TEST_PITANJE" />
+    </AssociationSet>
+    <AssociationSet Name="TEST_PITANJE_TEST_ODGOVOR_fk" Association="HRMModel.TEST_PITANJE_TEST_ODGOVOR_fk">
+      <End Role="TEST_PITANJE" EntitySet="TEST_PITANJE" />
+      <End Role="TEST_ODGOVOR" EntitySet="TEST_ODGOVOR" />
+    </AssociationSet>
+    <AssociationSet Name="VRSTA_ANGAZMANA_UGOVOR_O_RADU_fk" Association="HRMModel.VRSTA_ANGAZMANA_UGOVOR_O_RADU_fk">
+      <End Role="VRSTA_ANGAZMANA" EntitySet="VRSTA_ANGAZMANA" />
+      <End Role="UGOVOR_O_RADU" EntitySet="UGOVOR_O_RADU" />
+    </AssociationSet>
+    <AssociationSet Name="VRSTA_RADNOG_ODNOSA_UGOVOR_O_RADU_fk" Association="HRMModel.VRSTA_RADNOG_ODNOSA_UGOVOR_O_RADU_fk">
+      <End Role="VRSTA_RADNOG_ODNOSA" EntitySet="VRSTA_RADNOG_ODNOSA" />
+      <End Role="UGOVOR_O_RADU" EntitySet="UGOVOR_O_RADU" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AttendanceEvents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateTimeUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CardNumber" Type="Int64" Nullable="false" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="DeviceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="RegistrationType" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAtUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Hr_korisnik_id" Type="Int32" />
+    <Property Name="Source" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AttendoSyncStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="LastId" Type="Int64" Nullable="false" />
+    <Property Name="LastSyncTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="BRACNI_STATUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SORTIRANJE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.BRACNI_STATUS_HR_KORISNIK_fk" FromRole="BRACNI_STATUS" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="DANI_GODISNJEG_ODMORA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="GODINA" Type="Int32" Nullable="false" />
+    <Property Name="BROJ_DANA_ODMORA" Type="Int32" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_DANI_GODISNJEG_ODMORA_fk" FromRole="DANI_GODISNJEG_ODMORA" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AKTIVNO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="HR_KORISNIK_DODATNA_PRAVA" Relationship="HRMModel.DODATNA_PRAVA_IZ_RADNOG_ODNOSA_HR_KORISNIK_DODATNA_PRAVA_fk" FromRole="DODATNA_PRAVA_IZ_RADNOG_ODNOSA" ToRole="HR_KORISNIK_DODATNA_PRAVA" />
+  </EntityType>
+  <EntityType Name="DODATNI_POTPISNIK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="ORGANIZACIONA_JEDINICA_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_DODATNI_POTPISNIK_fk" FromRole="DODATNI_POTPISNIK" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="ORGANIZACIONA_JEDINICA" Relationship="HRMModel.ORGANIZACIONA_JEDINICA_DODATNI_POTPISNIK_fk" FromRole="DODATNI_POTPISNIK" ToRole="ORGANIZACIONA_JEDINICA" />
+  </EntityType>
+  <EntityType Name="DODATNO_OBRAZOVANJE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="VRSTA_DODATNOG_OBRAZOVANJA_ID" Type="Int32" Nullable="false" />
+    <Property Name="DOKUMENT_ID" Type="Int32" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_STICANJA" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_BRISANJA" Type="DateTime" Precision="3" />
+    <Property Name="OBRISAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DATUM_ISTEKA" Type="DateTime" Precision="3" />
+    <Property Name="AKTIVNO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="DOKUMENT" Relationship="HRMModel.DOKUMENT_DODATNO_OBRAZOVANJE_fk" FromRole="DODATNO_OBRAZOVANJE" ToRole="DOKUMENT" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_DODATNO_OBRAZOVANJE_fk" FromRole="DODATNO_OBRAZOVANJE" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="VRSTA_DODATNOG_OBRAZOVANJA" Relationship="HRMModel.VSRTA_DODATNOG_OBRAZOVANJA_DODATNO_OBRAZOVANJE_fk" FromRole="DODATNO_OBRAZOVANJE" ToRole="VRSTA_DODATNOG_OBRAZOVANJA" />
+  </EntityType>
+  <EntityType Name="DOKUMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STREAM_ID" Type="Guid" Nullable="false" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="EKSTENZIJA" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="PUTANJA" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="DODATNO_OBRAZOVANJE" Relationship="HRMModel.DOKUMENT_DODATNO_OBRAZOVANJE_fk" FromRole="DOKUMENT" ToRole="DODATNO_OBRAZOVANJE" />
+    <NavigationProperty Name="HR_KORISNIK_DODATNA_PRAVA" Relationship="HRMModel.DOKUMENT_HR_KORISNIK_DODATNA_PRAVA_fk" FromRole="DOKUMENT" ToRole="HR_KORISNIK_DODATNA_PRAVA" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.DOKUMENT_HR_KORISNIK_fk" FromRole="DOKUMENT" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="LICNI_DOKUMENTI" Relationship="HRMModel.DOKUMENT_LICNI_DOKUMENTI_fk" FromRole="DOKUMENT" ToRole="LICNI_DOKUMENTI" />
+    <NavigationProperty Name="UGOVOR_O_RADU" Relationship="HRMModel.DOKUMENT_UGOVOR_O_RADU_fk" FromRole="DOKUMENT" ToRole="UGOVOR_O_RADU" />
+  </EntityType>
+  <EntityType Name="DRZAVA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="KOD" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DRZAVLJANSTVO" Relationship="HRMModel.DRZAVA_DRZAVLJANSTVO_fk" FromRole="DRZAVA" ToRole="DRZAVLJANSTVO" />
+    <NavigationProperty Name="OPSTINA" Relationship="HRMModel.DRZAVA_OPSTINA_fk" FromRole="DRZAVA" ToRole="OPSTINA" />
+    <NavigationProperty Name="RAD_U_INOSTRANSTVU" Relationship="HRMModel.DRZAVA_RAD_U_INOSTRANSTVU_fk" FromRole="DRZAVA" ToRole="RAD_U_INOSTRANSTVU" />
+  </EntityType>
+  <EntityType Name="DRZAVLJANSTVO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="DRZAVA_ID" Type="Int32" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_BRISANJA" Type="DateTime" Precision="3" />
+    <Property Name="OBRISAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="DRZAVA" Relationship="HRMModel.DRZAVA_DRZAVLJANSTVO_fk" FromRole="DRZAVLJANSTVO" ToRole="DRZAVA" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_DRZAVLJANSTVO_fk" FromRole="DRZAVLJANSTVO" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="DRZAVNI_PRAZNICI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MJESEC" Type="Int32" Nullable="false" />
+    <Property Name="BROJ_DANA_PRAZNIKA" Type="Int32" Nullable="false" />
+    <Property Name="UKUPAN_BROJ_SATI" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EXPORT_PRISUSTVO_POINT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="DOWNLOAD_GUID" Type="Guid" Nullable="false" />
+    <Property Name="HOST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TEXT" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_EXPORT_PRISUSTVO_POINT_fk" FromRole="EXPORT_PRISUSTVO_POINT" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="HR_GRUPA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AKTIVNO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="HR_KORISNIK_HR_GRUPA" Relationship="HRMModel.HR_GRUPA_HR_KORISNIK_HR_GRUPA_fk" FromRole="HR_GRUPA" ToRole="HR_KORISNIK_HR_GRUPA" />
+    <NavigationProperty Name="PRAVA_PRISTUPA" Relationship="HRMModel.HR_GRUPA_PRAVA_PRISTUPA_fk" FromRole="HR_GRUPA" ToRole="PRAVA_PRISTUPA" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PREZIME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IME_RODITELJA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DJEVOJACKO_PREZIME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LOZINKA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="JMB" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="SPOL_ID" Type="Int32" Nullable="false" />
+    <Property Name="SLIKA_ID" Type="Int32" />
+    <Property Name="BRACNI_STATUS_ID" Type="Int32" />
+    <Property Name="DATUM_RODJENJA" Type="DateTime" Precision="3" />
+    <Property Name="MJESTO_RODJENJA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OPSTINA_ID" Type="Int32" />
+    <Property Name="NARODNOST_ID" Type="Int32" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DOZVOLA_ZA_BORAVAK_RAD" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_IZMJENE" Type="DateTime" Precision="3" />
+    <Property Name="SKOLSKA_SPREMA_ID" Type="Int32" />
+    <Property Name="STECENO_ZVANJE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="OBRAZOVNA_INSTITUCIJA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="BROJ_MOBILNOG_TELEFONA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BROJ_FIXNOG_TELEFONA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BROJ_LOKALA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="KATEGORIJA_VOZACKE_DOZVOLE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DATUM_POCETKA_RADA" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_BRISANJA" Type="DateTime" Precision="3" />
+    <Property Name="ACTIVE_DIRECTORY_KORISNIK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OBRISAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AKTIVNO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RACUNOVODSTVENI_BROJ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOMAIN_LOGON" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="KOREKCIJA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DJEVOJACKO_PREZIME_MAJKE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IME_MAJKE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PACS_ID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BRACNI_STATUS" Relationship="HRMModel.BRACNI_STATUS_HR_KORISNIK_fk" FromRole="HR_KORISNIK" ToRole="BRACNI_STATUS" />
+    <NavigationProperty Name="DANI_GODISNJEG_ODMORA" Relationship="HRMModel.HR_KORISNIK_DANI_GODISNJEG_ODMORA_fk" FromRole="HR_KORISNIK" ToRole="DANI_GODISNJEG_ODMORA" />
+    <NavigationProperty Name="DODATNI_POTPISNIK" Relationship="HRMModel.HR_KORISNIK_DODATNI_POTPISNIK_fk" FromRole="HR_KORISNIK" ToRole="DODATNI_POTPISNIK" />
+    <NavigationProperty Name="DODATNO_OBRAZOVANJE" Relationship="HRMModel.HR_KORISNIK_DODATNO_OBRAZOVANJE_fk" FromRole="HR_KORISNIK" ToRole="DODATNO_OBRAZOVANJE" />
+    <NavigationProperty Name="DOKUMENT" Relationship="HRMModel.DOKUMENT_HR_KORISNIK_fk" FromRole="HR_KORISNIK" ToRole="DOKUMENT" />
+    <NavigationProperty Name="DRZAVLJANSTVO" Relationship="HRMModel.HR_KORISNIK_DRZAVLJANSTVO_fk" FromRole="HR_KORISNIK" ToRole="DRZAVLJANSTVO" />
+    <NavigationProperty Name="EXPORT_PRISUSTVO_POINT" Relationship="HRMModel.HR_KORISNIK_EXPORT_PRISUSTVO_POINT_fk" FromRole="HR_KORISNIK" ToRole="EXPORT_PRISUSTVO_POINT" />
+    <NavigationProperty Name="HR_KORISNIK_DODATNA_PRAVA" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_DODATNA_PRAVA_fk" FromRole="HR_KORISNIK" ToRole="HR_KORISNIK_DODATNA_PRAVA" />
+    <NavigationProperty Name="HR_KORISNIK_FILTER" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_FILTER_fk" FromRole="HR_KORISNIK" ToRole="HR_KORISNIK_FILTER" />
+    <NavigationProperty Name="HR_KORISNIK_FILTER_UPOSLENIK" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_FILTER_UPOSLENIK_fk" FromRole="HR_KORISNIK" ToRole="HR_KORISNIK_FILTER_UPOSLENIK" />
+    <NavigationProperty Name="HR_KORISNIK_HR_GRUPA" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_HR_GRUPA_fk" FromRole="HR_KORISNIK" ToRole="HR_KORISNIK_HR_GRUPA" />
+    <NavigationProperty Name="HR_KORISNIK_LOKACIJE_MAS" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_LOKACIJE_MAS_fk" FromRole="HR_KORISNIK" ToRole="HR_KORISNIK_LOKACIJE_MAS" />
+    <NavigationProperty Name="HR_KORISNIK_PRERASPODJELA_SATI" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk" FromRole="HR_KORISNIK" ToRole="HR_KORISNIK_PRERASPODJELA_SATI" />
+    <NavigationProperty Name="HR_KORISNIK_PRERASPODJELA_SATI1" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk1" FromRole="HR_KORISNIK" ToRole="HR_KORISNIK_PRERASPODJELA_SATI" />
+    <NavigationProperty Name="HR_KORISNIK_PRISUSTVO" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk" FromRole="HR_KORISNIK" ToRole="HR_KORISNIK_PRISUSTVO" />
+    <NavigationProperty Name="HR_KORISNIK_PRISUSTVO1" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk1" FromRole="HR_KORISNIK" ToRole="HR_KORISNIK_PRISUSTVO" />
+    <NavigationProperty Name="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk" FromRole="HR_KORISNIK" ToRole="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" />
+    <NavigationProperty Name="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA1" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk1" FromRole="HR_KORISNIK" ToRole="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" />
+    <NavigationProperty Name="HR_KORISNIK_RADNO_MJESTO" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_RADNO_MJESTO_fk" FromRole="HR_KORISNIK" ToRole="HR_KORISNIK_RADNO_MJESTO" />
+    <NavigationProperty Name="HR_LOG" Relationship="HRMModel.HR_KORISNIK_HR_LOG_fk" FromRole="HR_KORISNIK" ToRole="HR_LOG" />
+    <NavigationProperty Name="KANDIDAT" Relationship="HRMModel.HR_KORISNIK_KANDIDAT_fk" FromRole="HR_KORISNIK" ToRole="KANDIDAT" />
+    <NavigationProperty Name="KONFIGURACIJA_VRSTA_PRISUSTVA" Relationship="HRMModel.HR_KORISNIK_KONFIGURACIA_VRSTA_PRISUSTVA_fk" FromRole="HR_KORISNIK" ToRole="KONFIGURACIJA_VRSTA_PRISUSTVA" />
+    <NavigationProperty Name="KONFIGURACIJA" Relationship="HRMModel.HR_KORISNIK_KONFIGURACIJA_fk" FromRole="HR_KORISNIK" ToRole="KONFIGURACIJA" />
+    <NavigationProperty Name="KONFIGURACIJA1" Relationship="HRMModel.HR_KORISNIK_KONFIGURACIJA_fk1" FromRole="HR_KORISNIK" ToRole="KONFIGURACIJA" />
+    <NavigationProperty Name="LICNI_DOKUMENTI" Relationship="HRMModel.HR_KORISNIK_LICNI_DOKUMENTI_fk" FromRole="HR_KORISNIK" ToRole="LICNI_DOKUMENTI" />
+    <NavigationProperty Name="MIROVANJE_RADNOG_ODNOSA" Relationship="HRMModel.HR_KORISNIK_MIROVANJE_RADNOG_ODNOSA_fk" FromRole="HR_KORISNIK" ToRole="MIROVANJE_RADNOG_ODNOSA" />
+    <NavigationProperty Name="ORGANIZACIONA_JEDINICA" Relationship="HRMModel.HR_KORISNIK_ORGANIZACIONA_JEDINICA_fk" FromRole="HR_KORISNIK" ToRole="ORGANIZACIONA_JEDINICA" />
+    <NavigationProperty Name="PRAVO_GODISNJI_ODMOR" Relationship="HRMModel.HR_KORISNIK_PRAVO_GODISNI_ODMOR_fk" FromRole="HR_KORISNIK" ToRole="PRAVO_GODISNJI_ODMOR" />
+    <NavigationProperty Name="PREBIVALISTE_BORAVISTE" Relationship="HRMModel.HR_KORISNIK_PREBIVALISTE_fk" FromRole="HR_KORISNIK" ToRole="PREBIVALISTE_BORAVISTE" />
+    <NavigationProperty Name="PRESTANAK_RADNOG_ODNOSA" Relationship="HRMModel.HR_KORISNIK_PRESTANAK_RADNOG_ODNOSA_fk" FromRole="HR_KORISNIK" ToRole="PRESTANAK_RADNOG_ODNOSA" />
+    <NavigationProperty Name="RAD_U_INOSTRANSTVU" Relationship="HRMModel.HR_KORISNIK_RAD_U_INOSTRANSTVU_fk" FromRole="HR_KORISNIK" ToRole="RAD_U_INOSTRANSTVU" />
+    <NavigationProperty Name="RADNI_STAZ" Relationship="HRMModel.HR_KORISNIK_RADNI_STAZ_fk" FromRole="HR_KORISNIK" ToRole="RADNI_STAZ" />
+    <NavigationProperty Name="RADNO_ISKUSTVO" Relationship="HRMModel.HR_KORISNIK_RADNO_ISKUSTVO_fk" FromRole="HR_KORISNIK" ToRole="RADNO_ISKUSTVO" />
+    <NavigationProperty Name="TEST" Relationship="HRMModel.HR_KORISNIK_TEST_fk" FromRole="HR_KORISNIK" ToRole="TEST" />
+    <NavigationProperty Name="ZAKLJUCAVANJE_EVIDENCIJE" Relationship="HRMModel.HR_KORISNIK_ZAKLJUCAVANJE_EVIDENCIJE_fk" FromRole="HR_KORISNIK" ToRole="ZAKLJUCAVANJE_EVIDENCIJE" />
+    <NavigationProperty Name="NARODNOST" Relationship="HRMModel.NARODNOST_HR_KORISNIK_fk" FromRole="HR_KORISNIK" ToRole="NARODNOST" />
+    <NavigationProperty Name="OPSTINA" Relationship="HRMModel.OPSTINA_HR_KORISNIK_fk" FromRole="HR_KORISNIK" ToRole="OPSTINA" />
+    <NavigationProperty Name="SKOLSKA_SPREMA" Relationship="HRMModel.SKOLSKA_SPREMA_HR_KORISNIK_fk" FromRole="HR_KORISNIK" ToRole="SKOLSKA_SPREMA" />
+    <NavigationProperty Name="SPOL" Relationship="HRMModel.SPOL_HR_KORISNIK_fk" FromRole="HR_KORISNIK" ToRole="SPOL" />
+    <Property Name="ADMIINISTRATIVNO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_DODATNA_PRAVA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA_ID" Type="Int32" Nullable="false" />
+    <Property Name="DOKUMENT_ID" Type="Int32" />
+    <Property Name="DATUM_POCETKA_PRAVA" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_ZAVRSETKA_PRAVA" Type="DateTime" Precision="3" />
+    <Property Name="NAPOMENA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_IZMJENE" Type="DateTime" Precision="3" />
+    <Property Name="AKTIVNO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA" Relationship="HRMModel.DODATNA_PRAVA_IZ_RADNOG_ODNOSA_HR_KORISNIK_DODATNA_PRAVA_fk" FromRole="HR_KORISNIK_DODATNA_PRAVA" ToRole="DODATNA_PRAVA_IZ_RADNOG_ODNOSA" />
+    <NavigationProperty Name="DOKUMENT" Relationship="HRMModel.DOKUMENT_HR_KORISNIK_DODATNA_PRAVA_fk" FromRole="HR_KORISNIK_DODATNA_PRAVA" ToRole="DOKUMENT" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_DODATNA_PRAVA_fk" FromRole="HR_KORISNIK_DODATNA_PRAVA" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_FILTER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AKTIVNO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_FILTER_fk" FromRole="HR_KORISNIK_FILTER" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="HR_KORISNIK_FILTER_UPOSLENIK" Relationship="HRMModel.HR_KORISNIK_FILTER_HR_KORISNIK_FILTER_UPOSLENIK_fk" FromRole="HR_KORISNIK_FILTER" ToRole="HR_KORISNIK_FILTER_UPOSLENIK" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_FILTER_UPOSLENIK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_FILTER_ID" Type="Int32" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_FILTER_UPOSLENIK_fk" FromRole="HR_KORISNIK_FILTER_UPOSLENIK" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="HR_KORISNIK_FILTER" Relationship="HRMModel.HR_KORISNIK_FILTER_HR_KORISNIK_FILTER_UPOSLENIK_fk" FromRole="HR_KORISNIK_FILTER_UPOSLENIK" ToRole="HR_KORISNIK_FILTER" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_HR_GRUPA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="HR_GRUPA_ID" Type="Int32" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="HR_GRUPA" Relationship="HRMModel.HR_GRUPA_HR_KORISNIK_HR_GRUPA_fk" FromRole="HR_KORISNIK_HR_GRUPA" ToRole="HR_GRUPA" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_HR_GRUPA_fk" FromRole="HR_KORISNIK_HR_GRUPA" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_LOKACIJE_MAS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="LOKACIJA_MAS_ID" Type="Int32" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_LOKACIJE_MAS_fk" FromRole="HR_KORISNIK_LOKACIJE_MAS" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="LOKACIJE_MAS" Relationship="HRMModel.LOKACIJE_MAS_HR_KORISNIK_LOKACIJE_MAS_fk" FromRole="HR_KORISNIK_LOKACIJE_MAS" ToRole="LOKACIJE_MAS" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_PRERASPODJELA_SATI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="RADNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="GODINA" Type="Int32" Nullable="false" />
+    <Property Name="MJESEC" Type="Int32" Nullable="false" />
+    <Property Name="SATI_PRERASPODJELE" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OBRISANO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DATUM_BRISANJA" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk" FromRole="HR_KORISNIK_PRERASPODJELA_SATI" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="HR_KORISNIK1" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk1" FromRole="HR_KORISNIK_PRERASPODJELA_SATI" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_PRISUSTVO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="VRSTA_PRISUSTVA_ODSUSTVA_ID" Type="Int32" Nullable="false" />
+    <Property Name="VRIJEME_OD" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VRIJEME_DO" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_IZMJENE" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_BRISANJA" Type="DateTime" Precision="3" />
+    <Property Name="OBRISANO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="REFERENT_ID" Type="Int32" />
+    <Property Name="ISHRM" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ISATTENDO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk" FromRole="HR_KORISNIK_PRISUSTVO" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="HR_KORISNIK1" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk1" FromRole="HR_KORISNIK_PRISUSTVO" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="VRSTA_PRISUSTVA_ODSUSTVA" Relationship="HRMModel.VRSTA_PRISUSTVA_ODSUSTVA_HR_KORISNIK_PRISUSTVO_fk" FromRole="HR_KORISNIK_PRISUSTVO" ToRole="VRSTA_PRISUSTVA_ODSUSTVA" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="RADNIK_ID" Type="Int32" />
+    <Property Name="ORGANIZACIONA_JEDINICA_ID" Type="Int32" />
+    <Property Name="OMOGUCI_EVIDENCIJU_SEBI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_IZMJENE" Type="DateTime" Precision="3" />
+    <Property Name="AKTIVNO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ZAKLJUCAVANJE_OJ" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk" FromRole="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="HR_KORISNIK1" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk1" FromRole="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="ORGANIZACIONA_JEDINICA" Relationship="HRMModel.ORGANIZACIONA_JEDINICA_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk" FromRole="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" ToRole="ORGANIZACIONA_JEDINICA" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_RADNO_MJESTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="RADNO_MJESTO_ID" Type="Int32" Nullable="false" />
+    <Property Name="UGOVOR_O_RADU_ID" Type="Int32" Nullable="false" />
+    <Property Name="SEDMICNO_RADNO_VRIJEME" Type="Int32" />
+    <Property Name="ODREDJENO_PUNO_RADNO_VRIJEME" Type="Int32" />
+    <Property Name="ODREDJENO_SKRACENO_RADNO_VRIJEME" Type="Int32" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_BRISANJA" Type="DateTime" Precision="3" />
+    <Property Name="OBRISAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AKTIVNO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_HR_KORISNIK_RADNO_MJESTO_fk" FromRole="HR_KORISNIK_RADNO_MJESTO" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="RADNO_MJESTO" Relationship="HRMModel.RADNO_MJESTO_HR_KORISNIK_RADNO_MJESTO_fk" FromRole="HR_KORISNIK_RADNO_MJESTO" ToRole="RADNO_MJESTO" />
+    <NavigationProperty Name="UGOVOR_O_RADU" Relationship="HRMModel.UGOVOR_O_RADU_HR_KORISNIK_RADNO_MJESTO_fk" FromRole="HR_KORISNIK_RADNO_MJESTO" ToRole="UGOVOR_O_RADU" />
+  </EntityType>
+  <EntityType Name="HR_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="URL" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="HOST" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AKTIVNOST" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAZIV_POLJA_VRIJEDNOST" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SISTEMSKA_PORUKA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="OPIS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_HR_LOG_fk" FromRole="HR_LOG" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="HRMDocStore">
+    <Key>
+      <PropertyRef Name="path_locator" />
+    </Key>
+    <Property Name="stream_id" Type="Guid" Nullable="false" />
+    <Property Name="file_stream" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="path_locator" Type="HierarchyId" Nullable="false" />
+    <Property Name="parent_path_locator" Type="HierarchyId" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="file_type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="cached_file_size" Type="Int64" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="creation_time" Type="DateTimeOffset" Nullable="false" Precision="7" />
+    <Property Name="last_write_time" Type="DateTimeOffset" Nullable="false" Precision="7" />
+    <Property Name="last_access_time" Type="DateTimeOffset" Precision="7" />
+    <Property Name="is_directory" Type="Boolean" Nullable="false" />
+    <Property Name="is_offline" Type="Boolean" Nullable="false" />
+    <Property Name="is_hidden" Type="Boolean" Nullable="false" />
+    <Property Name="is_readonly" Type="Boolean" Nullable="false" />
+    <Property Name="is_archive" Type="Boolean" Nullable="false" />
+    <Property Name="is_system" Type="Boolean" Nullable="false" />
+    <Property Name="is_temporary" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="HRMDocStore1" Relationship="HRMModel.FK__HRMDocSto__paren__114A936A" FromRole="HRMDocStore" ToRole="HRMDocStore1" />
+    <NavigationProperty Name="HRMDocStore2" Relationship="HRMModel.FK__HRMDocSto__paren__114A936A" FromRole="HRMDocStore1" ToRole="HRMDocStore" />
+  </EntityType>
+  <EntityType Name="JUBILARNI_STAZ">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BROJ_GODINA" Type="Int32" Nullable="false" />
+    <Property Name="AKTIVNO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="KANDIDAT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="TEST_ID" Type="Int32" Nullable="false" />
+    <Property Name="BROJ_DOZVOLE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TIP_PONAVLJANJA_TESTA_ID" Type="Int32" />
+    <Property Name="DATUM_POKRETANJA_TESTA" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_KANDIDAT_fk" FromRole="KANDIDAT" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="KANDIDAT_ODGOVOR" Relationship="HRMModel.KANDIDAT_KANDIDAT_ODGOVOR_fk" FromRole="KANDIDAT" ToRole="KANDIDAT_ODGOVOR" />
+    <NavigationProperty Name="REZULTAT_TESTA" Relationship="HRMModel.KANDIDAT_REZULTAT_TESTA_fk" FromRole="KANDIDAT" ToRole="REZULTAT_TESTA" />
+    <NavigationProperty Name="TEST" Relationship="HRMModel.TEST_KANDIDAT_fk" FromRole="KANDIDAT" ToRole="TEST" />
+    <NavigationProperty Name="TIP_PONAVLJANJA_TESTA" Relationship="HRMModel.TIP_PONAVLJANJA_TESTA_KANDIDAT_fk" FromRole="KANDIDAT" ToRole="TIP_PONAVLJANJA_TESTA" />
+  </EntityType>
+  <EntityType Name="KANDIDAT_ODGOVOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KANDIDAT_ID" Type="Int32" Nullable="false" />
+    <Property Name="TEST_ODGOVOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="BROJ_PONAVLJANJA_TESTA" Type="Int32" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="KANDIDAT" Relationship="HRMModel.KANDIDAT_KANDIDAT_ODGOVOR_fk" FromRole="KANDIDAT_ODGOVOR" ToRole="KANDIDAT" />
+    <NavigationProperty Name="TEST_ODGOVOR" Relationship="HRMModel.TEST_ODGOVOR_KANDIDAT_ODGOVOR_fk" FromRole="KANDIDAT_ODGOVOR" ToRole="TEST_ODGOVOR" />
+  </EntityType>
+  <EntityType Name="KANTON">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="IZDATA_OD_NAZIV" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LICNI_DOKUMENTI" Relationship="HRMModel.FK_LICNI_DOKUMENTI_KANTON" FromRole="KANTON" ToRole="LICNI_DOKUMENTI" />
+    <NavigationProperty Name="PREBIVALISTE_BORAVISTE" Relationship="HRMModel.FK_PREBIVALISTE_BORAVISTE_KANTON" FromRole="KANTON" ToRole="PREBIVALISTE_BORAVISTE" />
+  </EntityType>
+  <EntityType Name="KONFIGURACIJA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="HR_KORISNIK_PRENOS_ID" Type="Int32" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_KONFIGURACIJA_fk" FromRole="KONFIGURACIJA" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="HR_KORISNIK1" Relationship="HRMModel.HR_KORISNIK_KONFIGURACIJA_fk1" FromRole="KONFIGURACIJA" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="KONFIGURACIJA_VRSTA_PRISUSTVA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="VRSTA_PRISUSTVA_ODSUSTVA_ID" Type="Int32" Nullable="false" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="VRIJEME_OD" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="VRIJEME_DO" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_KONFIGURACIA_VRSTA_PRISUSTVA_fk" FromRole="KONFIGURACIJA_VRSTA_PRISUSTVA" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="VRSTA_PRISUSTVA_ODSUSTVA" Relationship="HRMModel.VRSTA_PRISUSTVA_ODSUSTVA_KONFIGURACIA_VRSTA_PRISUSTVA_fk" FromRole="KONFIGURACIJA_VRSTA_PRISUSTVA" ToRole="VRSTA_PRISUSTVA_ODSUSTVA" />
+  </EntityType>
+  <EntityType Name="LICNI_DOKUMENTI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="DOKUMENT_ID" Type="Int32" />
+    <Property Name="VRSTA_LICNOG_DOKUMENTA_ID" Type="Int32" Nullable="false" />
+    <Property Name="OZNAKA" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_IZMJENE" Type="DateTime" Precision="3" />
+    <Property Name="IZDATA_OD" Type="Int32" />
+    <Property Name="IZDATA_OD_PU_KANTON" Type="Int32" />
+    <Property Name="DATUM_ISTEKA" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DOKUMENT" Relationship="HRMModel.DOKUMENT_LICNI_DOKUMENTI_fk" FromRole="LICNI_DOKUMENTI" ToRole="DOKUMENT" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_LICNI_DOKUMENTI_fk" FromRole="LICNI_DOKUMENTI" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="KANTON" Relationship="HRMModel.FK_LICNI_DOKUMENTI_KANTON" FromRole="LICNI_DOKUMENTI" ToRole="KANTON" />
+    <NavigationProperty Name="OPSTINA" Relationship="HRMModel.FK_LICNI_DOKUMENTI_OPSTINA" FromRole="LICNI_DOKUMENTI" ToRole="OPSTINA" />
+    <NavigationProperty Name="VRSTA_LICNOG_DOKUMENTA" Relationship="HRMModel.VRSTA_LICNOG_DOKUMENTA_LICNI_DOKUMENTI_fk" FromRole="LICNI_DOKUMENTI" ToRole="VRSTA_LICNOG_DOKUMENTA" />
+  </EntityType>
+  <EntityType Name="LOKACIJE_MAS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OBJEKTI_MAS_ID" Type="Int32" Nullable="false" />
+    <Property Name="SEKCIJA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_IZMJENE" Type="DateTime" Precision="3" />
+    <Property Name="AKTIVNO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="HR_KORISNIK_LOKACIJE_MAS" Relationship="HRMModel.LOKACIJE_MAS_HR_KORISNIK_LOKACIJE_MAS_fk" FromRole="LOKACIJE_MAS" ToRole="HR_KORISNIK_LOKACIJE_MAS" />
+    <NavigationProperty Name="OBJEKTI_MAS" Relationship="HRMModel.OBJAKTI_MAS_LOKACIJE_MAS_fk" FromRole="LOKACIJE_MAS" ToRole="OBJEKTI_MAS" />
+  </EntityType>
+  <EntityType Name="MENI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NADREDJENI_MENI_ID" Type="Int32" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AREA" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CONTROLLER" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACTION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IKONICA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SORTIRANJE" Type="Int32" Nullable="false" />
+    <Property Name="AKTIVNO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VIDLJIVO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="PRAVA_PRISTUPA" Relationship="HRMModel.MENI_PRAVA_PRISTUPA_fk" FromRole="MENI" ToRole="PRAVA_PRISTUPA" />
+  </EntityType>
+  <EntityType Name="MIROVANJE_RADNOG_ODNOSA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="DATUM_POCETKA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_ZAVRSETKA" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_BRISANJA" Type="DateTime" Precision="3" />
+    <Property Name="OBRISAN" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_MIROVANJE_RADNOG_ODNOSA_fk" FromRole="MIROVANJE_RADNOG_ODNOSA" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="NARODNOST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SIFRA_POINT" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.NARODNOST_HR_KORISNIK_fk" FromRole="NARODNOST" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="OBJEKTI_MAS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SKRACENI_NAZIV" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="AKTIVNO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="LOKACIJE_MAS" Relationship="HRMModel.OBJAKTI_MAS_LOKACIJE_MAS_fk" FromRole="OBJEKTI_MAS" ToRole="LOKACIJE_MAS" />
+  </EntityType>
+  <EntityType Name="OBUKA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OZNAKA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TIP_OBUKE_ID" Type="Int32" Nullable="false" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SORTIRANJE" Type="Int32" />
+    <Property Name="AKTIVNO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="TEST" Relationship="HRMModel.OBUKA_TEST_fk" FromRole="OBUKA" ToRole="TEST" />
+    <NavigationProperty Name="TIP_OBUKE" Relationship="HRMModel.TIP_OBUKE_OBUKA_fk" FromRole="OBUKA" ToRole="TIP_OBUKE" />
+  </EntityType>
+  <EntityType Name="OPSTINA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DRZAVA_ID" Type="Int32" Nullable="false" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DRZAVA" Relationship="HRMModel.DRZAVA_OPSTINA_fk" FromRole="OPSTINA" ToRole="DRZAVA" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.OPSTINA_HR_KORISNIK_fk" FromRole="OPSTINA" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="LICNI_DOKUMENTI" Relationship="HRMModel.FK_LICNI_DOKUMENTI_OPSTINA" FromRole="OPSTINA" ToRole="LICNI_DOKUMENTI" />
+    <NavigationProperty Name="PREBIVALISTE_BORAVISTE" Relationship="HRMModel.OPSTINA_PREBIVALISTE_fk" FromRole="OPSTINA" ToRole="PREBIVALISTE_BORAVISTE" />
+    <NavigationProperty Name="UGOVOR_O_RADU" Relationship="HRMModel.OPSTINA_UGOVOR_O_RADU_fk" FromRole="OPSTINA" ToRole="UGOVOR_O_RADU" />
+  </EntityType>
+  <EntityType Name="ORGANIZACIONA_JEDINICA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NADREDJENA_ORGANIZACIONA_JEDINICA_ID" Type="Int32" />
+    <Property Name="SISTEMATIZACIJA_ID" Type="Int32" Nullable="false" />
+    <Property Name="TIP_ORGANIZACIONE_JEDINICE_ID" Type="Int32" Nullable="false" />
+    <Property Name="KOD" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OPIS_POSLOVA" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="NAZIV_ZA_EXPORT_POINT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="POTPISNIK_RADNIH_SATI" Type="Int32" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_IZMJENE" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_BRISANJA" Type="DateTime" Precision="3" />
+    <Property Name="OBRISAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AKTIVNO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NAZIV_SKRACENO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DODATNI_POTPISNIK" Relationship="HRMModel.ORGANIZACIONA_JEDINICA_DODATNI_POTPISNIK_fk" FromRole="ORGANIZACIONA_JEDINICA" ToRole="DODATNI_POTPISNIK" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_ORGANIZACIONA_JEDINICA_fk" FromRole="ORGANIZACIONA_JEDINICA" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Relationship="HRMModel.ORGANIZACIONA_JEDINICA_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk" FromRole="ORGANIZACIONA_JEDINICA" ToRole="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" />
+    <NavigationProperty Name="ORGANIZACIONA_JEDINICA1" Relationship="HRMModel.ORGANIZACIONA_JEDINICA_ORGANIZACIONA_JEDINICA_fk" FromRole="ORGANIZACIONA_JEDINICA" ToRole="ORGANIZACIONA_JEDINICA1" />
+    <NavigationProperty Name="ORGANIZACIONA_JEDINICA2" Relationship="HRMModel.ORGANIZACIONA_JEDINICA_ORGANIZACIONA_JEDINICA_fk" FromRole="ORGANIZACIONA_JEDINICA1" ToRole="ORGANIZACIONA_JEDINICA" />
+    <NavigationProperty Name="RADNO_MJESTO" Relationship="HRMModel.ORGANIZACIONA_JEDINICA_RADNO_MJESTO_fk" FromRole="ORGANIZACIONA_JEDINICA" ToRole="RADNO_MJESTO" />
+    <NavigationProperty Name="SIHT_LISTA_PRINT" Relationship="HRMModel.ORGANIZACIONA_JEDINICA_SIHT_LISTA_PRINT_fk" FromRole="ORGANIZACIONA_JEDINICA" ToRole="SIHT_LISTA_PRINT" />
+    <NavigationProperty Name="ZAKLJUCAVANJE_EVIDENCIJE" Relationship="HRMModel.ORGANIZACIONA_JEDINICA_ZAKLJUCAVANJE_EVIDENCIJE_fk" FromRole="ORGANIZACIONA_JEDINICA" ToRole="ZAKLJUCAVANJE_EVIDENCIJE" />
+    <NavigationProperty Name="SISTEMATIZACIJA" Relationship="HRMModel.SISTEMATIZACIJA_ORGANIZACIONA_JEDINICA_fk" FromRole="ORGANIZACIONA_JEDINICA" ToRole="SISTEMATIZACIJA" />
+    <NavigationProperty Name="TIP_ORGANIZACIONE_JEDINICE" Relationship="HRMModel.TIP_ORGANIZACIONE_JEDINICE_ORGANIZACIONA_JEDINICA_fk" FromRole="ORGANIZACIONA_JEDINICA" ToRole="TIP_ORGANIZACIONE_JEDINICE" />
+  </EntityType>
+  <EntityType Name="PRAVA_PRISTUPA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VRSTA_PRAVA_PRISTUPA_ID" Type="Int32" Nullable="false" />
+    <Property Name="MENI_ID" Type="Int32" Nullable="false" />
+    <Property Name="HR_GRUPA_ID" Type="Int32" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="HR_GRUPA" Relationship="HRMModel.HR_GRUPA_PRAVA_PRISTUPA_fk" FromRole="PRAVA_PRISTUPA" ToRole="HR_GRUPA" />
+    <NavigationProperty Name="MENI" Relationship="HRMModel.MENI_PRAVA_PRISTUPA_fk" FromRole="PRAVA_PRISTUPA" ToRole="MENI" />
+    <NavigationProperty Name="VRSTA_PRAVA_PRISTUPA" Relationship="HRMModel.VRSTA_PRAVA_PRISTUPA_PRAVA_PRISTUPA_fk" FromRole="PRAVA_PRISTUPA" ToRole="VRSTA_PRAVA_PRISTUPA" />
+  </EntityType>
+  <EntityType Name="PRAVO_GODISNJI_ODMOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="PRAVO_NA_PUNI_ODMOR" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DATUM_PRAVA_NA_PUNI_ODMOR" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OBRISAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_PRAVO_GODISNI_ODMOR_fk" FromRole="PRAVO_GODISNJI_ODMOR" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="PREBIVALISTE_BORAVISTE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIP" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="ADRESA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OPSTINA_ID" Type="Int32" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_BRISANJA" Type="DateTime" Precision="3" />
+    <Property Name="OBRISAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AKTIVNO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="KANTON_ID" Type="Int32" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_PREBIVALISTE_fk" FromRole="PREBIVALISTE_BORAVISTE" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="KANTON" Relationship="HRMModel.FK_PREBIVALISTE_BORAVISTE_KANTON" FromRole="PREBIVALISTE_BORAVISTE" ToRole="KANTON" />
+    <NavigationProperty Name="OPSTINA" Relationship="HRMModel.OPSTINA_PREBIVALISTE_fk" FromRole="PREBIVALISTE_BORAVISTE" ToRole="OPSTINA" />
+  </EntityType>
+  <EntityType Name="PRESTANAK_RADNOG_ODNOSA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="DATUM_PRESTANKA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RAZLOG_PRESTANKA" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_BRISANJA" Type="DateTime" Precision="3" />
+    <Property Name="OBRISAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_PRESTANAK_RADNOG_ODNOSA_fk" FromRole="PRESTANAK_RADNOG_ODNOSA" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="RAD_U_INOSTRANSTVU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="DRZAVA_ID" Type="Int32" Nullable="false" />
+    <Property Name="MJESTO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_POCETKA_RADA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_ZAVRSETKA_RADA" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_IZMJENE" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_BRISANJA" Type="DateTime" Precision="3" />
+    <Property Name="OBRISAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="DRZAVA" Relationship="HRMModel.DRZAVA_RAD_U_INOSTRANSTVU_fk" FromRole="RAD_U_INOSTRANSTVU" ToRole="DRZAVA" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_RAD_U_INOSTRANSTVU_fk" FromRole="RAD_U_INOSTRANSTVU" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="RADNI_STAZ">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="VRSTA_RADNOG_STAZA_ID" Type="Int32" Nullable="false" />
+    <Property Name="NAZIV_FIRME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_OD" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_DO" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_IZMJENE" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_BRISANJA" Type="DateTime" Precision="3" />
+    <Property Name="OBRISAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GODINE" Type="Int32" />
+    <Property Name="MJESECI" Type="Int32" />
+    <Property Name="DANI" Type="Int32" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_RADNI_STAZ_fk" FromRole="RADNI_STAZ" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="VRSTA_RADNOG_STAZA" Relationship="HRMModel.VRSTA_RADNOG_STAZA_RADNI_STAZ_fk" FromRole="RADNI_STAZ" ToRole="VRSTA_RADNOG_STAZA" />
+  </EntityType>
+  <EntityType Name="RADNO_ISKUSTVO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="KOMPANIJA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_OD" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_DO" Type="DateTime" Precision="3" />
+    <Property Name="VRSTA_ISKUSTVA" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="GODINE" Type="Int32" />
+    <Property Name="MJESECI" Type="Int32" />
+    <Property Name="DANI" Type="Int32" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_IZMJENE" Type="DateTime" Precision="3" />
+    <Property Name="OBRISAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_RADNO_ISKUSTVO_fk" FromRole="RADNO_ISKUSTVO" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="RADNO_MJESTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NADREDJENO_RADNO_MJESTO_ID" Type="Int32" />
+    <Property Name="ORGANIZACIONA_JEDINICA_ID" Type="Int32" Nullable="false" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="KOD" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NAZIV_ENG" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BROJ_RADNIH_MJESTA" Type="Int32" />
+    <Property Name="KOEFICIJENT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FAKULTET_SKOLA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="POSEBNI_USLOVI" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="RADNO_ISKUSTVO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="POSLOVI_RADNOG_MJESTA" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="PUNO_RADNO_VRIJEME" Type="Int32" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_IZMJENE" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_BRISANJA" Type="DateTime" Precision="3" />
+    <Property Name="OBRISAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UTVRDITI_RADNU_SPOSOBNOST" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AKTIVNO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SIFRA_POINT" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="OTEZANI_USLOVI_RADA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="HR_KORISNIK_RADNO_MJESTO" Relationship="HRMModel.RADNO_MJESTO_HR_KORISNIK_RADNO_MJESTO_fk" FromRole="RADNO_MJESTO" ToRole="HR_KORISNIK_RADNO_MJESTO" />
+    <NavigationProperty Name="ORGANIZACIONA_JEDINICA" Relationship="HRMModel.ORGANIZACIONA_JEDINICA_RADNO_MJESTO_fk" FromRole="RADNO_MJESTO" ToRole="ORGANIZACIONA_JEDINICA" />
+    <NavigationProperty Name="RADNO_MJESTO1" Relationship="HRMModel.RADNO_MJESTO_RADNO_MJESTO_fk" FromRole="RADNO_MJESTO" ToRole="RADNO_MJESTO1" />
+    <NavigationProperty Name="RADNO_MJESTO2" Relationship="HRMModel.RADNO_MJESTO_RADNO_MJESTO_fk" FromRole="RADNO_MJESTO1" ToRole="RADNO_MJESTO" />
+    <NavigationProperty Name="RADNO_MJESTO_SKOLSKA_SPREMA" Relationship="HRMModel.RADNO_MJESTO_RADNO_MJESTO_SKOLSKA_SPREMA_fk" FromRole="RADNO_MJESTO" ToRole="RADNO_MJESTO_SKOLSKA_SPREMA" />
+  </EntityType>
+  <EntityType Name="RADNO_MJESTO_SKOLSKA_SPREMA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RADNO_MJESTO_ID" Type="Int32" Nullable="false" />
+    <Property Name="SKOLSKA_SPREMA_ID" Type="Int32" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="RADNO_MJESTO" Relationship="HRMModel.RADNO_MJESTO_RADNO_MJESTO_SKOLSKA_SPREMA_fk" FromRole="RADNO_MJESTO_SKOLSKA_SPREMA" ToRole="RADNO_MJESTO" />
+    <NavigationProperty Name="SKOLSKA_SPREMA" Relationship="HRMModel.SKOLSKA_SPREMA_RADNO_MJESTO_SKOLSKA_SPREMA_fk" FromRole="RADNO_MJESTO_SKOLSKA_SPREMA" ToRole="SKOLSKA_SPREMA" />
+  </EntityType>
+  <EntityType Name="REZULTAT_TESTA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TEST_ID" Type="Int32" Nullable="false" />
+    <Property Name="KANDIDAT_ID" Type="Int32" Nullable="false" />
+    <Property Name="REZULTAT" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="NAPOMENA" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="KANDIDAT" Relationship="HRMModel.KANDIDAT_REZULTAT_TESTA_fk" FromRole="REZULTAT_TESTA" ToRole="KANDIDAT" />
+    <NavigationProperty Name="TEST" Relationship="HRMModel.TEST_REZULTAT_TESTA_fk" FromRole="REZULTAT_TESTA" ToRole="TEST" />
+  </EntityType>
+  <EntityType Name="SIHT_LISTA_PRINT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORGANIZACIONA_JEDINICA_ID" Type="Int32" Nullable="false" />
+    <Property Name="MJESEC" Type="Int32" Nullable="false" />
+    <Property Name="GODINA" Type="Int32" Nullable="false" />
+    <Property Name="PUTANJA" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AKTIVNO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="POTPISNIK_ID" Type="Int32" />
+    <NavigationProperty Name="ORGANIZACIONA_JEDINICA" Relationship="HRMModel.ORGANIZACIONA_JEDINICA_SIHT_LISTA_PRINT_fk" FromRole="SIHT_LISTA_PRINT" ToRole="ORGANIZACIONA_JEDINICA" />
+  </EntityType>
+  <EntityType Name="SISTEMATIZACIJA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AKTIVNO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="ORGANIZACIONA_JEDINICA" Relationship="HRMModel.SISTEMATIZACIJA_ORGANIZACIONA_JEDINICA_fk" FromRole="SISTEMATIZACIJA" ToRole="ORGANIZACIONA_JEDINICA" />
+  </EntityType>
+  <EntityType Name="SKOLSKA_SPREMA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OZNAKA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SORTIRANJE" Type="Int32" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.SKOLSKA_SPREMA_HR_KORISNIK_fk" FromRole="SKOLSKA_SPREMA" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="RADNO_MJESTO_SKOLSKA_SPREMA" Relationship="HRMModel.SKOLSKA_SPREMA_RADNO_MJESTO_SKOLSKA_SPREMA_fk" FromRole="SKOLSKA_SPREMA" ToRole="RADNO_MJESTO_SKOLSKA_SPREMA" />
+  </EntityType>
+  <EntityType Name="SPOL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="OZNAKA" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="SORTIRANJE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.SPOL_HR_KORISNIK_fk" FromRole="SPOL" ToRole="HR_KORISNIK" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TEST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="OBUKA_ID" Type="Int32" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="DATUM_POCETKA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_ZAVRSETKA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TRAJANJE_TESTA" Type="Int32" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SLUCAJNI_RASPORED_PITANJA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PROLAZNOST" Type="Int32" />
+    <Property Name="AKTIVNO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_TEST_fk" FromRole="TEST" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="KANDIDAT" Relationship="HRMModel.TEST_KANDIDAT_fk" FromRole="TEST" ToRole="KANDIDAT" />
+    <NavigationProperty Name="OBUKA" Relationship="HRMModel.OBUKA_TEST_fk" FromRole="TEST" ToRole="OBUKA" />
+    <NavigationProperty Name="REZULTAT_TESTA" Relationship="HRMModel.TEST_REZULTAT_TESTA_fk" FromRole="TEST" ToRole="REZULTAT_TESTA" />
+    <NavigationProperty Name="TEST_PITANJE" Relationship="HRMModel.TEST_TEST_PITANJE_fk" FromRole="TEST" ToRole="TEST_PITANJE" />
+  </EntityType>
+  <EntityType Name="TEST_ODGOVOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TEST_PITANJE_ID" Type="Int32" Nullable="false" />
+    <Property Name="REDNI_BROJ" Type="Int32" />
+    <Property Name="TEKST_ODGOVORA" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TACAN_ODGOVOR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="KANDIDAT_ODGOVOR" Relationship="HRMModel.TEST_ODGOVOR_KANDIDAT_ODGOVOR_fk" FromRole="TEST_ODGOVOR" ToRole="KANDIDAT_ODGOVOR" />
+    <NavigationProperty Name="TEST_PITANJE" Relationship="HRMModel.TEST_PITANJE_TEST_ODGOVOR_fk" FromRole="TEST_ODGOVOR" ToRole="TEST_PITANJE" />
+  </EntityType>
+  <EntityType Name="TEST_PITANJE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TEST_ID" Type="Int32" Nullable="false" />
+    <Property Name="REDNI_BROJ" Type="Int32" />
+    <Property Name="TEKST_PITANJA" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="TEST" Relationship="HRMModel.TEST_TEST_PITANJE_fk" FromRole="TEST_PITANJE" ToRole="TEST" />
+    <NavigationProperty Name="TEST_ODGOVOR" Relationship="HRMModel.TEST_PITANJE_TEST_ODGOVOR_fk" FromRole="TEST_PITANJE" ToRole="TEST_ODGOVOR" />
+  </EntityType>
+  <EntityType Name="test_preraspodjela">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="prezime_ime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="broj_radnih_sati" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="id_radnika" Type="Int32" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="TIP_OBUKE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="OBUKA" Relationship="HRMModel.TIP_OBUKE_OBUKA_fk" FromRole="TIP_OBUKE" ToRole="OBUKA" />
+  </EntityType>
+  <EntityType Name="TIP_ORGANIZACIONE_JEDINICE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ORGANIZACIONA_JEDINICA" Relationship="HRMModel.TIP_ORGANIZACIONE_JEDINICE_ORGANIZACIONA_JEDINICA_fk" FromRole="TIP_ORGANIZACIONE_JEDINICE" ToRole="ORGANIZACIONA_JEDINICA" />
+  </EntityType>
+  <EntityType Name="TIP_PONAVLJANJA_TESTA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="KANDIDAT" Relationship="HRMModel.TIP_PONAVLJANJA_TESTA_KANDIDAT_fk" FromRole="TIP_PONAVLJANJA_TESTA" ToRole="KANDIDAT" />
+  </EntityType>
+  <EntityType Name="tmp_pbroj_opstina">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="postanski_broj" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="opstina_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UGOVOR_O_RADU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VRSTA_RADNOG_ODNOSA_ID" Type="Int32" Nullable="false" />
+    <Property Name="VRSTA_ANGAZMANA_ID" Type="Int32" Nullable="false" />
+    <Property Name="DOKUMENT_ID" Type="Int32" />
+    <Property Name="OPSTINA_ID" Type="Int32" />
+    <Property Name="BROJ_UGOVORA" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TRAJANJE_PROBNOG_RADA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TRAJANJE_PRIPRAVNICKOG_STAZA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DATUM_UGOVORA" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_POCETKA_RADA" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_ZAVRSETKA_RADA" Type="DateTime" Precision="3" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATUM_IZMJENE" Type="DateTime" Precision="3" />
+    <Property Name="BENEFICIRANI_STAZ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FAKTOR_UVECANJA_STAZA" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="AKTIVNO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NAPOMENA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="STVARNI_POCETAK_RADA" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DOKUMENT" Relationship="HRMModel.DOKUMENT_UGOVOR_O_RADU_fk" FromRole="UGOVOR_O_RADU" ToRole="DOKUMENT" />
+    <NavigationProperty Name="HR_KORISNIK_RADNO_MJESTO" Relationship="HRMModel.UGOVOR_O_RADU_HR_KORISNIK_RADNO_MJESTO_fk" FromRole="UGOVOR_O_RADU" ToRole="HR_KORISNIK_RADNO_MJESTO" />
+    <NavigationProperty Name="OPSTINA" Relationship="HRMModel.OPSTINA_UGOVOR_O_RADU_fk" FromRole="UGOVOR_O_RADU" ToRole="OPSTINA" />
+    <NavigationProperty Name="VRSTA_ANGAZMANA" Relationship="HRMModel.VRSTA_ANGAZMANA_UGOVOR_O_RADU_fk" FromRole="UGOVOR_O_RADU" ToRole="VRSTA_ANGAZMANA" />
+    <NavigationProperty Name="VRSTA_RADNOG_ODNOSA" Relationship="HRMModel.VRSTA_RADNOG_ODNOSA_UGOVOR_O_RADU_fk" FromRole="UGOVOR_O_RADU" ToRole="VRSTA_RADNOG_ODNOSA" />
+  </EntityType>
+  <EntityType Name="VRSTA_ANGAZMANA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UGOVOR_O_RADU" Relationship="HRMModel.VRSTA_ANGAZMANA_UGOVOR_O_RADU_fk" FromRole="VRSTA_ANGAZMANA" ToRole="UGOVOR_O_RADU" />
+  </EntityType>
+  <EntityType Name="VRSTA_DODATNOG_OBRAZOVANJA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SORTIRANJE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DODATNO_OBRAZOVANJE" Relationship="HRMModel.VSRTA_DODATNOG_OBRAZOVANJA_DODATNO_OBRAZOVANJE_fk" FromRole="VRSTA_DODATNOG_OBRAZOVANJA" ToRole="DODATNO_OBRAZOVANJE" />
+  </EntityType>
+  <EntityType Name="VRSTA_LICNOG_DOKUMENTA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SIFRA_POINT" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LICNI_DOKUMENTI" Relationship="HRMModel.VRSTA_LICNOG_DOKUMENTA_LICNI_DOKUMENTI_fk" FromRole="VRSTA_LICNOG_DOKUMENTA" ToRole="LICNI_DOKUMENTI" />
+  </EntityType>
+  <EntityType Name="VRSTA_PRAVA_PRISTUPA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PRAVA_PRISTUPA" Relationship="HRMModel.VRSTA_PRAVA_PRISTUPA_PRAVA_PRISTUPA_fk" FromRole="VRSTA_PRAVA_PRISTUPA" ToRole="PRAVA_PRISTUPA" />
+  </EntityType>
+  <EntityType Name="VRSTA_PRISUSTVA_ODSUSTVA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SIFRA_POINT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AKTIVNO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SKRACENI_NAZIV" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CSS_KLASA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SORTIRANJE" Type="Int32" />
+    <Property Name="EXPORT_POINT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="HR_KORISNIK_PRISUSTVO" Relationship="HRMModel.VRSTA_PRISUSTVA_ODSUSTVA_HR_KORISNIK_PRISUSTVO_fk" FromRole="VRSTA_PRISUSTVA_ODSUSTVA" ToRole="HR_KORISNIK_PRISUSTVO" />
+    <NavigationProperty Name="KONFIGURACIJA_VRSTA_PRISUSTVA" Relationship="HRMModel.VRSTA_PRISUSTVA_ODSUSTVA_KONFIGURACIA_VRSTA_PRISUSTVA_fk" FromRole="VRSTA_PRISUSTVA_ODSUSTVA" ToRole="KONFIGURACIJA_VRSTA_PRISUSTVA" />
+  </EntityType>
+  <EntityType Name="VRSTA_RADNOG_ODNOSA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UGOVOR_O_RADU" Relationship="HRMModel.VRSTA_RADNOG_ODNOSA_UGOVOR_O_RADU_fk" FromRole="VRSTA_RADNOG_ODNOSA" ToRole="UGOVOR_O_RADU" />
+  </EntityType>
+  <EntityType Name="VRSTA_RADNOG_STAZA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SIFRA_POINT" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="NAZIV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RADNI_STAZ" Relationship="HRMModel.VRSTA_RADNOG_STAZA_RADNI_STAZ_fk" FromRole="VRSTA_RADNOG_STAZA" ToRole="RADNI_STAZ" />
+  </EntityType>
+  <EntityType Name="ZAKLJUCAVANJE_EVIDENCIJE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORGANIZACIONA_JEDINICA_ID" Type="Int32" Nullable="false" />
+    <Property Name="RADNIK_ID" Type="Int32" Nullable="false" />
+    <Property Name="MJESEC" Type="Int32" Nullable="false" />
+    <Property Name="GODINA" Type="Int32" Nullable="false" />
+    <Property Name="ZAKLJUCANO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DATUM_KREIRANJA" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="HR_KORISNIK" Relationship="HRMModel.HR_KORISNIK_ZAKLJUCAVANJE_EVIDENCIJE_fk" FromRole="ZAKLJUCAVANJE_EVIDENCIJE" ToRole="HR_KORISNIK" />
+    <NavigationProperty Name="ORGANIZACIONA_JEDINICA" Relationship="HRMModel.ORGANIZACIONA_JEDINICA_ZAKLJUCAVANJE_EVIDENCIJE_fk" FromRole="ZAKLJUCAVANJE_EVIDENCIJE" ToRole="ORGANIZACIONA_JEDINICA" />
+  </EntityType>
+  <Association Name="BRACNI_STATUS_HR_KORISNIK_fk">
+    <End Type="HRMModel.BRACNI_STATUS" Role="BRACNI_STATUS" Multiplicity="0..1" />
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BRACNI_STATUS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK">
+        <PropertyRef Name="BRACNI_STATUS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_DANI_GODISNJEG_ODMORA_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.DANI_GODISNJEG_ODMORA" Role="DANI_GODISNJEG_ODMORA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DANI_GODISNJEG_ODMORA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA_HR_KORISNIK_DODATNA_PRAVA_fk">
+    <End Type="HRMModel.DODATNA_PRAVA_IZ_RADNOG_ODNOSA" Role="DODATNA_PRAVA_IZ_RADNOG_ODNOSA" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_DODATNA_PRAVA" Role="HR_KORISNIK_DODATNA_PRAVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DODATNA_PRAVA_IZ_RADNOG_ODNOSA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_DODATNA_PRAVA">
+        <PropertyRef Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_DODATNI_POTPISNIK_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.DODATNI_POTPISNIK" Role="DODATNI_POTPISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DODATNI_POTPISNIK">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORGANIZACIONA_JEDINICA_DODATNI_POTPISNIK_fk">
+    <End Type="HRMModel.ORGANIZACIONA_JEDINICA" Role="ORGANIZACIONA_JEDINICA" Multiplicity="1" />
+    <End Type="HRMModel.DODATNI_POTPISNIK" Role="DODATNI_POTPISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DODATNI_POTPISNIK">
+        <PropertyRef Name="ORGANIZACIONA_JEDINICA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DOKUMENT_DODATNO_OBRAZOVANJE_fk">
+    <End Type="HRMModel.DOKUMENT" Role="DOKUMENT" Multiplicity="0..1" />
+    <End Type="HRMModel.DODATNO_OBRAZOVANJE" Role="DODATNO_OBRAZOVANJE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOKUMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DODATNO_OBRAZOVANJE">
+        <PropertyRef Name="DOKUMENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_DODATNO_OBRAZOVANJE_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.DODATNO_OBRAZOVANJE" Role="DODATNO_OBRAZOVANJE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DODATNO_OBRAZOVANJE">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VSRTA_DODATNOG_OBRAZOVANJA_DODATNO_OBRAZOVANJE_fk">
+    <End Type="HRMModel.VRSTA_DODATNOG_OBRAZOVANJA" Role="VRSTA_DODATNOG_OBRAZOVANJA" Multiplicity="1" />
+    <End Type="HRMModel.DODATNO_OBRAZOVANJE" Role="DODATNO_OBRAZOVANJE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_DODATNOG_OBRAZOVANJA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DODATNO_OBRAZOVANJE">
+        <PropertyRef Name="VRSTA_DODATNOG_OBRAZOVANJA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DOKUMENT_HR_KORISNIK_DODATNA_PRAVA_fk">
+    <End Type="HRMModel.DOKUMENT" Role="DOKUMENT" Multiplicity="0..1" />
+    <End Type="HRMModel.HR_KORISNIK_DODATNA_PRAVA" Role="HR_KORISNIK_DODATNA_PRAVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOKUMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_DODATNA_PRAVA">
+        <PropertyRef Name="DOKUMENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DOKUMENT_HR_KORISNIK_fk">
+    <End Type="HRMModel.DOKUMENT" Role="DOKUMENT" Multiplicity="0..1" />
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOKUMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK">
+        <PropertyRef Name="SLIKA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DOKUMENT_LICNI_DOKUMENTI_fk">
+    <End Type="HRMModel.DOKUMENT" Role="DOKUMENT" Multiplicity="0..1" />
+    <End Type="HRMModel.LICNI_DOKUMENTI" Role="LICNI_DOKUMENTI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOKUMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LICNI_DOKUMENTI">
+        <PropertyRef Name="DOKUMENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DOKUMENT_UGOVOR_O_RADU_fk">
+    <End Type="HRMModel.DOKUMENT" Role="DOKUMENT" Multiplicity="0..1" />
+    <End Type="HRMModel.UGOVOR_O_RADU" Role="UGOVOR_O_RADU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOKUMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UGOVOR_O_RADU">
+        <PropertyRef Name="DOKUMENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DRZAVA_DRZAVLJANSTVO_fk">
+    <End Type="HRMModel.DRZAVA" Role="DRZAVA" Multiplicity="1" />
+    <End Type="HRMModel.DRZAVLJANSTVO" Role="DRZAVLJANSTVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DRZAVA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DRZAVLJANSTVO">
+        <PropertyRef Name="DRZAVA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DRZAVA_OPSTINA_fk">
+    <End Type="HRMModel.DRZAVA" Role="DRZAVA" Multiplicity="1" />
+    <End Type="HRMModel.OPSTINA" Role="OPSTINA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DRZAVA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OPSTINA">
+        <PropertyRef Name="DRZAVA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DRZAVA_RAD_U_INOSTRANSTVU_fk">
+    <End Type="HRMModel.DRZAVA" Role="DRZAVA" Multiplicity="1" />
+    <End Type="HRMModel.RAD_U_INOSTRANSTVU" Role="RAD_U_INOSTRANSTVU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DRZAVA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RAD_U_INOSTRANSTVU">
+        <PropertyRef Name="DRZAVA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_DRZAVLJANSTVO_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.DRZAVLJANSTVO" Role="DRZAVLJANSTVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DRZAVLJANSTVO">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_EXPORT_PRISUSTVO_POINT_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.EXPORT_PRISUSTVO_POINT" Role="EXPORT_PRISUSTVO_POINT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EXPORT_PRISUSTVO_POINT">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_GRUPA_HR_KORISNIK_HR_GRUPA_fk">
+    <End Type="HRMModel.HR_GRUPA" Role="HR_GRUPA" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_HR_GRUPA" Role="HR_KORISNIK_HR_GRUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_GRUPA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_HR_GRUPA">
+        <PropertyRef Name="HR_GRUPA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_GRUPA_PRAVA_PRISTUPA_fk">
+    <End Type="HRMModel.HR_GRUPA" Role="HR_GRUPA" Multiplicity="1" />
+    <End Type="HRMModel.PRAVA_PRISTUPA" Role="PRAVA_PRISTUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_GRUPA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRAVA_PRISTUPA">
+        <PropertyRef Name="HR_GRUPA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_DODATNA_PRAVA_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_DODATNA_PRAVA" Role="HR_KORISNIK_DODATNA_PRAVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_DODATNA_PRAVA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_FILTER_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_FILTER" Role="HR_KORISNIK_FILTER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_FILTER">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_FILTER_UPOSLENIK_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_FILTER_UPOSLENIK" Role="HR_KORISNIK_FILTER_UPOSLENIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_FILTER_UPOSLENIK">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_HR_GRUPA_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_HR_GRUPA" Role="HR_KORISNIK_HR_GRUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_HR_GRUPA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_LOKACIJE_MAS_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_LOKACIJE_MAS" Role="HR_KORISNIK_LOKACIJE_MAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_LOKACIJE_MAS">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_PRERASPODJELA_SATI" Role="HR_KORISNIK_PRERASPODJELA_SATI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRERASPODJELA_SATI">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk1">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_PRERASPODJELA_SATI" Role="HR_KORISNIK_PRERASPODJELA_SATI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRERASPODJELA_SATI">
+        <PropertyRef Name="RADNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_PRISUSTVO" Role="HR_KORISNIK_PRISUSTVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRISUSTVO">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk1">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="0..1" />
+    <End Type="HRMModel.HR_KORISNIK_PRISUSTVO" Role="HR_KORISNIK_PRISUSTVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRISUSTVO">
+        <PropertyRef Name="REFERENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk1">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="0..1" />
+    <End Type="HRMModel.HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA">
+        <PropertyRef Name="RADNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_RADNO_MJESTO_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_RADNO_MJESTO" Role="HR_KORISNIK_RADNO_MJESTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_RADNO_MJESTO">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_LOG_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.HR_LOG" Role="HR_LOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_LOG">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_KANDIDAT_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.KANDIDAT" Role="KANDIDAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KANDIDAT">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_KONFIGURACIA_VRSTA_PRISUSTVA_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.KONFIGURACIJA_VRSTA_PRISUSTVA" Role="KONFIGURACIJA_VRSTA_PRISUSTVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KONFIGURACIJA_VRSTA_PRISUSTVA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_KONFIGURACIJA_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.KONFIGURACIJA" Role="KONFIGURACIJA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KONFIGURACIJA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_KONFIGURACIJA_fk1">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.KONFIGURACIJA" Role="KONFIGURACIJA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KONFIGURACIJA">
+        <PropertyRef Name="HR_KORISNIK_PRENOS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_LICNI_DOKUMENTI_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.LICNI_DOKUMENTI" Role="LICNI_DOKUMENTI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LICNI_DOKUMENTI">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_MIROVANJE_RADNOG_ODNOSA_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.MIROVANJE_RADNOG_ODNOSA" Role="MIROVANJE_RADNOG_ODNOSA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MIROVANJE_RADNOG_ODNOSA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_ORGANIZACIONA_JEDINICA_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="0..1" />
+    <End Type="HRMModel.ORGANIZACIONA_JEDINICA" Role="ORGANIZACIONA_JEDINICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="POTPISNIK_RADNIH_SATI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_PRAVO_GODISNI_ODMOR_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.PRAVO_GODISNJI_ODMOR" Role="PRAVO_GODISNJI_ODMOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRAVO_GODISNJI_ODMOR">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_PREBIVALISTE_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.PREBIVALISTE_BORAVISTE" Role="PREBIVALISTE_BORAVISTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PREBIVALISTE_BORAVISTE">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_PRESTANAK_RADNOG_ODNOSA_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.PRESTANAK_RADNOG_ODNOSA" Role="PRESTANAK_RADNOG_ODNOSA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRESTANAK_RADNOG_ODNOSA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_RAD_U_INOSTRANSTVU_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.RAD_U_INOSTRANSTVU" Role="RAD_U_INOSTRANSTVU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RAD_U_INOSTRANSTVU">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_RADNI_STAZ_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.RADNI_STAZ" Role="RADNI_STAZ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RADNI_STAZ">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_RADNO_ISKUSTVO_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.RADNO_ISKUSTVO" Role="RADNO_ISKUSTVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RADNO_ISKUSTVO">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_TEST_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.TEST" Role="TEST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TEST">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_ZAKLJUCAVANJE_EVIDENCIJE_fk">
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="1" />
+    <End Type="HRMModel.ZAKLJUCAVANJE_EVIDENCIJE" Role="ZAKLJUCAVANJE_EVIDENCIJE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ZAKLJUCAVANJE_EVIDENCIJE">
+        <PropertyRef Name="RADNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NARODNOST_HR_KORISNIK_fk">
+    <End Type="HRMModel.NARODNOST" Role="NARODNOST" Multiplicity="0..1" />
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NARODNOST">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK">
+        <PropertyRef Name="NARODNOST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OPSTINA_HR_KORISNIK_fk">
+    <End Type="HRMModel.OPSTINA" Role="OPSTINA" Multiplicity="0..1" />
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OPSTINA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK">
+        <PropertyRef Name="OPSTINA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SKOLSKA_SPREMA_HR_KORISNIK_fk">
+    <End Type="HRMModel.SKOLSKA_SPREMA" Role="SKOLSKA_SPREMA" Multiplicity="0..1" />
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SKOLSKA_SPREMA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK">
+        <PropertyRef Name="SKOLSKA_SPREMA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SPOL_HR_KORISNIK_fk">
+    <End Type="HRMModel.SPOL" Role="SPOL" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK" Role="HR_KORISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SPOL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK">
+        <PropertyRef Name="SPOL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_FILTER_HR_KORISNIK_FILTER_UPOSLENIK_fk">
+    <End Type="HRMModel.HR_KORISNIK_FILTER" Role="HR_KORISNIK_FILTER" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_FILTER_UPOSLENIK" Role="HR_KORISNIK_FILTER_UPOSLENIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK_FILTER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_FILTER_UPOSLENIK">
+        <PropertyRef Name="HR_KORISNIK_FILTER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LOKACIJE_MAS_HR_KORISNIK_LOKACIJE_MAS_fk">
+    <End Type="HRMModel.LOKACIJE_MAS" Role="LOKACIJE_MAS" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_LOKACIJE_MAS" Role="HR_KORISNIK_LOKACIJE_MAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOKACIJE_MAS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_LOKACIJE_MAS">
+        <PropertyRef Name="LOKACIJA_MAS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VRSTA_PRISUSTVA_ODSUSTVA_HR_KORISNIK_PRISUSTVO_fk">
+    <End Type="HRMModel.VRSTA_PRISUSTVA_ODSUSTVA" Role="VRSTA_PRISUSTVA_ODSUSTVA" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_PRISUSTVO" Role="HR_KORISNIK_PRISUSTVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_PRISUSTVA_ODSUSTVA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRISUSTVO">
+        <PropertyRef Name="VRSTA_PRISUSTVA_ODSUSTVA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORGANIZACIONA_JEDINICA_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk">
+    <End Type="HRMModel.ORGANIZACIONA_JEDINICA" Role="ORGANIZACIONA_JEDINICA" Multiplicity="0..1" />
+    <End Type="HRMModel.HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA">
+        <PropertyRef Name="ORGANIZACIONA_JEDINICA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RADNO_MJESTO_HR_KORISNIK_RADNO_MJESTO_fk">
+    <End Type="HRMModel.RADNO_MJESTO" Role="RADNO_MJESTO" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_RADNO_MJESTO" Role="HR_KORISNIK_RADNO_MJESTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RADNO_MJESTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_RADNO_MJESTO">
+        <PropertyRef Name="RADNO_MJESTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UGOVOR_O_RADU_HR_KORISNIK_RADNO_MJESTO_fk">
+    <End Type="HRMModel.UGOVOR_O_RADU" Role="UGOVOR_O_RADU" Multiplicity="1" />
+    <End Type="HRMModel.HR_KORISNIK_RADNO_MJESTO" Role="HR_KORISNIK_RADNO_MJESTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UGOVOR_O_RADU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_RADNO_MJESTO">
+        <PropertyRef Name="UGOVOR_O_RADU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HRMDocSto__paren__114A936A">
+    <End Type="HRMModel.HRMDocStore" Role="HRMDocStore" Multiplicity="0..1" />
+    <End Type="HRMModel.HRMDocStore" Role="HRMDocStore1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HRMDocStore">
+        <PropertyRef Name="path_locator" />
+      </Principal>
+      <Dependent Role="HRMDocStore1">
+        <PropertyRef Name="parent_path_locator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KANDIDAT_KANDIDAT_ODGOVOR_fk">
+    <End Type="HRMModel.KANDIDAT" Role="KANDIDAT" Multiplicity="1" />
+    <End Type="HRMModel.KANDIDAT_ODGOVOR" Role="KANDIDAT_ODGOVOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KANDIDAT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KANDIDAT_ODGOVOR">
+        <PropertyRef Name="KANDIDAT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KANDIDAT_REZULTAT_TESTA_fk">
+    <End Type="HRMModel.KANDIDAT" Role="KANDIDAT" Multiplicity="1" />
+    <End Type="HRMModel.REZULTAT_TESTA" Role="REZULTAT_TESTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KANDIDAT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="REZULTAT_TESTA">
+        <PropertyRef Name="KANDIDAT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TEST_KANDIDAT_fk">
+    <End Type="HRMModel.TEST" Role="TEST" Multiplicity="1" />
+    <End Type="HRMModel.KANDIDAT" Role="KANDIDAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEST">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KANDIDAT">
+        <PropertyRef Name="TEST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TIP_PONAVLJANJA_TESTA_KANDIDAT_fk">
+    <End Type="HRMModel.TIP_PONAVLJANJA_TESTA" Role="TIP_PONAVLJANJA_TESTA" Multiplicity="0..1" />
+    <End Type="HRMModel.KANDIDAT" Role="KANDIDAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIP_PONAVLJANJA_TESTA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KANDIDAT">
+        <PropertyRef Name="TIP_PONAVLJANJA_TESTA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TEST_ODGOVOR_KANDIDAT_ODGOVOR_fk">
+    <End Type="HRMModel.TEST_ODGOVOR" Role="TEST_ODGOVOR" Multiplicity="1" />
+    <End Type="HRMModel.KANDIDAT_ODGOVOR" Role="KANDIDAT_ODGOVOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEST_ODGOVOR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KANDIDAT_ODGOVOR">
+        <PropertyRef Name="TEST_ODGOVOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LICNI_DOKUMENTI_KANTON">
+    <End Type="HRMModel.KANTON" Role="KANTON" Multiplicity="0..1" />
+    <End Type="HRMModel.LICNI_DOKUMENTI" Role="LICNI_DOKUMENTI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KANTON">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LICNI_DOKUMENTI">
+        <PropertyRef Name="IZDATA_OD_PU_KANTON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PREBIVALISTE_BORAVISTE_KANTON">
+    <End Type="HRMModel.KANTON" Role="KANTON" Multiplicity="0..1" />
+    <End Type="HRMModel.PREBIVALISTE_BORAVISTE" Role="PREBIVALISTE_BORAVISTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KANTON">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PREBIVALISTE_BORAVISTE">
+        <PropertyRef Name="KANTON_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VRSTA_PRISUSTVA_ODSUSTVA_KONFIGURACIA_VRSTA_PRISUSTVA_fk">
+    <End Type="HRMModel.VRSTA_PRISUSTVA_ODSUSTVA" Role="VRSTA_PRISUSTVA_ODSUSTVA" Multiplicity="1" />
+    <End Type="HRMModel.KONFIGURACIJA_VRSTA_PRISUSTVA" Role="KONFIGURACIJA_VRSTA_PRISUSTVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_PRISUSTVA_ODSUSTVA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KONFIGURACIJA_VRSTA_PRISUSTVA">
+        <PropertyRef Name="VRSTA_PRISUSTVA_ODSUSTVA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LICNI_DOKUMENTI_OPSTINA">
+    <End Type="HRMModel.OPSTINA" Role="OPSTINA" Multiplicity="0..1" />
+    <End Type="HRMModel.LICNI_DOKUMENTI" Role="LICNI_DOKUMENTI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OPSTINA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LICNI_DOKUMENTI">
+        <PropertyRef Name="IZDATA_OD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VRSTA_LICNOG_DOKUMENTA_LICNI_DOKUMENTI_fk">
+    <End Type="HRMModel.VRSTA_LICNOG_DOKUMENTA" Role="VRSTA_LICNOG_DOKUMENTA" Multiplicity="1" />
+    <End Type="HRMModel.LICNI_DOKUMENTI" Role="LICNI_DOKUMENTI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_LICNOG_DOKUMENTA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LICNI_DOKUMENTI">
+        <PropertyRef Name="VRSTA_LICNOG_DOKUMENTA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OBJAKTI_MAS_LOKACIJE_MAS_fk">
+    <End Type="HRMModel.OBJEKTI_MAS" Role="OBJEKTI_MAS" Multiplicity="1" />
+    <End Type="HRMModel.LOKACIJE_MAS" Role="LOKACIJE_MAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OBJEKTI_MAS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LOKACIJE_MAS">
+        <PropertyRef Name="OBJEKTI_MAS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MENI_PRAVA_PRISTUPA_fk">
+    <End Type="HRMModel.MENI" Role="MENI" Multiplicity="1" />
+    <End Type="HRMModel.PRAVA_PRISTUPA" Role="PRAVA_PRISTUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MENI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRAVA_PRISTUPA">
+        <PropertyRef Name="MENI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OBUKA_TEST_fk">
+    <End Type="HRMModel.OBUKA" Role="OBUKA" Multiplicity="1" />
+    <End Type="HRMModel.TEST" Role="TEST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OBUKA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TEST">
+        <PropertyRef Name="OBUKA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TIP_OBUKE_OBUKA_fk">
+    <End Type="HRMModel.TIP_OBUKE" Role="TIP_OBUKE" Multiplicity="1" />
+    <End Type="HRMModel.OBUKA" Role="OBUKA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIP_OBUKE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OBUKA">
+        <PropertyRef Name="TIP_OBUKE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OPSTINA_PREBIVALISTE_fk">
+    <End Type="HRMModel.OPSTINA" Role="OPSTINA" Multiplicity="1" />
+    <End Type="HRMModel.PREBIVALISTE_BORAVISTE" Role="PREBIVALISTE_BORAVISTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OPSTINA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PREBIVALISTE_BORAVISTE">
+        <PropertyRef Name="OPSTINA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OPSTINA_UGOVOR_O_RADU_fk">
+    <End Type="HRMModel.OPSTINA" Role="OPSTINA" Multiplicity="0..1" />
+    <End Type="HRMModel.UGOVOR_O_RADU" Role="UGOVOR_O_RADU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OPSTINA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UGOVOR_O_RADU">
+        <PropertyRef Name="OPSTINA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORGANIZACIONA_JEDINICA_ORGANIZACIONA_JEDINICA_fk">
+    <End Type="HRMModel.ORGANIZACIONA_JEDINICA" Role="ORGANIZACIONA_JEDINICA" Multiplicity="0..1" />
+    <End Type="HRMModel.ORGANIZACIONA_JEDINICA" Role="ORGANIZACIONA_JEDINICA1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORGANIZACIONA_JEDINICA1">
+        <PropertyRef Name="NADREDJENA_ORGANIZACIONA_JEDINICA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORGANIZACIONA_JEDINICA_RADNO_MJESTO_fk">
+    <End Type="HRMModel.ORGANIZACIONA_JEDINICA" Role="ORGANIZACIONA_JEDINICA" Multiplicity="1" />
+    <End Type="HRMModel.RADNO_MJESTO" Role="RADNO_MJESTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RADNO_MJESTO">
+        <PropertyRef Name="ORGANIZACIONA_JEDINICA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORGANIZACIONA_JEDINICA_SIHT_LISTA_PRINT_fk">
+    <End Type="HRMModel.ORGANIZACIONA_JEDINICA" Role="ORGANIZACIONA_JEDINICA" Multiplicity="1" />
+    <End Type="HRMModel.SIHT_LISTA_PRINT" Role="SIHT_LISTA_PRINT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SIHT_LISTA_PRINT">
+        <PropertyRef Name="ORGANIZACIONA_JEDINICA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORGANIZACIONA_JEDINICA_ZAKLJUCAVANJE_EVIDENCIJE_fk">
+    <End Type="HRMModel.ORGANIZACIONA_JEDINICA" Role="ORGANIZACIONA_JEDINICA" Multiplicity="1" />
+    <End Type="HRMModel.ZAKLJUCAVANJE_EVIDENCIJE" Role="ZAKLJUCAVANJE_EVIDENCIJE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ZAKLJUCAVANJE_EVIDENCIJE">
+        <PropertyRef Name="ORGANIZACIONA_JEDINICA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SISTEMATIZACIJA_ORGANIZACIONA_JEDINICA_fk">
+    <End Type="HRMModel.SISTEMATIZACIJA" Role="SISTEMATIZACIJA" Multiplicity="1" />
+    <End Type="HRMModel.ORGANIZACIONA_JEDINICA" Role="ORGANIZACIONA_JEDINICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SISTEMATIZACIJA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="SISTEMATIZACIJA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TIP_ORGANIZACIONE_JEDINICE_ORGANIZACIONA_JEDINICA_fk">
+    <End Type="HRMModel.TIP_ORGANIZACIONE_JEDINICE" Role="TIP_ORGANIZACIONE_JEDINICE" Multiplicity="1" />
+    <End Type="HRMModel.ORGANIZACIONA_JEDINICA" Role="ORGANIZACIONA_JEDINICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIP_ORGANIZACIONE_JEDINICE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="TIP_ORGANIZACIONE_JEDINICE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VRSTA_PRAVA_PRISTUPA_PRAVA_PRISTUPA_fk">
+    <End Type="HRMModel.VRSTA_PRAVA_PRISTUPA" Role="VRSTA_PRAVA_PRISTUPA" Multiplicity="1" />
+    <End Type="HRMModel.PRAVA_PRISTUPA" Role="PRAVA_PRISTUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_PRAVA_PRISTUPA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRAVA_PRISTUPA">
+        <PropertyRef Name="VRSTA_PRAVA_PRISTUPA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VRSTA_RADNOG_STAZA_RADNI_STAZ_fk">
+    <End Type="HRMModel.VRSTA_RADNOG_STAZA" Role="VRSTA_RADNOG_STAZA" Multiplicity="1" />
+    <End Type="HRMModel.RADNI_STAZ" Role="RADNI_STAZ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_RADNOG_STAZA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RADNI_STAZ">
+        <PropertyRef Name="VRSTA_RADNOG_STAZA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RADNO_MJESTO_RADNO_MJESTO_fk">
+    <End Type="HRMModel.RADNO_MJESTO" Role="RADNO_MJESTO" Multiplicity="0..1" />
+    <End Type="HRMModel.RADNO_MJESTO" Role="RADNO_MJESTO1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RADNO_MJESTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RADNO_MJESTO1">
+        <PropertyRef Name="NADREDJENO_RADNO_MJESTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RADNO_MJESTO_RADNO_MJESTO_SKOLSKA_SPREMA_fk">
+    <End Type="HRMModel.RADNO_MJESTO" Role="RADNO_MJESTO" Multiplicity="1" />
+    <End Type="HRMModel.RADNO_MJESTO_SKOLSKA_SPREMA" Role="RADNO_MJESTO_SKOLSKA_SPREMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RADNO_MJESTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RADNO_MJESTO_SKOLSKA_SPREMA">
+        <PropertyRef Name="RADNO_MJESTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SKOLSKA_SPREMA_RADNO_MJESTO_SKOLSKA_SPREMA_fk">
+    <End Type="HRMModel.SKOLSKA_SPREMA" Role="SKOLSKA_SPREMA" Multiplicity="1" />
+    <End Type="HRMModel.RADNO_MJESTO_SKOLSKA_SPREMA" Role="RADNO_MJESTO_SKOLSKA_SPREMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SKOLSKA_SPREMA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RADNO_MJESTO_SKOLSKA_SPREMA">
+        <PropertyRef Name="SKOLSKA_SPREMA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TEST_REZULTAT_TESTA_fk">
+    <End Type="HRMModel.TEST" Role="TEST" Multiplicity="1" />
+    <End Type="HRMModel.REZULTAT_TESTA" Role="REZULTAT_TESTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEST">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="REZULTAT_TESTA">
+        <PropertyRef Name="TEST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TEST_TEST_PITANJE_fk">
+    <End Type="HRMModel.TEST" Role="TEST" Multiplicity="1" />
+    <End Type="HRMModel.TEST_PITANJE" Role="TEST_PITANJE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEST">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TEST_PITANJE">
+        <PropertyRef Name="TEST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TEST_PITANJE_TEST_ODGOVOR_fk">
+    <End Type="HRMModel.TEST_PITANJE" Role="TEST_PITANJE" Multiplicity="1" />
+    <End Type="HRMModel.TEST_ODGOVOR" Role="TEST_ODGOVOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEST_PITANJE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TEST_ODGOVOR">
+        <PropertyRef Name="TEST_PITANJE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VRSTA_ANGAZMANA_UGOVOR_O_RADU_fk">
+    <End Type="HRMModel.VRSTA_ANGAZMANA" Role="VRSTA_ANGAZMANA" Multiplicity="1" />
+    <End Type="HRMModel.UGOVOR_O_RADU" Role="UGOVOR_O_RADU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_ANGAZMANA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UGOVOR_O_RADU">
+        <PropertyRef Name="VRSTA_ANGAZMANA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VRSTA_RADNOG_ODNOSA_UGOVOR_O_RADU_fk">
+    <End Type="HRMModel.VRSTA_RADNOG_ODNOSA" Role="VRSTA_RADNOG_ODNOSA" Multiplicity="1" />
+    <End Type="HRMModel.UGOVOR_O_RADU" Role="UGOVOR_O_RADU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_RADNOG_ODNOSA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UGOVOR_O_RADU">
+        <PropertyRef Name="VRSTA_RADNOG_ODNOSA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

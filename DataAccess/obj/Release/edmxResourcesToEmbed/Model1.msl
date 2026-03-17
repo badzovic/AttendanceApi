@@ -1,0 +1,935 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRMModelStoreContainer" CdmEntityContainer="HRMEntities">
+    <EntitySetMapping Name="AttendanceEvents">
+      <EntityTypeMapping TypeName="HRMModel.AttendanceEvents">
+        <MappingFragment StoreEntitySet="AttendanceEvents">
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Hr_korisnik_id" ColumnName="Hr_korisnik_id" />
+          <ScalarProperty Name="CreatedAtUtc" ColumnName="CreatedAtUtc" />
+          <ScalarProperty Name="RegistrationType" ColumnName="RegistrationType" />
+          <ScalarProperty Name="DeviceDescription" ColumnName="DeviceDescription" />
+          <ScalarProperty Name="DeviceCode" ColumnName="DeviceCode" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="DateTimeUtc" ColumnName="DateTimeUtc" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttendoSyncStatus">
+      <EntityTypeMapping TypeName="HRMModel.AttendoSyncStatus">
+        <MappingFragment StoreEntitySet="AttendoSyncStatus">
+          <ScalarProperty Name="LastSyncTime" ColumnName="LastSyncTime" />
+          <ScalarProperty Name="LastId" ColumnName="LastId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BRACNI_STATUS">
+      <EntityTypeMapping TypeName="HRMModel.BRACNI_STATUS">
+        <MappingFragment StoreEntitySet="BRACNI_STATUS">
+          <ScalarProperty Name="SORTIRANJE" ColumnName="SORTIRANJE" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DANI_GODISNJEG_ODMORA">
+      <EntityTypeMapping TypeName="HRMModel.DANI_GODISNJEG_ODMORA">
+        <MappingFragment StoreEntitySet="DANI_GODISNJEG_ODMORA">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="BROJ_DANA_ODMORA" ColumnName="BROJ_DANA_ODMORA" />
+          <ScalarProperty Name="GODINA" ColumnName="GODINA" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA">
+      <EntityTypeMapping TypeName="HRMModel.DODATNA_PRAVA_IZ_RADNOG_ODNOSA">
+        <MappingFragment StoreEntitySet="DODATNA_PRAVA_IZ_RADNOG_ODNOSA">
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DODATNI_POTPISNIK">
+      <EntityTypeMapping TypeName="HRMModel.DODATNI_POTPISNIK">
+        <MappingFragment StoreEntitySet="DODATNI_POTPISNIK">
+          <ScalarProperty Name="ORGANIZACIONA_JEDINICA_ID" ColumnName="ORGANIZACIONA_JEDINICA_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DODATNO_OBRAZOVANJE">
+      <EntityTypeMapping TypeName="HRMModel.DODATNO_OBRAZOVANJE">
+        <MappingFragment StoreEntitySet="DODATNO_OBRAZOVANJE">
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="DATUM_ISTEKA" ColumnName="DATUM_ISTEKA" />
+          <ScalarProperty Name="OBRISAN" ColumnName="OBRISAN" />
+          <ScalarProperty Name="DATUM_BRISANJA" ColumnName="DATUM_BRISANJA" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="DATUM_STICANJA" ColumnName="DATUM_STICANJA" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="DOKUMENT_ID" ColumnName="DOKUMENT_ID" />
+          <ScalarProperty Name="VRSTA_DODATNOG_OBRAZOVANJA_ID" ColumnName="VRSTA_DODATNOG_OBRAZOVANJA_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOKUMENT">
+      <EntityTypeMapping TypeName="HRMModel.DOKUMENT">
+        <MappingFragment StoreEntitySet="DOKUMENT">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="PUTANJA" ColumnName="PUTANJA" />
+          <ScalarProperty Name="EKSTENZIJA" ColumnName="EKSTENZIJA" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="STREAM_ID" ColumnName="STREAM_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DRZAVA">
+      <EntityTypeMapping TypeName="HRMModel.DRZAVA">
+        <MappingFragment StoreEntitySet="DRZAVA">
+          <ScalarProperty Name="KOD" ColumnName="KOD" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DRZAVLJANSTVO">
+      <EntityTypeMapping TypeName="HRMModel.DRZAVLJANSTVO">
+        <MappingFragment StoreEntitySet="DRZAVLJANSTVO">
+          <ScalarProperty Name="OBRISAN" ColumnName="OBRISAN" />
+          <ScalarProperty Name="DATUM_BRISANJA" ColumnName="DATUM_BRISANJA" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="DRZAVA_ID" ColumnName="DRZAVA_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DRZAVNI_PRAZNICI">
+      <EntityTypeMapping TypeName="HRMModel.DRZAVNI_PRAZNICI">
+        <MappingFragment StoreEntitySet="DRZAVNI_PRAZNICI">
+          <ScalarProperty Name="UKUPAN_BROJ_SATI" ColumnName="UKUPAN_BROJ_SATI" />
+          <ScalarProperty Name="BROJ_DANA_PRAZNIKA" ColumnName="BROJ_DANA_PRAZNIKA" />
+          <ScalarProperty Name="MJESEC" ColumnName="MJESEC" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EXPORT_PRISUSTVO_POINT">
+      <EntityTypeMapping TypeName="HRMModel.EXPORT_PRISUSTVO_POINT">
+        <MappingFragment StoreEntitySet="EXPORT_PRISUSTVO_POINT">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="TEXT" ColumnName="TEXT" />
+          <ScalarProperty Name="HOST" ColumnName="HOST" />
+          <ScalarProperty Name="DOWNLOAD_GUID" ColumnName="DOWNLOAD_GUID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_GRUPA">
+      <EntityTypeMapping TypeName="HRMModel.HR_GRUPA">
+        <MappingFragment StoreEntitySet="HR_GRUPA">
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_KORISNIK">
+      <EntityTypeMapping TypeName="HRMModel.HR_KORISNIK">
+        <MappingFragment StoreEntitySet="HR_KORISNIK">
+          <ScalarProperty Name="ADMIINISTRATIVNO" ColumnName="ADMIINISTRATIVNO" />
+          <ScalarProperty Name="PACS_ID" ColumnName="PACS_ID" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="IME_MAJKE" ColumnName="IME_MAJKE" />
+          <ScalarProperty Name="DJEVOJACKO_PREZIME_MAJKE" ColumnName="DJEVOJACKO_PREZIME_MAJKE" />
+          <ScalarProperty Name="KOREKCIJA" ColumnName="KOREKCIJA" />
+          <ScalarProperty Name="DOMAIN_LOGON" ColumnName="DOMAIN_LOGON" />
+          <ScalarProperty Name="RACUNOVODSTVENI_BROJ" ColumnName="RACUNOVODSTVENI_BROJ" />
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="OBRISAN" ColumnName="OBRISAN" />
+          <ScalarProperty Name="ACTIVE_DIRECTORY_KORISNIK" ColumnName="ACTIVE_DIRECTORY_KORISNIK" />
+          <ScalarProperty Name="DATUM_BRISANJA" ColumnName="DATUM_BRISANJA" />
+          <ScalarProperty Name="DATUM_POCETKA_RADA" ColumnName="DATUM_POCETKA_RADA" />
+          <ScalarProperty Name="KATEGORIJA_VOZACKE_DOZVOLE" ColumnName="KATEGORIJA_VOZACKE_DOZVOLE" />
+          <ScalarProperty Name="BROJ_LOKALA" ColumnName="BROJ_LOKALA" />
+          <ScalarProperty Name="BROJ_FIXNOG_TELEFONA" ColumnName="BROJ_FIXNOG_TELEFONA" />
+          <ScalarProperty Name="BROJ_MOBILNOG_TELEFONA" ColumnName="BROJ_MOBILNOG_TELEFONA" />
+          <ScalarProperty Name="OBRAZOVNA_INSTITUCIJA" ColumnName="OBRAZOVNA_INSTITUCIJA" />
+          <ScalarProperty Name="STECENO_ZVANJE" ColumnName="STECENO_ZVANJE" />
+          <ScalarProperty Name="SKOLSKA_SPREMA_ID" ColumnName="SKOLSKA_SPREMA_ID" />
+          <ScalarProperty Name="DATUM_IZMJENE" ColumnName="DATUM_IZMJENE" />
+          <ScalarProperty Name="DOZVOLA_ZA_BORAVAK_RAD" ColumnName="DOZVOLA_ZA_BORAVAK_RAD" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="NARODNOST_ID" ColumnName="NARODNOST_ID" />
+          <ScalarProperty Name="OPSTINA_ID" ColumnName="OPSTINA_ID" />
+          <ScalarProperty Name="MJESTO_RODJENJA" ColumnName="MJESTO_RODJENJA" />
+          <ScalarProperty Name="DATUM_RODJENJA" ColumnName="DATUM_RODJENJA" />
+          <ScalarProperty Name="BRACNI_STATUS_ID" ColumnName="BRACNI_STATUS_ID" />
+          <ScalarProperty Name="SLIKA_ID" ColumnName="SLIKA_ID" />
+          <ScalarProperty Name="SPOL_ID" ColumnName="SPOL_ID" />
+          <ScalarProperty Name="JMB" ColumnName="JMB" />
+          <ScalarProperty Name="LOZINKA" ColumnName="LOZINKA" />
+          <ScalarProperty Name="DJEVOJACKO_PREZIME" ColumnName="DJEVOJACKO_PREZIME" />
+          <ScalarProperty Name="IME_RODITELJA" ColumnName="IME_RODITELJA" />
+          <ScalarProperty Name="PREZIME" ColumnName="PREZIME" />
+          <ScalarProperty Name="IME" ColumnName="IME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_KORISNIK_DODATNA_PRAVA">
+      <EntityTypeMapping TypeName="HRMModel.HR_KORISNIK_DODATNA_PRAVA">
+        <MappingFragment StoreEntitySet="HR_KORISNIK_DODATNA_PRAVA">
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="DATUM_IZMJENE" ColumnName="DATUM_IZMJENE" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="NAPOMENA" ColumnName="NAPOMENA" />
+          <ScalarProperty Name="DATUM_ZAVRSETKA_PRAVA" ColumnName="DATUM_ZAVRSETKA_PRAVA" />
+          <ScalarProperty Name="DATUM_POCETKA_PRAVA" ColumnName="DATUM_POCETKA_PRAVA" />
+          <ScalarProperty Name="DOKUMENT_ID" ColumnName="DOKUMENT_ID" />
+          <ScalarProperty Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA_ID" ColumnName="DODATNA_PRAVA_IZ_RADNOG_ODNOSA_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_KORISNIK_FILTER">
+      <EntityTypeMapping TypeName="HRMModel.HR_KORISNIK_FILTER">
+        <MappingFragment StoreEntitySet="HR_KORISNIK_FILTER">
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_KORISNIK_FILTER_UPOSLENIK">
+      <EntityTypeMapping TypeName="HRMModel.HR_KORISNIK_FILTER_UPOSLENIK">
+        <MappingFragment StoreEntitySet="HR_KORISNIK_FILTER_UPOSLENIK">
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="HR_KORISNIK_FILTER_ID" ColumnName="HR_KORISNIK_FILTER_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_KORISNIK_HR_GRUPA">
+      <EntityTypeMapping TypeName="HRMModel.HR_KORISNIK_HR_GRUPA">
+        <MappingFragment StoreEntitySet="HR_KORISNIK_HR_GRUPA">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="HR_GRUPA_ID" ColumnName="HR_GRUPA_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_KORISNIK_LOKACIJE_MAS">
+      <EntityTypeMapping TypeName="HRMModel.HR_KORISNIK_LOKACIJE_MAS">
+        <MappingFragment StoreEntitySet="HR_KORISNIK_LOKACIJE_MAS">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="LOKACIJA_MAS_ID" ColumnName="LOKACIJA_MAS_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_KORISNIK_PRERASPODJELA_SATI">
+      <EntityTypeMapping TypeName="HRMModel.HR_KORISNIK_PRERASPODJELA_SATI">
+        <MappingFragment StoreEntitySet="HR_KORISNIK_PRERASPODJELA_SATI">
+          <ScalarProperty Name="DATUM_BRISANJA" ColumnName="DATUM_BRISANJA" />
+          <ScalarProperty Name="OBRISANO" ColumnName="OBRISANO" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="SATI_PRERASPODJELE" ColumnName="SATI_PRERASPODJELE" />
+          <ScalarProperty Name="MJESEC" ColumnName="MJESEC" />
+          <ScalarProperty Name="GODINA" ColumnName="GODINA" />
+          <ScalarProperty Name="RADNIK_ID" ColumnName="RADNIK_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_KORISNIK_PRISUSTVO">
+      <EntityTypeMapping TypeName="HRMModel.HR_KORISNIK_PRISUSTVO">
+        <MappingFragment StoreEntitySet="HR_KORISNIK_PRISUSTVO">
+          <ScalarProperty Name="ISATTENDO" ColumnName="ISATTENDO" />
+          <ScalarProperty Name="ISHRM" ColumnName="ISHRM" />
+          <ScalarProperty Name="REFERENT_ID" ColumnName="REFERENT_ID" />
+          <ScalarProperty Name="OBRISANO" ColumnName="OBRISANO" />
+          <ScalarProperty Name="DATUM_BRISANJA" ColumnName="DATUM_BRISANJA" />
+          <ScalarProperty Name="DATUM_IZMJENE" ColumnName="DATUM_IZMJENE" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="VRIJEME_DO" ColumnName="VRIJEME_DO" />
+          <ScalarProperty Name="VRIJEME_OD" ColumnName="VRIJEME_OD" />
+          <ScalarProperty Name="VRSTA_PRISUSTVA_ODSUSTVA_ID" ColumnName="VRSTA_PRISUSTVA_ODSUSTVA_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA">
+      <EntityTypeMapping TypeName="HRMModel.HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA">
+        <MappingFragment StoreEntitySet="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA">
+          <ScalarProperty Name="ZAKLJUCAVANJE_OJ" ColumnName="ZAKLJUCAVANJE_OJ" />
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="DATUM_IZMJENE" ColumnName="DATUM_IZMJENE" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="OMOGUCI_EVIDENCIJU_SEBI" ColumnName="OMOGUCI_EVIDENCIJU_SEBI" />
+          <ScalarProperty Name="ORGANIZACIONA_JEDINICA_ID" ColumnName="ORGANIZACIONA_JEDINICA_ID" />
+          <ScalarProperty Name="RADNIK_ID" ColumnName="RADNIK_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_KORISNIK_RADNO_MJESTO">
+      <EntityTypeMapping TypeName="HRMModel.HR_KORISNIK_RADNO_MJESTO">
+        <MappingFragment StoreEntitySet="HR_KORISNIK_RADNO_MJESTO">
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="OBRISAN" ColumnName="OBRISAN" />
+          <ScalarProperty Name="DATUM_BRISANJA" ColumnName="DATUM_BRISANJA" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="ODREDJENO_SKRACENO_RADNO_VRIJEME" ColumnName="ODREDJENO_SKRACENO_RADNO_VRIJEME" />
+          <ScalarProperty Name="ODREDJENO_PUNO_RADNO_VRIJEME" ColumnName="ODREDJENO_PUNO_RADNO_VRIJEME" />
+          <ScalarProperty Name="SEDMICNO_RADNO_VRIJEME" ColumnName="SEDMICNO_RADNO_VRIJEME" />
+          <ScalarProperty Name="UGOVOR_O_RADU_ID" ColumnName="UGOVOR_O_RADU_ID" />
+          <ScalarProperty Name="RADNO_MJESTO_ID" ColumnName="RADNO_MJESTO_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_LOG">
+      <EntityTypeMapping TypeName="HRMModel.HR_LOG">
+        <MappingFragment StoreEntitySet="HR_LOG">
+          <ScalarProperty Name="OPIS" ColumnName="OPIS" />
+          <ScalarProperty Name="SISTEMSKA_PORUKA" ColumnName="SISTEMSKA_PORUKA" />
+          <ScalarProperty Name="NAZIV_POLJA_VRIJEDNOST" ColumnName="NAZIV_POLJA_VRIJEDNOST" />
+          <ScalarProperty Name="AKTIVNOST" ColumnName="AKTIVNOST" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="HOST" ColumnName="HOST" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HRMDocStore">
+      <EntityTypeMapping TypeName="HRMModel.HRMDocStore">
+        <MappingFragment StoreEntitySet="HRMDocStore">
+          <ScalarProperty Name="is_temporary" ColumnName="is_temporary" />
+          <ScalarProperty Name="is_system" ColumnName="is_system" />
+          <ScalarProperty Name="is_archive" ColumnName="is_archive" />
+          <ScalarProperty Name="is_readonly" ColumnName="is_readonly" />
+          <ScalarProperty Name="is_hidden" ColumnName="is_hidden" />
+          <ScalarProperty Name="is_offline" ColumnName="is_offline" />
+          <ScalarProperty Name="is_directory" ColumnName="is_directory" />
+          <ScalarProperty Name="last_access_time" ColumnName="last_access_time" />
+          <ScalarProperty Name="last_write_time" ColumnName="last_write_time" />
+          <ScalarProperty Name="creation_time" ColumnName="creation_time" />
+          <ScalarProperty Name="cached_file_size" ColumnName="cached_file_size" />
+          <ScalarProperty Name="file_type" ColumnName="file_type" />
+          <ScalarProperty Name="parent_path_locator" ColumnName="parent_path_locator" />
+          <ScalarProperty Name="path_locator" ColumnName="path_locator" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="file_stream" ColumnName="file_stream" />
+          <ScalarProperty Name="stream_id" ColumnName="stream_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JUBILARNI_STAZ">
+      <EntityTypeMapping TypeName="HRMModel.JUBILARNI_STAZ">
+        <MappingFragment StoreEntitySet="JUBILARNI_STAZ">
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="BROJ_GODINA" ColumnName="BROJ_GODINA" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KANDIDAT">
+      <EntityTypeMapping TypeName="HRMModel.KANDIDAT">
+        <MappingFragment StoreEntitySet="KANDIDAT">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="DATUM_POKRETANJA_TESTA" ColumnName="DATUM_POKRETANJA_TESTA" />
+          <ScalarProperty Name="TIP_PONAVLJANJA_TESTA_ID" ColumnName="TIP_PONAVLJANJA_TESTA_ID" />
+          <ScalarProperty Name="BROJ_DOZVOLE" ColumnName="BROJ_DOZVOLE" />
+          <ScalarProperty Name="TEST_ID" ColumnName="TEST_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KANDIDAT_ODGOVOR">
+      <EntityTypeMapping TypeName="HRMModel.KANDIDAT_ODGOVOR">
+        <MappingFragment StoreEntitySet="KANDIDAT_ODGOVOR">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="BROJ_PONAVLJANJA_TESTA" ColumnName="BROJ_PONAVLJANJA_TESTA" />
+          <ScalarProperty Name="TEST_ODGOVOR_ID" ColumnName="TEST_ODGOVOR_ID" />
+          <ScalarProperty Name="KANDIDAT_ID" ColumnName="KANDIDAT_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KANTON">
+      <EntityTypeMapping TypeName="HRMModel.KANTON">
+        <MappingFragment StoreEntitySet="KANTON">
+          <ScalarProperty Name="IZDATA_OD_NAZIV" ColumnName="IZDATA_OD_NAZIV" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KONFIGURACIJA">
+      <EntityTypeMapping TypeName="HRMModel.KONFIGURACIJA">
+        <MappingFragment StoreEntitySet="KONFIGURACIJA">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="HR_KORISNIK_PRENOS_ID" ColumnName="HR_KORISNIK_PRENOS_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KONFIGURACIJA_VRSTA_PRISUSTVA">
+      <EntityTypeMapping TypeName="HRMModel.KONFIGURACIJA_VRSTA_PRISUSTVA">
+        <MappingFragment StoreEntitySet="KONFIGURACIJA_VRSTA_PRISUSTVA">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="VRIJEME_DO" ColumnName="VRIJEME_DO" />
+          <ScalarProperty Name="VRIJEME_OD" ColumnName="VRIJEME_OD" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="VRSTA_PRISUSTVA_ODSUSTVA_ID" ColumnName="VRSTA_PRISUSTVA_ODSUSTVA_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LICNI_DOKUMENTI">
+      <EntityTypeMapping TypeName="HRMModel.LICNI_DOKUMENTI">
+        <MappingFragment StoreEntitySet="LICNI_DOKUMENTI">
+          <ScalarProperty Name="DATUM_ISTEKA" ColumnName="DATUM_ISTEKA" />
+          <ScalarProperty Name="IZDATA_OD_PU_KANTON" ColumnName="IZDATA_OD_PU_KANTON" />
+          <ScalarProperty Name="IZDATA_OD" ColumnName="IZDATA_OD" />
+          <ScalarProperty Name="DATUM_IZMJENE" ColumnName="DATUM_IZMJENE" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="OZNAKA" ColumnName="OZNAKA" />
+          <ScalarProperty Name="VRSTA_LICNOG_DOKUMENTA_ID" ColumnName="VRSTA_LICNOG_DOKUMENTA_ID" />
+          <ScalarProperty Name="DOKUMENT_ID" ColumnName="DOKUMENT_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOKACIJE_MAS">
+      <EntityTypeMapping TypeName="HRMModel.LOKACIJE_MAS">
+        <MappingFragment StoreEntitySet="LOKACIJE_MAS">
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="DATUM_IZMJENE" ColumnName="DATUM_IZMJENE" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="SEKCIJA" ColumnName="SEKCIJA" />
+          <ScalarProperty Name="OBJEKTI_MAS_ID" ColumnName="OBJEKTI_MAS_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MENI">
+      <EntityTypeMapping TypeName="HRMModel.MENI">
+        <MappingFragment StoreEntitySet="MENI">
+          <ScalarProperty Name="VIDLJIVO" ColumnName="VIDLJIVO" />
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="SORTIRANJE" ColumnName="SORTIRANJE" />
+          <ScalarProperty Name="IKONICA" ColumnName="IKONICA" />
+          <ScalarProperty Name="ACTION" ColumnName="ACTION" />
+          <ScalarProperty Name="CONTROLLER" ColumnName="CONTROLLER" />
+          <ScalarProperty Name="AREA" ColumnName="AREA" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="NADREDJENI_MENI_ID" ColumnName="NADREDJENI_MENI_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MIROVANJE_RADNOG_ODNOSA">
+      <EntityTypeMapping TypeName="HRMModel.MIROVANJE_RADNOG_ODNOSA">
+        <MappingFragment StoreEntitySet="MIROVANJE_RADNOG_ODNOSA">
+          <ScalarProperty Name="OBRISAN" ColumnName="OBRISAN" />
+          <ScalarProperty Name="DATUM_BRISANJA" ColumnName="DATUM_BRISANJA" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="DATUM_ZAVRSETKA" ColumnName="DATUM_ZAVRSETKA" />
+          <ScalarProperty Name="DATUM_POCETKA" ColumnName="DATUM_POCETKA" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NARODNOST">
+      <EntityTypeMapping TypeName="HRMModel.NARODNOST">
+        <MappingFragment StoreEntitySet="NARODNOST">
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="SIFRA_POINT" ColumnName="SIFRA_POINT" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OBJEKTI_MAS">
+      <EntityTypeMapping TypeName="HRMModel.OBJEKTI_MAS">
+        <MappingFragment StoreEntitySet="OBJEKTI_MAS">
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="SKRACENI_NAZIV" ColumnName="SKRACENI_NAZIV" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OBUKA">
+      <EntityTypeMapping TypeName="HRMModel.OBUKA">
+        <MappingFragment StoreEntitySet="OBUKA">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="SORTIRANJE" ColumnName="SORTIRANJE" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="TIP_OBUKE_ID" ColumnName="TIP_OBUKE_ID" />
+          <ScalarProperty Name="OZNAKA" ColumnName="OZNAKA" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPSTINA">
+      <EntityTypeMapping TypeName="HRMModel.OPSTINA">
+        <MappingFragment StoreEntitySet="OPSTINA">
+          <ScalarProperty Name="PB" ColumnName="PB" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="DRZAVA_ID" ColumnName="DRZAVA_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORGANIZACIONA_JEDINICA">
+      <EntityTypeMapping TypeName="HRMModel.ORGANIZACIONA_JEDINICA">
+        <MappingFragment StoreEntitySet="ORGANIZACIONA_JEDINICA">
+          <ScalarProperty Name="NAZIV_SKRACENO" ColumnName="NAZIV_SKRACENO" />
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="OBRISAN" ColumnName="OBRISAN" />
+          <ScalarProperty Name="DATUM_BRISANJA" ColumnName="DATUM_BRISANJA" />
+          <ScalarProperty Name="DATUM_IZMJENE" ColumnName="DATUM_IZMJENE" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="POTPISNIK_RADNIH_SATI" ColumnName="POTPISNIK_RADNIH_SATI" />
+          <ScalarProperty Name="NAZIV_ZA_EXPORT_POINT" ColumnName="NAZIV_ZA_EXPORT_POINT" />
+          <ScalarProperty Name="OPIS_POSLOVA" ColumnName="OPIS_POSLOVA" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="KOD" ColumnName="KOD" />
+          <ScalarProperty Name="TIP_ORGANIZACIONE_JEDINICE_ID" ColumnName="TIP_ORGANIZACIONE_JEDINICE_ID" />
+          <ScalarProperty Name="SISTEMATIZACIJA_ID" ColumnName="SISTEMATIZACIJA_ID" />
+          <ScalarProperty Name="NADREDJENA_ORGANIZACIONA_JEDINICA_ID" ColumnName="NADREDJENA_ORGANIZACIONA_JEDINICA_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRAVA_PRISTUPA">
+      <EntityTypeMapping TypeName="HRMModel.PRAVA_PRISTUPA">
+        <MappingFragment StoreEntitySet="PRAVA_PRISTUPA">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="HR_GRUPA_ID" ColumnName="HR_GRUPA_ID" />
+          <ScalarProperty Name="MENI_ID" ColumnName="MENI_ID" />
+          <ScalarProperty Name="VRSTA_PRAVA_PRISTUPA_ID" ColumnName="VRSTA_PRAVA_PRISTUPA_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRAVO_GODISNJI_ODMOR">
+      <EntityTypeMapping TypeName="HRMModel.PRAVO_GODISNJI_ODMOR">
+        <MappingFragment StoreEntitySet="PRAVO_GODISNJI_ODMOR">
+          <ScalarProperty Name="OBRISAN" ColumnName="OBRISAN" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="DATUM_PRAVA_NA_PUNI_ODMOR" ColumnName="DATUM_PRAVA_NA_PUNI_ODMOR" />
+          <ScalarProperty Name="PRAVO_NA_PUNI_ODMOR" ColumnName="PRAVO_NA_PUNI_ODMOR" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PREBIVALISTE_BORAVISTE">
+      <EntityTypeMapping TypeName="HRMModel.PREBIVALISTE_BORAVISTE">
+        <MappingFragment StoreEntitySet="PREBIVALISTE_BORAVISTE">
+          <ScalarProperty Name="KANTON_ID" ColumnName="KANTON_ID" />
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="OBRISAN" ColumnName="OBRISAN" />
+          <ScalarProperty Name="DATUM_BRISANJA" ColumnName="DATUM_BRISANJA" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="OPSTINA_ID" ColumnName="OPSTINA_ID" />
+          <ScalarProperty Name="ADRESA" ColumnName="ADRESA" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="TIP" ColumnName="TIP" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRESTANAK_RADNOG_ODNOSA">
+      <EntityTypeMapping TypeName="HRMModel.PRESTANAK_RADNOG_ODNOSA">
+        <MappingFragment StoreEntitySet="PRESTANAK_RADNOG_ODNOSA">
+          <ScalarProperty Name="OBRISAN" ColumnName="OBRISAN" />
+          <ScalarProperty Name="DATUM_BRISANJA" ColumnName="DATUM_BRISANJA" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="RAZLOG_PRESTANKA" ColumnName="RAZLOG_PRESTANKA" />
+          <ScalarProperty Name="DATUM_PRESTANKA" ColumnName="DATUM_PRESTANKA" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RAD_U_INOSTRANSTVU">
+      <EntityTypeMapping TypeName="HRMModel.RAD_U_INOSTRANSTVU">
+        <MappingFragment StoreEntitySet="RAD_U_INOSTRANSTVU">
+          <ScalarProperty Name="OBRISAN" ColumnName="OBRISAN" />
+          <ScalarProperty Name="DATUM_BRISANJA" ColumnName="DATUM_BRISANJA" />
+          <ScalarProperty Name="DATUM_IZMJENE" ColumnName="DATUM_IZMJENE" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="DATUM_ZAVRSETKA_RADA" ColumnName="DATUM_ZAVRSETKA_RADA" />
+          <ScalarProperty Name="DATUM_POCETKA_RADA" ColumnName="DATUM_POCETKA_RADA" />
+          <ScalarProperty Name="MJESTO" ColumnName="MJESTO" />
+          <ScalarProperty Name="DRZAVA_ID" ColumnName="DRZAVA_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RADNI_STAZ">
+      <EntityTypeMapping TypeName="HRMModel.RADNI_STAZ">
+        <MappingFragment StoreEntitySet="RADNI_STAZ">
+          <ScalarProperty Name="DANI" ColumnName="DANI" />
+          <ScalarProperty Name="MJESECI" ColumnName="MJESECI" />
+          <ScalarProperty Name="GODINE" ColumnName="GODINE" />
+          <ScalarProperty Name="OBRISAN" ColumnName="OBRISAN" />
+          <ScalarProperty Name="DATUM_BRISANJA" ColumnName="DATUM_BRISANJA" />
+          <ScalarProperty Name="DATUM_IZMJENE" ColumnName="DATUM_IZMJENE" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="DATUM_DO" ColumnName="DATUM_DO" />
+          <ScalarProperty Name="DATUM_OD" ColumnName="DATUM_OD" />
+          <ScalarProperty Name="NAZIV_FIRME" ColumnName="NAZIV_FIRME" />
+          <ScalarProperty Name="VRSTA_RADNOG_STAZA_ID" ColumnName="VRSTA_RADNOG_STAZA_ID" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RADNO_ISKUSTVO">
+      <EntityTypeMapping TypeName="HRMModel.RADNO_ISKUSTVO">
+        <MappingFragment StoreEntitySet="RADNO_ISKUSTVO">
+          <ScalarProperty Name="OBRISAN" ColumnName="OBRISAN" />
+          <ScalarProperty Name="DATUM_IZMJENE" ColumnName="DATUM_IZMJENE" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="DANI" ColumnName="DANI" />
+          <ScalarProperty Name="MJESECI" ColumnName="MJESECI" />
+          <ScalarProperty Name="GODINE" ColumnName="GODINE" />
+          <ScalarProperty Name="VRSTA_ISKUSTVA" ColumnName="VRSTA_ISKUSTVA" />
+          <ScalarProperty Name="DATUM_DO" ColumnName="DATUM_DO" />
+          <ScalarProperty Name="DATUM_OD" ColumnName="DATUM_OD" />
+          <ScalarProperty Name="KOMPANIJA" ColumnName="KOMPANIJA" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RADNO_MJESTO">
+      <EntityTypeMapping TypeName="HRMModel.RADNO_MJESTO">
+        <MappingFragment StoreEntitySet="RADNO_MJESTO">
+          <ScalarProperty Name="OTEZANI_USLOVI_RADA" ColumnName="OTEZANI_USLOVI_RADA" />
+          <ScalarProperty Name="SIFRA_POINT" ColumnName="SIFRA_POINT" />
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="UTVRDITI_RADNU_SPOSOBNOST" ColumnName="UTVRDITI_RADNU_SPOSOBNOST" />
+          <ScalarProperty Name="OBRISAN" ColumnName="OBRISAN" />
+          <ScalarProperty Name="DATUM_BRISANJA" ColumnName="DATUM_BRISANJA" />
+          <ScalarProperty Name="DATUM_IZMJENE" ColumnName="DATUM_IZMJENE" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="PUNO_RADNO_VRIJEME" ColumnName="PUNO_RADNO_VRIJEME" />
+          <ScalarProperty Name="POSLOVI_RADNOG_MJESTA" ColumnName="POSLOVI_RADNOG_MJESTA" />
+          <ScalarProperty Name="RADNO_ISKUSTVO" ColumnName="RADNO_ISKUSTVO" />
+          <ScalarProperty Name="POSEBNI_USLOVI" ColumnName="POSEBNI_USLOVI" />
+          <ScalarProperty Name="FAKULTET_SKOLA" ColumnName="FAKULTET_SKOLA" />
+          <ScalarProperty Name="KOEFICIJENT" ColumnName="KOEFICIJENT" />
+          <ScalarProperty Name="BROJ_RADNIH_MJESTA" ColumnName="BROJ_RADNIH_MJESTA" />
+          <ScalarProperty Name="NAZIV_ENG" ColumnName="NAZIV_ENG" />
+          <ScalarProperty Name="KOD" ColumnName="KOD" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ORGANIZACIONA_JEDINICA_ID" ColumnName="ORGANIZACIONA_JEDINICA_ID" />
+          <ScalarProperty Name="NADREDJENO_RADNO_MJESTO_ID" ColumnName="NADREDJENO_RADNO_MJESTO_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RADNO_MJESTO_SKOLSKA_SPREMA">
+      <EntityTypeMapping TypeName="HRMModel.RADNO_MJESTO_SKOLSKA_SPREMA">
+        <MappingFragment StoreEntitySet="RADNO_MJESTO_SKOLSKA_SPREMA">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="SKOLSKA_SPREMA_ID" ColumnName="SKOLSKA_SPREMA_ID" />
+          <ScalarProperty Name="RADNO_MJESTO_ID" ColumnName="RADNO_MJESTO_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REZULTAT_TESTA">
+      <EntityTypeMapping TypeName="HRMModel.REZULTAT_TESTA">
+        <MappingFragment StoreEntitySet="REZULTAT_TESTA">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="NAPOMENA" ColumnName="NAPOMENA" />
+          <ScalarProperty Name="REZULTAT" ColumnName="REZULTAT" />
+          <ScalarProperty Name="KANDIDAT_ID" ColumnName="KANDIDAT_ID" />
+          <ScalarProperty Name="TEST_ID" ColumnName="TEST_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIHT_LISTA_PRINT">
+      <EntityTypeMapping TypeName="HRMModel.SIHT_LISTA_PRINT">
+        <MappingFragment StoreEntitySet="SIHT_LISTA_PRINT">
+          <ScalarProperty Name="POTPISNIK_ID" ColumnName="POTPISNIK_ID" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="PUTANJA" ColumnName="PUTANJA" />
+          <ScalarProperty Name="GODINA" ColumnName="GODINA" />
+          <ScalarProperty Name="MJESEC" ColumnName="MJESEC" />
+          <ScalarProperty Name="ORGANIZACIONA_JEDINICA_ID" ColumnName="ORGANIZACIONA_JEDINICA_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SISTEMATIZACIJA">
+      <EntityTypeMapping TypeName="HRMModel.SISTEMATIZACIJA">
+        <MappingFragment StoreEntitySet="SISTEMATIZACIJA">
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SKOLSKA_SPREMA">
+      <EntityTypeMapping TypeName="HRMModel.SKOLSKA_SPREMA">
+        <MappingFragment StoreEntitySet="SKOLSKA_SPREMA">
+          <ScalarProperty Name="SORTIRANJE" ColumnName="SORTIRANJE" />
+          <ScalarProperty Name="OZNAKA" ColumnName="OZNAKA" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SPOL">
+      <EntityTypeMapping TypeName="HRMModel.SPOL">
+        <MappingFragment StoreEntitySet="SPOL">
+          <ScalarProperty Name="SORTIRANJE" ColumnName="SORTIRANJE" />
+          <ScalarProperty Name="OZNAKA" ColumnName="OZNAKA" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HRMModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEST">
+      <EntityTypeMapping TypeName="HRMModel.TEST">
+        <MappingFragment StoreEntitySet="TEST">
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="PROLAZNOST" ColumnName="PROLAZNOST" />
+          <ScalarProperty Name="SLUCAJNI_RASPORED_PITANJA" ColumnName="SLUCAJNI_RASPORED_PITANJA" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="TRAJANJE_TESTA" ColumnName="TRAJANJE_TESTA" />
+          <ScalarProperty Name="DATUM_ZAVRSETKA" ColumnName="DATUM_ZAVRSETKA" />
+          <ScalarProperty Name="DATUM_POCETKA" ColumnName="DATUM_POCETKA" />
+          <ScalarProperty Name="HR_KORISNIK_ID" ColumnName="HR_KORISNIK_ID" />
+          <ScalarProperty Name="OBUKA_ID" ColumnName="OBUKA_ID" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEST_ODGOVOR">
+      <EntityTypeMapping TypeName="HRMModel.TEST_ODGOVOR">
+        <MappingFragment StoreEntitySet="TEST_ODGOVOR">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="TACAN_ODGOVOR" ColumnName="TACAN_ODGOVOR" />
+          <ScalarProperty Name="TEKST_ODGOVORA" ColumnName="TEKST_ODGOVORA" />
+          <ScalarProperty Name="REDNI_BROJ" ColumnName="REDNI_BROJ" />
+          <ScalarProperty Name="TEST_PITANJE_ID" ColumnName="TEST_PITANJE_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEST_PITANJE">
+      <EntityTypeMapping TypeName="HRMModel.TEST_PITANJE">
+        <MappingFragment StoreEntitySet="TEST_PITANJE">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="TEKST_PITANJA" ColumnName="TEKST_PITANJA" />
+          <ScalarProperty Name="REDNI_BROJ" ColumnName="REDNI_BROJ" />
+          <ScalarProperty Name="TEST_ID" ColumnName="TEST_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="test_preraspodjela">
+      <EntityTypeMapping TypeName="HRMModel.test_preraspodjela">
+        <MappingFragment StoreEntitySet="test_preraspodjela">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_radnika" ColumnName="id_radnika" />
+          <ScalarProperty Name="broj_radnih_sati" ColumnName="broj_radnih_sati" />
+          <ScalarProperty Name="prezime_ime" ColumnName="prezime_ime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIP_OBUKE">
+      <EntityTypeMapping TypeName="HRMModel.TIP_OBUKE">
+        <MappingFragment StoreEntitySet="TIP_OBUKE">
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIP_ORGANIZACIONE_JEDINICE">
+      <EntityTypeMapping TypeName="HRMModel.TIP_ORGANIZACIONE_JEDINICE">
+        <MappingFragment StoreEntitySet="TIP_ORGANIZACIONE_JEDINICE">
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIP_PONAVLJANJA_TESTA">
+      <EntityTypeMapping TypeName="HRMModel.TIP_PONAVLJANJA_TESTA">
+        <MappingFragment StoreEntitySet="TIP_PONAVLJANJA_TESTA">
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmp_pbroj_opstina">
+      <EntityTypeMapping TypeName="HRMModel.tmp_pbroj_opstina">
+        <MappingFragment StoreEntitySet="tmp_pbroj_opstina">
+          <ScalarProperty Name="opstina_id" ColumnName="opstina_id" />
+          <ScalarProperty Name="postanski_broj" ColumnName="postanski_broj" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UGOVOR_O_RADU">
+      <EntityTypeMapping TypeName="HRMModel.UGOVOR_O_RADU">
+        <MappingFragment StoreEntitySet="UGOVOR_O_RADU">
+          <ScalarProperty Name="STVARNI_POCETAK_RADA" ColumnName="STVARNI_POCETAK_RADA" />
+          <ScalarProperty Name="NAPOMENA" ColumnName="NAPOMENA" />
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="FAKTOR_UVECANJA_STAZA" ColumnName="FAKTOR_UVECANJA_STAZA" />
+          <ScalarProperty Name="BENEFICIRANI_STAZ" ColumnName="BENEFICIRANI_STAZ" />
+          <ScalarProperty Name="DATUM_IZMJENE" ColumnName="DATUM_IZMJENE" />
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="DATUM_ZAVRSETKA_RADA" ColumnName="DATUM_ZAVRSETKA_RADA" />
+          <ScalarProperty Name="DATUM_POCETKA_RADA" ColumnName="DATUM_POCETKA_RADA" />
+          <ScalarProperty Name="DATUM_UGOVORA" ColumnName="DATUM_UGOVORA" />
+          <ScalarProperty Name="TRAJANJE_PRIPRAVNICKOG_STAZA" ColumnName="TRAJANJE_PRIPRAVNICKOG_STAZA" />
+          <ScalarProperty Name="TRAJANJE_PROBNOG_RADA" ColumnName="TRAJANJE_PROBNOG_RADA" />
+          <ScalarProperty Name="BROJ_UGOVORA" ColumnName="BROJ_UGOVORA" />
+          <ScalarProperty Name="OPSTINA_ID" ColumnName="OPSTINA_ID" />
+          <ScalarProperty Name="DOKUMENT_ID" ColumnName="DOKUMENT_ID" />
+          <ScalarProperty Name="VRSTA_ANGAZMANA_ID" ColumnName="VRSTA_ANGAZMANA_ID" />
+          <ScalarProperty Name="VRSTA_RADNOG_ODNOSA_ID" ColumnName="VRSTA_RADNOG_ODNOSA_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VRSTA_ANGAZMANA">
+      <EntityTypeMapping TypeName="HRMModel.VRSTA_ANGAZMANA">
+        <MappingFragment StoreEntitySet="VRSTA_ANGAZMANA">
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VRSTA_DODATNOG_OBRAZOVANJA">
+      <EntityTypeMapping TypeName="HRMModel.VRSTA_DODATNOG_OBRAZOVANJA">
+        <MappingFragment StoreEntitySet="VRSTA_DODATNOG_OBRAZOVANJA">
+          <ScalarProperty Name="SORTIRANJE" ColumnName="SORTIRANJE" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VRSTA_LICNOG_DOKUMENTA">
+      <EntityTypeMapping TypeName="HRMModel.VRSTA_LICNOG_DOKUMENTA">
+        <MappingFragment StoreEntitySet="VRSTA_LICNOG_DOKUMENTA">
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="SIFRA_POINT" ColumnName="SIFRA_POINT" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VRSTA_PRAVA_PRISTUPA">
+      <EntityTypeMapping TypeName="HRMModel.VRSTA_PRAVA_PRISTUPA">
+        <MappingFragment StoreEntitySet="VRSTA_PRAVA_PRISTUPA">
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VRSTA_PRISUSTVA_ODSUSTVA">
+      <EntityTypeMapping TypeName="HRMModel.VRSTA_PRISUSTVA_ODSUSTVA">
+        <MappingFragment StoreEntitySet="VRSTA_PRISUSTVA_ODSUSTVA">
+          <ScalarProperty Name="EXPORT_POINT" ColumnName="EXPORT_POINT" />
+          <ScalarProperty Name="SORTIRANJE" ColumnName="SORTIRANJE" />
+          <ScalarProperty Name="CSS_KLASA" ColumnName="CSS_KLASA" />
+          <ScalarProperty Name="SKRACENI_NAZIV" ColumnName="SKRACENI_NAZIV" />
+          <ScalarProperty Name="AKTIVNO" ColumnName="AKTIVNO" />
+          <ScalarProperty Name="SIFRA_POINT" ColumnName="SIFRA_POINT" />
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VRSTA_RADNOG_ODNOSA">
+      <EntityTypeMapping TypeName="HRMModel.VRSTA_RADNOG_ODNOSA">
+        <MappingFragment StoreEntitySet="VRSTA_RADNOG_ODNOSA">
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VRSTA_RADNOG_STAZA">
+      <EntityTypeMapping TypeName="HRMModel.VRSTA_RADNOG_STAZA">
+        <MappingFragment StoreEntitySet="VRSTA_RADNOG_STAZA">
+          <ScalarProperty Name="NAZIV" ColumnName="NAZIV" />
+          <ScalarProperty Name="SIFRA_POINT" ColumnName="SIFRA_POINT" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZAKLJUCAVANJE_EVIDENCIJE">
+      <EntityTypeMapping TypeName="HRMModel.ZAKLJUCAVANJE_EVIDENCIJE">
+        <MappingFragment StoreEntitySet="ZAKLJUCAVANJE_EVIDENCIJE">
+          <ScalarProperty Name="DATUM_KREIRANJA" ColumnName="DATUM_KREIRANJA" />
+          <ScalarProperty Name="ZAKLJUCANO" ColumnName="ZAKLJUCANO" />
+          <ScalarProperty Name="GODINA" ColumnName="GODINA" />
+          <ScalarProperty Name="MJESEC" ColumnName="MJESEC" />
+          <ScalarProperty Name="RADNIK_ID" ColumnName="RADNIK_ID" />
+          <ScalarProperty Name="ORGANIZACIONA_JEDINICA_ID" ColumnName="ORGANIZACIONA_JEDINICA_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,2375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AttendanceEvents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateTimeUtc" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="CardNumber" Type="bigint" Nullable="false" />
+    <Property Name="DeviceId" Type="int" Nullable="false" />
+    <Property Name="DeviceCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeviceDescription" Type="nvarchar" MaxLength="200" />
+    <Property Name="RegistrationType" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CreatedAtUtc" Type="datetime2" Precision="3" Nullable="false" />
+    <Property Name="Hr_korisnik_id" Type="int" />
+    <Property Name="Source" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="AttendoSyncStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="LastId" Type="bigint" Nullable="false" />
+    <Property Name="LastSyncTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BRACNI_STATUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SORTIRANJE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DANI_GODISNJEG_ODMORA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="GODINA" Type="int" Nullable="false" />
+    <Property Name="BROJ_DANA_ODMORA" Type="int" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DODATNI_POTPISNIK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="ORGANIZACIONA_JEDINICA_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DODATNO_OBRAZOVANJE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="VRSTA_DODATNOG_OBRAZOVANJA_ID" Type="int" Nullable="false" />
+    <Property Name="DOKUMENT_ID" Type="int" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="DATUM_STICANJA" Type="datetime" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_BRISANJA" Type="datetime" />
+    <Property Name="OBRISAN" Type="char" MaxLength="1" />
+    <Property Name="DATUM_ISTEKA" Type="datetime" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="DOKUMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STREAM_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="EKSTENZIJA" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="PUTANJA" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DRZAVA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="KOD" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="DRZAVLJANSTVO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="DRZAVA_ID" Type="int" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_BRISANJA" Type="datetime" />
+    <Property Name="OBRISAN" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="DRZAVNI_PRAZNICI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MJESEC" Type="int" Nullable="false" />
+    <Property Name="BROJ_DANA_PRAZNIKA" Type="int" Nullable="false" />
+    <Property Name="UKUPAN_BROJ_SATI" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EXPORT_PRISUSTVO_POINT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="DOWNLOAD_GUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="HOST" Type="varchar" MaxLength="50" />
+    <Property Name="TEXT" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HR_GRUPA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IME" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PREZIME" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IME_RODITELJA" Type="nvarchar" MaxLength="50" />
+    <Property Name="DJEVOJACKO_PREZIME" Type="nvarchar" MaxLength="100" />
+    <Property Name="LOZINKA" Type="varchar" MaxLength="100" />
+    <Property Name="JMB" Type="varchar" MaxLength="13" />
+    <Property Name="SPOL_ID" Type="int" Nullable="false" />
+    <Property Name="SLIKA_ID" Type="int" />
+    <Property Name="BRACNI_STATUS_ID" Type="int" />
+    <Property Name="DATUM_RODJENJA" Type="datetime" />
+    <Property Name="MJESTO_RODJENJA" Type="nvarchar" MaxLength="100" />
+    <Property Name="OPSTINA_ID" Type="int" />
+    <Property Name="NARODNOST_ID" Type="int" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DOZVOLA_ZA_BORAVAK_RAD" Type="nvarchar" MaxLength="200" />
+    <Property Name="DATUM_IZMJENE" Type="datetime" />
+    <Property Name="SKOLSKA_SPREMA_ID" Type="int" />
+    <Property Name="STECENO_ZVANJE" Type="nvarchar" MaxLength="250" />
+    <Property Name="OBRAZOVNA_INSTITUCIJA" Type="nvarchar" MaxLength="250" />
+    <Property Name="BROJ_MOBILNOG_TELEFONA" Type="varchar" MaxLength="50" />
+    <Property Name="BROJ_FIXNOG_TELEFONA" Type="varchar" MaxLength="50" />
+    <Property Name="BROJ_LOKALA" Type="varchar" MaxLength="20" />
+    <Property Name="KATEGORIJA_VOZACKE_DOZVOLE" Type="varchar" MaxLength="20" />
+    <Property Name="DATUM_POCETKA_RADA" Type="datetime" />
+    <Property Name="DATUM_BRISANJA" Type="datetime" />
+    <Property Name="ACTIVE_DIRECTORY_KORISNIK" Type="char" MaxLength="1" />
+    <Property Name="OBRISAN" Type="char" MaxLength="1" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="RACUNOVODSTVENI_BROJ" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOMAIN_LOGON" Type="nvarchar" MaxLength="100" />
+    <Property Name="KOREKCIJA" Type="char" MaxLength="1" />
+    <Property Name="DJEVOJACKO_PREZIME_MAJKE" Type="nvarchar" MaxLength="100" />
+    <Property Name="IME_MAJKE" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="PACS_ID" Type="nvarchar" MaxLength="200" />
+    <Property Name="ADMIINISTRATIVNO" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_DODATNA_PRAVA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA_ID" Type="int" Nullable="false" />
+    <Property Name="DOKUMENT_ID" Type="int" />
+    <Property Name="DATUM_POCETKA_PRAVA" Type="datetime" />
+    <Property Name="DATUM_ZAVRSETKA_PRAVA" Type="datetime" />
+    <Property Name="NAPOMENA" Type="nvarchar" MaxLength="500" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_IZMJENE" Type="datetime" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_FILTER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_FILTER_UPOSLENIK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_FILTER_ID" Type="int" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_HR_GRUPA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="HR_GRUPA_ID" Type="int" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_LOKACIJE_MAS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="LOKACIJA_MAS_ID" Type="int" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_PRERASPODJELA_SATI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="RADNIK_ID" Type="int" Nullable="false" />
+    <Property Name="GODINA" Type="int" Nullable="false" />
+    <Property Name="MJESEC" Type="int" Nullable="false" />
+    <Property Name="SATI_PRERASPODJELE" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="OBRISANO" Type="char" MaxLength="1" />
+    <Property Name="DATUM_BRISANJA" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_PRISUSTVO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="VRSTA_PRISUSTVA_ODSUSTVA_ID" Type="int" Nullable="false" />
+    <Property Name="VRIJEME_OD" Type="datetime" Nullable="false" />
+    <Property Name="VRIJEME_DO" Type="datetime" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_IZMJENE" Type="datetime" />
+    <Property Name="DATUM_BRISANJA" Type="datetime" />
+    <Property Name="OBRISANO" Type="char" MaxLength="1" />
+    <Property Name="REFERENT_ID" Type="int" />
+    <Property Name="ISHRM" Type="char" MaxLength="1" />
+    <Property Name="ISATTENDO" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="RADNIK_ID" Type="int" />
+    <Property Name="ORGANIZACIONA_JEDINICA_ID" Type="int" />
+    <Property Name="OMOGUCI_EVIDENCIJU_SEBI" Type="char" MaxLength="1" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_IZMJENE" Type="datetime" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" />
+    <Property Name="ZAKLJUCAVANJE_OJ" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="HR_KORISNIK_RADNO_MJESTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="RADNO_MJESTO_ID" Type="int" Nullable="false" />
+    <Property Name="UGOVOR_O_RADU_ID" Type="int" Nullable="false" />
+    <Property Name="SEDMICNO_RADNO_VRIJEME" Type="int" />
+    <Property Name="ODREDJENO_PUNO_RADNO_VRIJEME" Type="int" />
+    <Property Name="ODREDJENO_SKRACENO_RADNO_VRIJEME" Type="int" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_BRISANJA" Type="datetime" />
+    <Property Name="OBRISAN" Type="char" MaxLength="1" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="HR_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="URL" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="HOST" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="AKTIVNOST" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NAZIV_POLJA_VRIJEDNOST" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SISTEMSKA_PORUKA" Type="varchar" MaxLength="1000" />
+    <Property Name="OPIS" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="HRMDocStore">
+    <Key>
+      <PropertyRef Name="path_locator" />
+    </Key>
+    <Property Name="stream_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="file_stream" Type="varbinary(max)" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="path_locator" Type="hierarchyid" Nullable="false" />
+    <Property Name="parent_path_locator" Type="hierarchyid" StoreGeneratedPattern="Computed" />
+    <Property Name="file_type" Type="nvarchar" MaxLength="255" StoreGeneratedPattern="Computed" />
+    <Property Name="cached_file_size" Type="bigint" StoreGeneratedPattern="Computed" />
+    <Property Name="creation_time" Type="datetimeoffset" Precision="7" Nullable="false" />
+    <Property Name="last_write_time" Type="datetimeoffset" Precision="7" Nullable="false" />
+    <Property Name="last_access_time" Type="datetimeoffset" Precision="7" />
+    <Property Name="is_directory" Type="bit" Nullable="false" />
+    <Property Name="is_offline" Type="bit" Nullable="false" />
+    <Property Name="is_hidden" Type="bit" Nullable="false" />
+    <Property Name="is_readonly" Type="bit" Nullable="false" />
+    <Property Name="is_archive" Type="bit" Nullable="false" />
+    <Property Name="is_system" Type="bit" Nullable="false" />
+    <Property Name="is_temporary" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JUBILARNI_STAZ">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BROJ_GODINA" Type="int" Nullable="false" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="KANDIDAT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="TEST_ID" Type="int" Nullable="false" />
+    <Property Name="BROJ_DOZVOLE" Type="varchar" MaxLength="10" />
+    <Property Name="TIP_PONAVLJANJA_TESTA_ID" Type="int" />
+    <Property Name="DATUM_POKRETANJA_TESTA" Type="datetime" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KANDIDAT_ODGOVOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KANDIDAT_ID" Type="int" Nullable="false" />
+    <Property Name="TEST_ODGOVOR_ID" Type="int" Nullable="false" />
+    <Property Name="BROJ_PONAVLJANJA_TESTA" Type="int" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KANTON">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="80" />
+    <Property Name="IZDATA_OD_NAZIV" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="KONFIGURACIJA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="HR_KORISNIK_PRENOS_ID" Type="int" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KONFIGURACIJA_VRSTA_PRISUSTVA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="VRSTA_PRISUSTVA_ODSUSTVA_ID" Type="int" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="VRIJEME_OD" Type="time" Precision="0" Nullable="false" />
+    <Property Name="VRIJEME_DO" Type="time" Precision="0" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LICNI_DOKUMENTI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="DOKUMENT_ID" Type="int" />
+    <Property Name="VRSTA_LICNOG_DOKUMENTA_ID" Type="int" Nullable="false" />
+    <Property Name="OZNAKA" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_IZMJENE" Type="datetime" />
+    <Property Name="IZDATA_OD" Type="int" />
+    <Property Name="IZDATA_OD_PU_KANTON" Type="int" />
+    <Property Name="DATUM_ISTEKA" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LOKACIJE_MAS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OBJEKTI_MAS_ID" Type="int" Nullable="false" />
+    <Property Name="SEKCIJA" Type="nvarchar" MaxLength="50" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_IZMJENE" Type="datetime" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MENI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NADREDJENI_MENI_ID" Type="int" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="URL" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="AREA" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CONTROLLER" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ACTION" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IKONICA" Type="varchar" MaxLength="20" />
+    <Property Name="SORTIRANJE" Type="int" Nullable="false" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="VIDLJIVO" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MIROVANJE_RADNOG_ODNOSA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="DATUM_POCETKA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_ZAVRSETKA" Type="datetime" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_BRISANJA" Type="datetime" />
+    <Property Name="OBRISAN" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NARODNOST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SIFRA_POINT" Type="char" MaxLength="5" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OBJEKTI_MAS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SKRACENI_NAZIV" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OBUKA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OZNAKA" Type="nvarchar" MaxLength="50" />
+    <Property Name="TIP_OBUKE_ID" Type="int" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="SORTIRANJE" Type="int" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OPSTINA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DRZAVA_ID" Type="int" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="PB" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ORGANIZACIONA_JEDINICA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NADREDJENA_ORGANIZACIONA_JEDINICA_ID" Type="int" />
+    <Property Name="SISTEMATIZACIJA_ID" Type="int" Nullable="false" />
+    <Property Name="TIP_ORGANIZACIONE_JEDINICE_ID" Type="int" Nullable="false" />
+    <Property Name="KOD" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPIS_POSLOVA" Type="nvarchar" MaxLength="1000" />
+    <Property Name="NAZIV_ZA_EXPORT_POINT" Type="nvarchar" MaxLength="50" />
+    <Property Name="POTPISNIK_RADNIH_SATI" Type="int" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_IZMJENE" Type="datetime" />
+    <Property Name="DATUM_BRISANJA" Type="datetime" />
+    <Property Name="OBRISAN" Type="char" MaxLength="1" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" />
+    <Property Name="NAZIV_SKRACENO" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PRAVA_PRISTUPA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VRSTA_PRAVA_PRISTUPA_ID" Type="int" Nullable="false" />
+    <Property Name="MENI_ID" Type="int" Nullable="false" />
+    <Property Name="HR_GRUPA_ID" Type="int" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRAVO_GODISNJI_ODMOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="PRAVO_NA_PUNI_ODMOR" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="DATUM_PRAVA_NA_PUNI_ODMOR" Type="datetime" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="OBRISAN" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="PREBIVALISTE_BORAVISTE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TIP" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="ADRESA" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OPSTINA_ID" Type="int" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_BRISANJA" Type="datetime" />
+    <Property Name="OBRISAN" Type="char" MaxLength="1" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" />
+    <Property Name="KANTON_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="PRESTANAK_RADNOG_ODNOSA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="DATUM_PRESTANKA" Type="datetime" Nullable="false" />
+    <Property Name="RAZLOG_PRESTANKA" Type="nvarchar" MaxLength="200" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_BRISANJA" Type="datetime" />
+    <Property Name="OBRISAN" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="RAD_U_INOSTRANSTVU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="DRZAVA_ID" Type="int" Nullable="false" />
+    <Property Name="MJESTO" Type="nvarchar" MaxLength="100" />
+    <Property Name="DATUM_POCETKA_RADA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_ZAVRSETKA_RADA" Type="datetime" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_IZMJENE" Type="datetime" />
+    <Property Name="DATUM_BRISANJA" Type="datetime" />
+    <Property Name="OBRISAN" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="RADNI_STAZ">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="VRSTA_RADNOG_STAZA_ID" Type="int" Nullable="false" />
+    <Property Name="NAZIV_FIRME" Type="nvarchar" MaxLength="100" />
+    <Property Name="DATUM_OD" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_DO" Type="datetime" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_IZMJENE" Type="datetime" />
+    <Property Name="DATUM_BRISANJA" Type="datetime" />
+    <Property Name="OBRISAN" Type="char" MaxLength="1" />
+    <Property Name="GODINE" Type="int" />
+    <Property Name="MJESECI" Type="int" />
+    <Property Name="DANI" Type="int" />
+  </EntityType>
+  <EntityType Name="RADNO_ISKUSTVO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="KOMPANIJA" Type="nvarchar" MaxLength="100" />
+    <Property Name="DATUM_OD" Type="datetime" />
+    <Property Name="DATUM_DO" Type="datetime" />
+    <Property Name="VRSTA_ISKUSTVA" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="GODINE" Type="int" />
+    <Property Name="MJESECI" Type="int" />
+    <Property Name="DANI" Type="int" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_IZMJENE" Type="datetime" />
+    <Property Name="OBRISAN" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="RADNO_MJESTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NADREDJENO_RADNO_MJESTO_ID" Type="int" />
+    <Property Name="ORGANIZACIONA_JEDINICA_ID" Type="int" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="KOD" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="NAZIV_ENG" Type="nvarchar" MaxLength="200" />
+    <Property Name="BROJ_RADNIH_MJESTA" Type="int" />
+    <Property Name="KOEFICIJENT" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FAKULTET_SKOLA" Type="nvarchar" MaxLength="500" />
+    <Property Name="POSEBNI_USLOVI" Type="nvarchar" MaxLength="800" />
+    <Property Name="RADNO_ISKUSTVO" Type="nvarchar" MaxLength="50" />
+    <Property Name="POSLOVI_RADNOG_MJESTA" Type="nvarchar" MaxLength="3000" />
+    <Property Name="PUNO_RADNO_VRIJEME" Type="int" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_IZMJENE" Type="datetime" />
+    <Property Name="DATUM_BRISANJA" Type="datetime" />
+    <Property Name="OBRISAN" Type="char" MaxLength="1" />
+    <Property Name="UTVRDITI_RADNU_SPOSOBNOST" Type="char" MaxLength="1" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" />
+    <Property Name="SIFRA_POINT" Type="char" MaxLength="6" />
+    <Property Name="OTEZANI_USLOVI_RADA" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="RADNO_MJESTO_SKOLSKA_SPREMA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RADNO_MJESTO_ID" Type="int" Nullable="false" />
+    <Property Name="SKOLSKA_SPREMA_ID" Type="int" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="REZULTAT_TESTA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEST_ID" Type="int" Nullable="false" />
+    <Property Name="KANDIDAT_ID" Type="int" Nullable="false" />
+    <Property Name="REZULTAT" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="NAPOMENA" Type="nvarchar" MaxLength="200" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SIHT_LISTA_PRINT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORGANIZACIONA_JEDINICA_ID" Type="int" Nullable="false" />
+    <Property Name="MJESEC" Type="int" Nullable="false" />
+    <Property Name="GODINA" Type="int" Nullable="false" />
+    <Property Name="PUTANJA" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="POTPISNIK_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="SISTEMATIZACIJA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SKOLSKA_SPREMA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OZNAKA" Type="nvarchar" MaxLength="10" />
+    <Property Name="SORTIRANJE" Type="int" />
+  </EntityType>
+  <EntityType Name="SPOL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="OZNAKA" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="SORTIRANJE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TEST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="OBUKA_ID" Type="int" Nullable="false" />
+    <Property Name="HR_KORISNIK_ID" Type="int" Nullable="false" />
+    <Property Name="DATUM_POCETKA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_ZAVRSETKA" Type="datetime" Nullable="false" />
+    <Property Name="TRAJANJE_TESTA" Type="int" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="SLUCAJNI_RASPORED_PITANJA" Type="char" MaxLength="1" />
+    <Property Name="PROLAZNOST" Type="int" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="TEST_ODGOVOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEST_PITANJE_ID" Type="int" Nullable="false" />
+    <Property Name="REDNI_BROJ" Type="int" />
+    <Property Name="TEKST_ODGOVORA" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="TACAN_ODGOVOR" Type="char" MaxLength="1" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TEST_PITANJE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEST_ID" Type="int" Nullable="false" />
+    <Property Name="REDNI_BROJ" Type="int" />
+    <Property Name="TEKST_PITANJA" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="test_preraspodjela">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="prezime_ime" Type="nvarchar" MaxLength="200" />
+    <Property Name="broj_radnih_sati" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="id_radnika" Type="int" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIP_OBUKE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIP_ORGANIZACIONE_JEDINICE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIP_PONAVLJANJA_TESTA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tmp_pbroj_opstina">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="postanski_broj" Type="nvarchar" MaxLength="10" />
+    <Property Name="opstina_id" Type="int" />
+  </EntityType>
+  <EntityType Name="UGOVOR_O_RADU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VRSTA_RADNOG_ODNOSA_ID" Type="int" Nullable="false" />
+    <Property Name="VRSTA_ANGAZMANA_ID" Type="int" Nullable="false" />
+    <Property Name="DOKUMENT_ID" Type="int" />
+    <Property Name="OPSTINA_ID" Type="int" />
+    <Property Name="BROJ_UGOVORA" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="TRAJANJE_PROBNOG_RADA" Type="nvarchar" MaxLength="50" />
+    <Property Name="TRAJANJE_PRIPRAVNICKOG_STAZA" Type="nvarchar" MaxLength="50" />
+    <Property Name="DATUM_UGOVORA" Type="datetime" />
+    <Property Name="DATUM_POCETKA_RADA" Type="datetime" />
+    <Property Name="DATUM_ZAVRSETKA_RADA" Type="datetime" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+    <Property Name="DATUM_IZMJENE" Type="datetime" />
+    <Property Name="BENEFICIRANI_STAZ" Type="char" MaxLength="1" />
+    <Property Name="FAKTOR_UVECANJA_STAZA" Type="decimal" Precision="4" Scale="2" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" />
+    <Property Name="NAPOMENA" Type="nvarchar" MaxLength="500" />
+    <Property Name="STVARNI_POCETAK_RADA" Type="datetime" />
+  </EntityType>
+  <EntityType Name="VRSTA_ANGAZMANA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VRSTA_DODATNOG_OBRAZOVANJA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SORTIRANJE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VRSTA_LICNOG_DOKUMENTA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SIFRA_POINT" Type="char" MaxLength="5" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VRSTA_PRAVA_PRISTUPA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VRSTA_PRISUSTVA_ODSUSTVA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SIFRA_POINT" Type="varchar" MaxLength="30" />
+    <Property Name="AKTIVNO" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="SKRACENI_NAZIV" Type="nvarchar" MaxLength="5" />
+    <Property Name="CSS_KLASA" Type="nvarchar" MaxLength="50" />
+    <Property Name="SORTIRANJE" Type="int" />
+    <Property Name="EXPORT_POINT" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="VRSTA_RADNOG_ODNOSA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VRSTA_RADNOG_STAZA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SIFRA_POINT" Type="char" MaxLength="5" />
+    <Property Name="NAZIV" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ZAKLJUCAVANJE_EVIDENCIJE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORGANIZACIONA_JEDINICA_ID" Type="int" Nullable="false" />
+    <Property Name="RADNIK_ID" Type="int" Nullable="false" />
+    <Property Name="MJESEC" Type="int" Nullable="false" />
+    <Property Name="GODINA" Type="int" Nullable="false" />
+    <Property Name="ZAKLJUCANO" Type="char" MaxLength="1" />
+    <Property Name="DATUM_KREIRANJA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="BRACNI_STATUS_HR_KORISNIK_fk">
+    <End Role="BRACNI_STATUS" Type="Self.BRACNI_STATUS" Multiplicity="0..1" />
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BRACNI_STATUS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK">
+        <PropertyRef Name="BRACNI_STATUS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA_HR_KORISNIK_DODATNA_PRAVA_fk">
+    <End Role="DODATNA_PRAVA_IZ_RADNOG_ODNOSA" Type="Self.DODATNA_PRAVA_IZ_RADNOG_ODNOSA" Multiplicity="1" />
+    <End Role="HR_KORISNIK_DODATNA_PRAVA" Type="Self.HR_KORISNIK_DODATNA_PRAVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DODATNA_PRAVA_IZ_RADNOG_ODNOSA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_DODATNA_PRAVA">
+        <PropertyRef Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DOKUMENT_DODATNO_OBRAZOVANJE_fk">
+    <End Role="DOKUMENT" Type="Self.DOKUMENT" Multiplicity="0..1" />
+    <End Role="DODATNO_OBRAZOVANJE" Type="Self.DODATNO_OBRAZOVANJE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOKUMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DODATNO_OBRAZOVANJE">
+        <PropertyRef Name="DOKUMENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DOKUMENT_HR_KORISNIK_DODATNA_PRAVA_fk">
+    <End Role="DOKUMENT" Type="Self.DOKUMENT" Multiplicity="0..1" />
+    <End Role="HR_KORISNIK_DODATNA_PRAVA" Type="Self.HR_KORISNIK_DODATNA_PRAVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOKUMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_DODATNA_PRAVA">
+        <PropertyRef Name="DOKUMENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DOKUMENT_HR_KORISNIK_fk">
+    <End Role="DOKUMENT" Type="Self.DOKUMENT" Multiplicity="0..1" />
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOKUMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK">
+        <PropertyRef Name="SLIKA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DOKUMENT_LICNI_DOKUMENTI_fk">
+    <End Role="DOKUMENT" Type="Self.DOKUMENT" Multiplicity="0..1" />
+    <End Role="LICNI_DOKUMENTI" Type="Self.LICNI_DOKUMENTI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOKUMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LICNI_DOKUMENTI">
+        <PropertyRef Name="DOKUMENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DOKUMENT_UGOVOR_O_RADU_fk">
+    <End Role="DOKUMENT" Type="Self.DOKUMENT" Multiplicity="0..1" />
+    <End Role="UGOVOR_O_RADU" Type="Self.UGOVOR_O_RADU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOKUMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UGOVOR_O_RADU">
+        <PropertyRef Name="DOKUMENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DRZAVA_DRZAVLJANSTVO_fk">
+    <End Role="DRZAVA" Type="Self.DRZAVA" Multiplicity="1" />
+    <End Role="DRZAVLJANSTVO" Type="Self.DRZAVLJANSTVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DRZAVA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DRZAVLJANSTVO">
+        <PropertyRef Name="DRZAVA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DRZAVA_OPSTINA_fk">
+    <End Role="DRZAVA" Type="Self.DRZAVA" Multiplicity="1" />
+    <End Role="OPSTINA" Type="Self.OPSTINA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DRZAVA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OPSTINA">
+        <PropertyRef Name="DRZAVA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DRZAVA_RAD_U_INOSTRANSTVU_fk">
+    <End Role="DRZAVA" Type="Self.DRZAVA" Multiplicity="1" />
+    <End Role="RAD_U_INOSTRANSTVU" Type="Self.RAD_U_INOSTRANSTVU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DRZAVA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RAD_U_INOSTRANSTVU">
+        <PropertyRef Name="DRZAVA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HRMDocSto__paren__114A936A">
+    <End Role="HRMDocStore" Type="Self.HRMDocStore" Multiplicity="0..1" />
+    <End Role="HRMDocStore1" Type="Self.HRMDocStore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HRMDocStore">
+        <PropertyRef Name="path_locator" />
+      </Principal>
+      <Dependent Role="HRMDocStore1">
+        <PropertyRef Name="parent_path_locator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LICNI_DOKUMENTI_KANTON">
+    <End Role="KANTON" Type="Self.KANTON" Multiplicity="0..1" />
+    <End Role="LICNI_DOKUMENTI" Type="Self.LICNI_DOKUMENTI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KANTON">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LICNI_DOKUMENTI">
+        <PropertyRef Name="IZDATA_OD_PU_KANTON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LICNI_DOKUMENTI_OPSTINA">
+    <End Role="OPSTINA" Type="Self.OPSTINA" Multiplicity="0..1" />
+    <End Role="LICNI_DOKUMENTI" Type="Self.LICNI_DOKUMENTI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OPSTINA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LICNI_DOKUMENTI">
+        <PropertyRef Name="IZDATA_OD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PREBIVALISTE_BORAVISTE_KANTON">
+    <End Role="KANTON" Type="Self.KANTON" Multiplicity="0..1" />
+    <End Role="PREBIVALISTE_BORAVISTE" Type="Self.PREBIVALISTE_BORAVISTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KANTON">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PREBIVALISTE_BORAVISTE">
+        <PropertyRef Name="KANTON_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_GRUPA_HR_KORISNIK_HR_GRUPA_fk">
+    <End Role="HR_GRUPA" Type="Self.HR_GRUPA" Multiplicity="1" />
+    <End Role="HR_KORISNIK_HR_GRUPA" Type="Self.HR_KORISNIK_HR_GRUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_GRUPA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_HR_GRUPA">
+        <PropertyRef Name="HR_GRUPA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_GRUPA_PRAVA_PRISTUPA_fk">
+    <End Role="HR_GRUPA" Type="Self.HR_GRUPA" Multiplicity="1" />
+    <End Role="PRAVA_PRISTUPA" Type="Self.PRAVA_PRISTUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_GRUPA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRAVA_PRISTUPA">
+        <PropertyRef Name="HR_GRUPA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_DANI_GODISNJEG_ODMORA_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="DANI_GODISNJEG_ODMORA" Type="Self.DANI_GODISNJEG_ODMORA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DANI_GODISNJEG_ODMORA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_DODATNI_POTPISNIK_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="DODATNI_POTPISNIK" Type="Self.DODATNI_POTPISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DODATNI_POTPISNIK">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_DODATNO_OBRAZOVANJE_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="DODATNO_OBRAZOVANJE" Type="Self.DODATNO_OBRAZOVANJE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DODATNO_OBRAZOVANJE">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_DRZAVLJANSTVO_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="DRZAVLJANSTVO" Type="Self.DRZAVLJANSTVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DRZAVLJANSTVO">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_EXPORT_PRISUSTVO_POINT_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="EXPORT_PRISUSTVO_POINT" Type="Self.EXPORT_PRISUSTVO_POINT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EXPORT_PRISUSTVO_POINT">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_FILTER_HR_KORISNIK_FILTER_UPOSLENIK_fk">
+    <End Role="HR_KORISNIK_FILTER" Type="Self.HR_KORISNIK_FILTER" Multiplicity="1" />
+    <End Role="HR_KORISNIK_FILTER_UPOSLENIK" Type="Self.HR_KORISNIK_FILTER_UPOSLENIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK_FILTER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_FILTER_UPOSLENIK">
+        <PropertyRef Name="HR_KORISNIK_FILTER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_DODATNA_PRAVA_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="HR_KORISNIK_DODATNA_PRAVA" Type="Self.HR_KORISNIK_DODATNA_PRAVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_DODATNA_PRAVA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_FILTER_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="HR_KORISNIK_FILTER" Type="Self.HR_KORISNIK_FILTER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_FILTER">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_FILTER_UPOSLENIK_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="HR_KORISNIK_FILTER_UPOSLENIK" Type="Self.HR_KORISNIK_FILTER_UPOSLENIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_FILTER_UPOSLENIK">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_HR_GRUPA_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="HR_KORISNIK_HR_GRUPA" Type="Self.HR_KORISNIK_HR_GRUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_HR_GRUPA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_LOKACIJE_MAS_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="HR_KORISNIK_LOKACIJE_MAS" Type="Self.HR_KORISNIK_LOKACIJE_MAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_LOKACIJE_MAS">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="HR_KORISNIK_PRERASPODJELA_SATI" Type="Self.HR_KORISNIK_PRERASPODJELA_SATI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRERASPODJELA_SATI">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk1">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="HR_KORISNIK_PRERASPODJELA_SATI" Type="Self.HR_KORISNIK_PRERASPODJELA_SATI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRERASPODJELA_SATI">
+        <PropertyRef Name="RADNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="HR_KORISNIK_PRISUSTVO" Type="Self.HR_KORISNIK_PRISUSTVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRISUSTVO">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk1">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="0..1" />
+    <End Role="HR_KORISNIK_PRISUSTVO" Type="Self.HR_KORISNIK_PRISUSTVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRISUSTVO">
+        <PropertyRef Name="REFERENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Type="Self.HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk1">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="0..1" />
+    <End Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Type="Self.HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA">
+        <PropertyRef Name="RADNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_KORISNIK_RADNO_MJESTO_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="HR_KORISNIK_RADNO_MJESTO" Type="Self.HR_KORISNIK_RADNO_MJESTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_RADNO_MJESTO">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_HR_LOG_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="HR_LOG" Type="Self.HR_LOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_LOG">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_KANDIDAT_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="KANDIDAT" Type="Self.KANDIDAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KANDIDAT">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_KONFIGURACIA_VRSTA_PRISUSTVA_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="KONFIGURACIJA_VRSTA_PRISUSTVA" Type="Self.KONFIGURACIJA_VRSTA_PRISUSTVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KONFIGURACIJA_VRSTA_PRISUSTVA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_KONFIGURACIJA_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="KONFIGURACIJA" Type="Self.KONFIGURACIJA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KONFIGURACIJA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_KONFIGURACIJA_fk1">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="KONFIGURACIJA" Type="Self.KONFIGURACIJA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KONFIGURACIJA">
+        <PropertyRef Name="HR_KORISNIK_PRENOS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_LICNI_DOKUMENTI_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="LICNI_DOKUMENTI" Type="Self.LICNI_DOKUMENTI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LICNI_DOKUMENTI">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_MIROVANJE_RADNOG_ODNOSA_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="MIROVANJE_RADNOG_ODNOSA" Type="Self.MIROVANJE_RADNOG_ODNOSA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MIROVANJE_RADNOG_ODNOSA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_ORGANIZACIONA_JEDINICA_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="0..1" />
+    <End Role="ORGANIZACIONA_JEDINICA" Type="Self.ORGANIZACIONA_JEDINICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="POTPISNIK_RADNIH_SATI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_PRAVO_GODISNI_ODMOR_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="PRAVO_GODISNJI_ODMOR" Type="Self.PRAVO_GODISNJI_ODMOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRAVO_GODISNJI_ODMOR">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_PREBIVALISTE_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="PREBIVALISTE_BORAVISTE" Type="Self.PREBIVALISTE_BORAVISTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PREBIVALISTE_BORAVISTE">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_PRESTANAK_RADNOG_ODNOSA_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="PRESTANAK_RADNOG_ODNOSA" Type="Self.PRESTANAK_RADNOG_ODNOSA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRESTANAK_RADNOG_ODNOSA">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_RAD_U_INOSTRANSTVU_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="RAD_U_INOSTRANSTVU" Type="Self.RAD_U_INOSTRANSTVU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RAD_U_INOSTRANSTVU">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_RADNI_STAZ_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="RADNI_STAZ" Type="Self.RADNI_STAZ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RADNI_STAZ">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_RADNO_ISKUSTVO_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="RADNO_ISKUSTVO" Type="Self.RADNO_ISKUSTVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RADNO_ISKUSTVO">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_TEST_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="TEST" Type="Self.TEST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TEST">
+        <PropertyRef Name="HR_KORISNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HR_KORISNIK_ZAKLJUCAVANJE_EVIDENCIJE_fk">
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="1" />
+    <End Role="ZAKLJUCAVANJE_EVIDENCIJE" Type="Self.ZAKLJUCAVANJE_EVIDENCIJE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HR_KORISNIK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ZAKLJUCAVANJE_EVIDENCIJE">
+        <PropertyRef Name="RADNIK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KANDIDAT_KANDIDAT_ODGOVOR_fk">
+    <End Role="KANDIDAT" Type="Self.KANDIDAT" Multiplicity="1" />
+    <End Role="KANDIDAT_ODGOVOR" Type="Self.KANDIDAT_ODGOVOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KANDIDAT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KANDIDAT_ODGOVOR">
+        <PropertyRef Name="KANDIDAT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KANDIDAT_REZULTAT_TESTA_fk">
+    <End Role="KANDIDAT" Type="Self.KANDIDAT" Multiplicity="1" />
+    <End Role="REZULTAT_TESTA" Type="Self.REZULTAT_TESTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KANDIDAT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="REZULTAT_TESTA">
+        <PropertyRef Name="KANDIDAT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LOKACIJE_MAS_HR_KORISNIK_LOKACIJE_MAS_fk">
+    <End Role="LOKACIJE_MAS" Type="Self.LOKACIJE_MAS" Multiplicity="1" />
+    <End Role="HR_KORISNIK_LOKACIJE_MAS" Type="Self.HR_KORISNIK_LOKACIJE_MAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOKACIJE_MAS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_LOKACIJE_MAS">
+        <PropertyRef Name="LOKACIJA_MAS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MENI_PRAVA_PRISTUPA_fk">
+    <End Role="MENI" Type="Self.MENI" Multiplicity="1" />
+    <End Role="PRAVA_PRISTUPA" Type="Self.PRAVA_PRISTUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MENI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRAVA_PRISTUPA">
+        <PropertyRef Name="MENI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NARODNOST_HR_KORISNIK_fk">
+    <End Role="NARODNOST" Type="Self.NARODNOST" Multiplicity="0..1" />
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NARODNOST">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK">
+        <PropertyRef Name="NARODNOST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OBJAKTI_MAS_LOKACIJE_MAS_fk">
+    <End Role="OBJEKTI_MAS" Type="Self.OBJEKTI_MAS" Multiplicity="1" />
+    <End Role="LOKACIJE_MAS" Type="Self.LOKACIJE_MAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OBJEKTI_MAS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LOKACIJE_MAS">
+        <PropertyRef Name="OBJEKTI_MAS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OBUKA_TEST_fk">
+    <End Role="OBUKA" Type="Self.OBUKA" Multiplicity="1" />
+    <End Role="TEST" Type="Self.TEST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OBUKA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TEST">
+        <PropertyRef Name="OBUKA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OPSTINA_HR_KORISNIK_fk">
+    <End Role="OPSTINA" Type="Self.OPSTINA" Multiplicity="0..1" />
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OPSTINA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK">
+        <PropertyRef Name="OPSTINA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OPSTINA_PREBIVALISTE_fk">
+    <End Role="OPSTINA" Type="Self.OPSTINA" Multiplicity="1" />
+    <End Role="PREBIVALISTE_BORAVISTE" Type="Self.PREBIVALISTE_BORAVISTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OPSTINA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PREBIVALISTE_BORAVISTE">
+        <PropertyRef Name="OPSTINA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OPSTINA_UGOVOR_O_RADU_fk">
+    <End Role="OPSTINA" Type="Self.OPSTINA" Multiplicity="0..1" />
+    <End Role="UGOVOR_O_RADU" Type="Self.UGOVOR_O_RADU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OPSTINA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UGOVOR_O_RADU">
+        <PropertyRef Name="OPSTINA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORGANIZACIONA_JEDINICA_DODATNI_POTPISNIK_fk">
+    <End Role="ORGANIZACIONA_JEDINICA" Type="Self.ORGANIZACIONA_JEDINICA" Multiplicity="1" />
+    <End Role="DODATNI_POTPISNIK" Type="Self.DODATNI_POTPISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DODATNI_POTPISNIK">
+        <PropertyRef Name="ORGANIZACIONA_JEDINICA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORGANIZACIONA_JEDINICA_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk">
+    <End Role="ORGANIZACIONA_JEDINICA" Type="Self.ORGANIZACIONA_JEDINICA" Multiplicity="0..1" />
+    <End Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Type="Self.HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA">
+        <PropertyRef Name="ORGANIZACIONA_JEDINICA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORGANIZACIONA_JEDINICA_ORGANIZACIONA_JEDINICA_fk">
+    <End Role="ORGANIZACIONA_JEDINICA" Type="Self.ORGANIZACIONA_JEDINICA" Multiplicity="0..1" />
+    <End Role="ORGANIZACIONA_JEDINICA1" Type="Self.ORGANIZACIONA_JEDINICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORGANIZACIONA_JEDINICA1">
+        <PropertyRef Name="NADREDJENA_ORGANIZACIONA_JEDINICA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORGANIZACIONA_JEDINICA_RADNO_MJESTO_fk">
+    <End Role="ORGANIZACIONA_JEDINICA" Type="Self.ORGANIZACIONA_JEDINICA" Multiplicity="1" />
+    <End Role="RADNO_MJESTO" Type="Self.RADNO_MJESTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RADNO_MJESTO">
+        <PropertyRef Name="ORGANIZACIONA_JEDINICA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORGANIZACIONA_JEDINICA_SIHT_LISTA_PRINT_fk">
+    <End Role="ORGANIZACIONA_JEDINICA" Type="Self.ORGANIZACIONA_JEDINICA" Multiplicity="1" />
+    <End Role="SIHT_LISTA_PRINT" Type="Self.SIHT_LISTA_PRINT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SIHT_LISTA_PRINT">
+        <PropertyRef Name="ORGANIZACIONA_JEDINICA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORGANIZACIONA_JEDINICA_ZAKLJUCAVANJE_EVIDENCIJE_fk">
+    <End Role="ORGANIZACIONA_JEDINICA" Type="Self.ORGANIZACIONA_JEDINICA" Multiplicity="1" />
+    <End Role="ZAKLJUCAVANJE_EVIDENCIJE" Type="Self.ZAKLJUCAVANJE_EVIDENCIJE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ZAKLJUCAVANJE_EVIDENCIJE">
+        <PropertyRef Name="ORGANIZACIONA_JEDINICA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RADNO_MJESTO_HR_KORISNIK_RADNO_MJESTO_fk">
+    <End Role="RADNO_MJESTO" Type="Self.RADNO_MJESTO" Multiplicity="1" />
+    <End Role="HR_KORISNIK_RADNO_MJESTO" Type="Self.HR_KORISNIK_RADNO_MJESTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RADNO_MJESTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_RADNO_MJESTO">
+        <PropertyRef Name="RADNO_MJESTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RADNO_MJESTO_RADNO_MJESTO_fk">
+    <End Role="RADNO_MJESTO" Type="Self.RADNO_MJESTO" Multiplicity="0..1" />
+    <End Role="RADNO_MJESTO1" Type="Self.RADNO_MJESTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RADNO_MJESTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RADNO_MJESTO1">
+        <PropertyRef Name="NADREDJENO_RADNO_MJESTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RADNO_MJESTO_RADNO_MJESTO_SKOLSKA_SPREMA_fk">
+    <End Role="RADNO_MJESTO" Type="Self.RADNO_MJESTO" Multiplicity="1" />
+    <End Role="RADNO_MJESTO_SKOLSKA_SPREMA" Type="Self.RADNO_MJESTO_SKOLSKA_SPREMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RADNO_MJESTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RADNO_MJESTO_SKOLSKA_SPREMA">
+        <PropertyRef Name="RADNO_MJESTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SISTEMATIZACIJA_ORGANIZACIONA_JEDINICA_fk">
+    <End Role="SISTEMATIZACIJA" Type="Self.SISTEMATIZACIJA" Multiplicity="1" />
+    <End Role="ORGANIZACIONA_JEDINICA" Type="Self.ORGANIZACIONA_JEDINICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SISTEMATIZACIJA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="SISTEMATIZACIJA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SKOLSKA_SPREMA_HR_KORISNIK_fk">
+    <End Role="SKOLSKA_SPREMA" Type="Self.SKOLSKA_SPREMA" Multiplicity="0..1" />
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SKOLSKA_SPREMA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK">
+        <PropertyRef Name="SKOLSKA_SPREMA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SKOLSKA_SPREMA_RADNO_MJESTO_SKOLSKA_SPREMA_fk">
+    <End Role="SKOLSKA_SPREMA" Type="Self.SKOLSKA_SPREMA" Multiplicity="1" />
+    <End Role="RADNO_MJESTO_SKOLSKA_SPREMA" Type="Self.RADNO_MJESTO_SKOLSKA_SPREMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SKOLSKA_SPREMA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RADNO_MJESTO_SKOLSKA_SPREMA">
+        <PropertyRef Name="SKOLSKA_SPREMA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SPOL_HR_KORISNIK_fk">
+    <End Role="SPOL" Type="Self.SPOL" Multiplicity="1" />
+    <End Role="HR_KORISNIK" Type="Self.HR_KORISNIK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SPOL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK">
+        <PropertyRef Name="SPOL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TEST_KANDIDAT_fk">
+    <End Role="TEST" Type="Self.TEST" Multiplicity="1" />
+    <End Role="KANDIDAT" Type="Self.KANDIDAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEST">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KANDIDAT">
+        <PropertyRef Name="TEST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TEST_ODGOVOR_KANDIDAT_ODGOVOR_fk">
+    <End Role="TEST_ODGOVOR" Type="Self.TEST_ODGOVOR" Multiplicity="1" />
+    <End Role="KANDIDAT_ODGOVOR" Type="Self.KANDIDAT_ODGOVOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEST_ODGOVOR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KANDIDAT_ODGOVOR">
+        <PropertyRef Name="TEST_ODGOVOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TEST_PITANJE_TEST_ODGOVOR_fk">
+    <End Role="TEST_PITANJE" Type="Self.TEST_PITANJE" Multiplicity="1" />
+    <End Role="TEST_ODGOVOR" Type="Self.TEST_ODGOVOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEST_PITANJE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TEST_ODGOVOR">
+        <PropertyRef Name="TEST_PITANJE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TEST_REZULTAT_TESTA_fk">
+    <End Role="TEST" Type="Self.TEST" Multiplicity="1" />
+    <End Role="REZULTAT_TESTA" Type="Self.REZULTAT_TESTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEST">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="REZULTAT_TESTA">
+        <PropertyRef Name="TEST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TEST_TEST_PITANJE_fk">
+    <End Role="TEST" Type="Self.TEST" Multiplicity="1" />
+    <End Role="TEST_PITANJE" Type="Self.TEST_PITANJE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEST">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TEST_PITANJE">
+        <PropertyRef Name="TEST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TIP_OBUKE_OBUKA_fk">
+    <End Role="TIP_OBUKE" Type="Self.TIP_OBUKE" Multiplicity="1" />
+    <End Role="OBUKA" Type="Self.OBUKA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIP_OBUKE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OBUKA">
+        <PropertyRef Name="TIP_OBUKE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TIP_ORGANIZACIONE_JEDINICE_ORGANIZACIONA_JEDINICA_fk">
+    <End Role="TIP_ORGANIZACIONE_JEDINICE" Type="Self.TIP_ORGANIZACIONE_JEDINICE" Multiplicity="1" />
+    <End Role="ORGANIZACIONA_JEDINICA" Type="Self.ORGANIZACIONA_JEDINICA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIP_ORGANIZACIONE_JEDINICE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORGANIZACIONA_JEDINICA">
+        <PropertyRef Name="TIP_ORGANIZACIONE_JEDINICE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TIP_PONAVLJANJA_TESTA_KANDIDAT_fk">
+    <End Role="TIP_PONAVLJANJA_TESTA" Type="Self.TIP_PONAVLJANJA_TESTA" Multiplicity="0..1" />
+    <End Role="KANDIDAT" Type="Self.KANDIDAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIP_PONAVLJANJA_TESTA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KANDIDAT">
+        <PropertyRef Name="TIP_PONAVLJANJA_TESTA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UGOVOR_O_RADU_HR_KORISNIK_RADNO_MJESTO_fk">
+    <End Role="UGOVOR_O_RADU" Type="Self.UGOVOR_O_RADU" Multiplicity="1" />
+    <End Role="HR_KORISNIK_RADNO_MJESTO" Type="Self.HR_KORISNIK_RADNO_MJESTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UGOVOR_O_RADU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_RADNO_MJESTO">
+        <PropertyRef Name="UGOVOR_O_RADU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VRSTA_ANGAZMANA_UGOVOR_O_RADU_fk">
+    <End Role="VRSTA_ANGAZMANA" Type="Self.VRSTA_ANGAZMANA" Multiplicity="1" />
+    <End Role="UGOVOR_O_RADU" Type="Self.UGOVOR_O_RADU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_ANGAZMANA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UGOVOR_O_RADU">
+        <PropertyRef Name="VRSTA_ANGAZMANA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VRSTA_LICNOG_DOKUMENTA_LICNI_DOKUMENTI_fk">
+    <End Role="VRSTA_LICNOG_DOKUMENTA" Type="Self.VRSTA_LICNOG_DOKUMENTA" Multiplicity="1" />
+    <End Role="LICNI_DOKUMENTI" Type="Self.LICNI_DOKUMENTI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_LICNOG_DOKUMENTA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LICNI_DOKUMENTI">
+        <PropertyRef Name="VRSTA_LICNOG_DOKUMENTA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VRSTA_PRAVA_PRISTUPA_PRAVA_PRISTUPA_fk">
+    <End Role="VRSTA_PRAVA_PRISTUPA" Type="Self.VRSTA_PRAVA_PRISTUPA" Multiplicity="1" />
+    <End Role="PRAVA_PRISTUPA" Type="Self.PRAVA_PRISTUPA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_PRAVA_PRISTUPA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRAVA_PRISTUPA">
+        <PropertyRef Name="VRSTA_PRAVA_PRISTUPA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VRSTA_PRISUSTVA_ODSUSTVA_HR_KORISNIK_PRISUSTVO_fk">
+    <End Role="VRSTA_PRISUSTVA_ODSUSTVA" Type="Self.VRSTA_PRISUSTVA_ODSUSTVA" Multiplicity="1" />
+    <End Role="HR_KORISNIK_PRISUSTVO" Type="Self.HR_KORISNIK_PRISUSTVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_PRISUSTVA_ODSUSTVA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HR_KORISNIK_PRISUSTVO">
+        <PropertyRef Name="VRSTA_PRISUSTVA_ODSUSTVA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VRSTA_PRISUSTVA_ODSUSTVA_KONFIGURACIA_VRSTA_PRISUSTVA_fk">
+    <End Role="VRSTA_PRISUSTVA_ODSUSTVA" Type="Self.VRSTA_PRISUSTVA_ODSUSTVA" Multiplicity="1" />
+    <End Role="KONFIGURACIJA_VRSTA_PRISUSTVA" Type="Self.KONFIGURACIJA_VRSTA_PRISUSTVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_PRISUSTVA_ODSUSTVA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KONFIGURACIJA_VRSTA_PRISUSTVA">
+        <PropertyRef Name="VRSTA_PRISUSTVA_ODSUSTVA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VRSTA_RADNOG_ODNOSA_UGOVOR_O_RADU_fk">
+    <End Role="VRSTA_RADNOG_ODNOSA" Type="Self.VRSTA_RADNOG_ODNOSA" Multiplicity="1" />
+    <End Role="UGOVOR_O_RADU" Type="Self.UGOVOR_O_RADU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_RADNOG_ODNOSA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UGOVOR_O_RADU">
+        <PropertyRef Name="VRSTA_RADNOG_ODNOSA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VRSTA_RADNOG_STAZA_RADNI_STAZ_fk">
+    <End Role="VRSTA_RADNOG_STAZA" Type="Self.VRSTA_RADNOG_STAZA" Multiplicity="1" />
+    <End Role="RADNI_STAZ" Type="Self.RADNI_STAZ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_RADNOG_STAZA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RADNI_STAZ">
+        <PropertyRef Name="VRSTA_RADNOG_STAZA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VSRTA_DODATNOG_OBRAZOVANJA_DODATNO_OBRAZOVANJE_fk">
+    <End Role="VRSTA_DODATNOG_OBRAZOVANJA" Type="Self.VRSTA_DODATNOG_OBRAZOVANJA" Multiplicity="1" />
+    <End Role="DODATNO_OBRAZOVANJE" Type="Self.DODATNO_OBRAZOVANJE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VRSTA_DODATNOG_OBRAZOVANJA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DODATNO_OBRAZOVANJE">
+        <PropertyRef Name="VRSTA_DODATNOG_OBRAZOVANJA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HRMModelStoreContainer">
+    <EntitySet Name="AttendanceEvents" EntityType="Self.AttendanceEvents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AttendoSyncStatus" EntityType="Self.AttendoSyncStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BRACNI_STATUS" EntityType="Self.BRACNI_STATUS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DANI_GODISNJEG_ODMORA" EntityType="Self.DANI_GODISNJEG_ODMORA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA" EntityType="Self.DODATNA_PRAVA_IZ_RADNOG_ODNOSA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DODATNI_POTPISNIK" EntityType="Self.DODATNI_POTPISNIK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DODATNO_OBRAZOVANJE" EntityType="Self.DODATNO_OBRAZOVANJE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOKUMENT" EntityType="Self.DOKUMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DRZAVA" EntityType="Self.DRZAVA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DRZAVLJANSTVO" EntityType="Self.DRZAVLJANSTVO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DRZAVNI_PRAZNICI" EntityType="Self.DRZAVNI_PRAZNICI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EXPORT_PRISUSTVO_POINT" EntityType="Self.EXPORT_PRISUSTVO_POINT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_GRUPA" EntityType="Self.HR_GRUPA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_KORISNIK" EntityType="Self.HR_KORISNIK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_KORISNIK_DODATNA_PRAVA" EntityType="Self.HR_KORISNIK_DODATNA_PRAVA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_KORISNIK_FILTER" EntityType="Self.HR_KORISNIK_FILTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_KORISNIK_FILTER_UPOSLENIK" EntityType="Self.HR_KORISNIK_FILTER_UPOSLENIK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_KORISNIK_HR_GRUPA" EntityType="Self.HR_KORISNIK_HR_GRUPA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_KORISNIK_LOKACIJE_MAS" EntityType="Self.HR_KORISNIK_LOKACIJE_MAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_KORISNIK_PRERASPODJELA_SATI" EntityType="Self.HR_KORISNIK_PRERASPODJELA_SATI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_KORISNIK_PRISUSTVO" EntityType="Self.HR_KORISNIK_PRISUSTVO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" EntityType="Self.HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_KORISNIK_RADNO_MJESTO" EntityType="Self.HR_KORISNIK_RADNO_MJESTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_LOG" EntityType="Self.HR_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HRMDocStore" EntityType="Self.HRMDocStore" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JUBILARNI_STAZ" EntityType="Self.JUBILARNI_STAZ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KANDIDAT" EntityType="Self.KANDIDAT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KANDIDAT_ODGOVOR" EntityType="Self.KANDIDAT_ODGOVOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KANTON" EntityType="Self.KANTON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KONFIGURACIJA" EntityType="Self.KONFIGURACIJA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KONFIGURACIJA_VRSTA_PRISUSTVA" EntityType="Self.KONFIGURACIJA_VRSTA_PRISUSTVA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LICNI_DOKUMENTI" EntityType="Self.LICNI_DOKUMENTI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOKACIJE_MAS" EntityType="Self.LOKACIJE_MAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MENI" EntityType="Self.MENI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MIROVANJE_RADNOG_ODNOSA" EntityType="Self.MIROVANJE_RADNOG_ODNOSA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NARODNOST" EntityType="Self.NARODNOST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OBJEKTI_MAS" EntityType="Self.OBJEKTI_MAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OBUKA" EntityType="Self.OBUKA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OPSTINA" EntityType="Self.OPSTINA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORGANIZACIONA_JEDINICA" EntityType="Self.ORGANIZACIONA_JEDINICA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRAVA_PRISTUPA" EntityType="Self.PRAVA_PRISTUPA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRAVO_GODISNJI_ODMOR" EntityType="Self.PRAVO_GODISNJI_ODMOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PREBIVALISTE_BORAVISTE" EntityType="Self.PREBIVALISTE_BORAVISTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRESTANAK_RADNOG_ODNOSA" EntityType="Self.PRESTANAK_RADNOG_ODNOSA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RAD_U_INOSTRANSTVU" EntityType="Self.RAD_U_INOSTRANSTVU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RADNI_STAZ" EntityType="Self.RADNI_STAZ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RADNO_ISKUSTVO" EntityType="Self.RADNO_ISKUSTVO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RADNO_MJESTO" EntityType="Self.RADNO_MJESTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RADNO_MJESTO_SKOLSKA_SPREMA" EntityType="Self.RADNO_MJESTO_SKOLSKA_SPREMA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REZULTAT_TESTA" EntityType="Self.REZULTAT_TESTA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SIHT_LISTA_PRINT" EntityType="Self.SIHT_LISTA_PRINT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SISTEMATIZACIJA" EntityType="Self.SISTEMATIZACIJA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SKOLSKA_SPREMA" EntityType="Self.SKOLSKA_SPREMA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SPOL" EntityType="Self.SPOL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEST" EntityType="Self.TEST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEST_ODGOVOR" EntityType="Self.TEST_ODGOVOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEST_PITANJE" EntityType="Self.TEST_PITANJE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="test_preraspodjela" EntityType="Self.test_preraspodjela" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIP_OBUKE" EntityType="Self.TIP_OBUKE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIP_ORGANIZACIONE_JEDINICE" EntityType="Self.TIP_ORGANIZACIONE_JEDINICE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIP_PONAVLJANJA_TESTA" EntityType="Self.TIP_PONAVLJANJA_TESTA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmp_pbroj_opstina" EntityType="Self.tmp_pbroj_opstina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UGOVOR_O_RADU" EntityType="Self.UGOVOR_O_RADU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VRSTA_ANGAZMANA" EntityType="Self.VRSTA_ANGAZMANA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VRSTA_DODATNOG_OBRAZOVANJA" EntityType="Self.VRSTA_DODATNOG_OBRAZOVANJA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VRSTA_LICNOG_DOKUMENTA" EntityType="Self.VRSTA_LICNOG_DOKUMENTA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VRSTA_PRAVA_PRISTUPA" EntityType="Self.VRSTA_PRAVA_PRISTUPA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VRSTA_PRISUSTVA_ODSUSTVA" EntityType="Self.VRSTA_PRISUSTVA_ODSUSTVA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VRSTA_RADNOG_ODNOSA" EntityType="Self.VRSTA_RADNOG_ODNOSA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VRSTA_RADNOG_STAZA" EntityType="Self.VRSTA_RADNOG_STAZA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZAKLJUCAVANJE_EVIDENCIJE" EntityType="Self.ZAKLJUCAVANJE_EVIDENCIJE" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="BRACNI_STATUS_HR_KORISNIK_fk" Association="Self.BRACNI_STATUS_HR_KORISNIK_fk">
+      <End Role="BRACNI_STATUS" EntitySet="BRACNI_STATUS" />
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="DODATNA_PRAVA_IZ_RADNOG_ODNOSA_HR_KORISNIK_DODATNA_PRAVA_fk" Association="Self.DODATNA_PRAVA_IZ_RADNOG_ODNOSA_HR_KORISNIK_DODATNA_PRAVA_fk">
+      <End Role="DODATNA_PRAVA_IZ_RADNOG_ODNOSA" EntitySet="DODATNA_PRAVA_IZ_RADNOG_ODNOSA" />
+      <End Role="HR_KORISNIK_DODATNA_PRAVA" EntitySet="HR_KORISNIK_DODATNA_PRAVA" />
+    </AssociationSet>
+    <AssociationSet Name="DOKUMENT_DODATNO_OBRAZOVANJE_fk" Association="Self.DOKUMENT_DODATNO_OBRAZOVANJE_fk">
+      <End Role="DOKUMENT" EntitySet="DOKUMENT" />
+      <End Role="DODATNO_OBRAZOVANJE" EntitySet="DODATNO_OBRAZOVANJE" />
+    </AssociationSet>
+    <AssociationSet Name="DOKUMENT_HR_KORISNIK_DODATNA_PRAVA_fk" Association="Self.DOKUMENT_HR_KORISNIK_DODATNA_PRAVA_fk">
+      <End Role="DOKUMENT" EntitySet="DOKUMENT" />
+      <End Role="HR_KORISNIK_DODATNA_PRAVA" EntitySet="HR_KORISNIK_DODATNA_PRAVA" />
+    </AssociationSet>
+    <AssociationSet Name="DOKUMENT_HR_KORISNIK_fk" Association="Self.DOKUMENT_HR_KORISNIK_fk">
+      <End Role="DOKUMENT" EntitySet="DOKUMENT" />
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="DOKUMENT_LICNI_DOKUMENTI_fk" Association="Self.DOKUMENT_LICNI_DOKUMENTI_fk">
+      <End Role="DOKUMENT" EntitySet="DOKUMENT" />
+      <End Role="LICNI_DOKUMENTI" EntitySet="LICNI_DOKUMENTI" />
+    </AssociationSet>
+    <AssociationSet Name="DOKUMENT_UGOVOR_O_RADU_fk" Association="Self.DOKUMENT_UGOVOR_O_RADU_fk">
+      <End Role="DOKUMENT" EntitySet="DOKUMENT" />
+      <End Role="UGOVOR_O_RADU" EntitySet="UGOVOR_O_RADU" />
+    </AssociationSet>
+    <AssociationSet Name="DRZAVA_DRZAVLJANSTVO_fk" Association="Self.DRZAVA_DRZAVLJANSTVO_fk">
+      <End Role="DRZAVA" EntitySet="DRZAVA" />
+      <End Role="DRZAVLJANSTVO" EntitySet="DRZAVLJANSTVO" />
+    </AssociationSet>
+    <AssociationSet Name="DRZAVA_OPSTINA_fk" Association="Self.DRZAVA_OPSTINA_fk">
+      <End Role="DRZAVA" EntitySet="DRZAVA" />
+      <End Role="OPSTINA" EntitySet="OPSTINA" />
+    </AssociationSet>
+    <AssociationSet Name="DRZAVA_RAD_U_INOSTRANSTVU_fk" Association="Self.DRZAVA_RAD_U_INOSTRANSTVU_fk">
+      <End Role="DRZAVA" EntitySet="DRZAVA" />
+      <End Role="RAD_U_INOSTRANSTVU" EntitySet="RAD_U_INOSTRANSTVU" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HRMDocSto__paren__114A936A" Association="Self.FK__HRMDocSto__paren__114A936A">
+      <End Role="HRMDocStore" EntitySet="HRMDocStore" />
+      <End Role="HRMDocStore1" EntitySet="HRMDocStore" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LICNI_DOKUMENTI_KANTON" Association="Self.FK_LICNI_DOKUMENTI_KANTON">
+      <End Role="KANTON" EntitySet="KANTON" />
+      <End Role="LICNI_DOKUMENTI" EntitySet="LICNI_DOKUMENTI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LICNI_DOKUMENTI_OPSTINA" Association="Self.FK_LICNI_DOKUMENTI_OPSTINA">
+      <End Role="OPSTINA" EntitySet="OPSTINA" />
+      <End Role="LICNI_DOKUMENTI" EntitySet="LICNI_DOKUMENTI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PREBIVALISTE_BORAVISTE_KANTON" Association="Self.FK_PREBIVALISTE_BORAVISTE_KANTON">
+      <End Role="KANTON" EntitySet="KANTON" />
+      <End Role="PREBIVALISTE_BORAVISTE" EntitySet="PREBIVALISTE_BORAVISTE" />
+    </AssociationSet>
+    <AssociationSet Name="HR_GRUPA_HR_KORISNIK_HR_GRUPA_fk" Association="Self.HR_GRUPA_HR_KORISNIK_HR_GRUPA_fk">
+      <End Role="HR_GRUPA" EntitySet="HR_GRUPA" />
+      <End Role="HR_KORISNIK_HR_GRUPA" EntitySet="HR_KORISNIK_HR_GRUPA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_GRUPA_PRAVA_PRISTUPA_fk" Association="Self.HR_GRUPA_PRAVA_PRISTUPA_fk">
+      <End Role="HR_GRUPA" EntitySet="HR_GRUPA" />
+      <End Role="PRAVA_PRISTUPA" EntitySet="PRAVA_PRISTUPA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_DANI_GODISNJEG_ODMORA_fk" Association="Self.HR_KORISNIK_DANI_GODISNJEG_ODMORA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="DANI_GODISNJEG_ODMORA" EntitySet="DANI_GODISNJEG_ODMORA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_DODATNI_POTPISNIK_fk" Association="Self.HR_KORISNIK_DODATNI_POTPISNIK_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="DODATNI_POTPISNIK" EntitySet="DODATNI_POTPISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_DODATNO_OBRAZOVANJE_fk" Association="Self.HR_KORISNIK_DODATNO_OBRAZOVANJE_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="DODATNO_OBRAZOVANJE" EntitySet="DODATNO_OBRAZOVANJE" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_DRZAVLJANSTVO_fk" Association="Self.HR_KORISNIK_DRZAVLJANSTVO_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="DRZAVLJANSTVO" EntitySet="DRZAVLJANSTVO" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_EXPORT_PRISUSTVO_POINT_fk" Association="Self.HR_KORISNIK_EXPORT_PRISUSTVO_POINT_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="EXPORT_PRISUSTVO_POINT" EntitySet="EXPORT_PRISUSTVO_POINT" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_FILTER_HR_KORISNIK_FILTER_UPOSLENIK_fk" Association="Self.HR_KORISNIK_FILTER_HR_KORISNIK_FILTER_UPOSLENIK_fk">
+      <End Role="HR_KORISNIK_FILTER" EntitySet="HR_KORISNIK_FILTER" />
+      <End Role="HR_KORISNIK_FILTER_UPOSLENIK" EntitySet="HR_KORISNIK_FILTER_UPOSLENIK" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_DODATNA_PRAVA_fk" Association="Self.HR_KORISNIK_HR_KORISNIK_DODATNA_PRAVA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_DODATNA_PRAVA" EntitySet="HR_KORISNIK_DODATNA_PRAVA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_FILTER_fk" Association="Self.HR_KORISNIK_HR_KORISNIK_FILTER_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_FILTER" EntitySet="HR_KORISNIK_FILTER" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_FILTER_UPOSLENIK_fk" Association="Self.HR_KORISNIK_HR_KORISNIK_FILTER_UPOSLENIK_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_FILTER_UPOSLENIK" EntitySet="HR_KORISNIK_FILTER_UPOSLENIK" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_HR_GRUPA_fk" Association="Self.HR_KORISNIK_HR_KORISNIK_HR_GRUPA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_HR_GRUPA" EntitySet="HR_KORISNIK_HR_GRUPA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_LOKACIJE_MAS_fk" Association="Self.HR_KORISNIK_HR_KORISNIK_LOKACIJE_MAS_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_LOKACIJE_MAS" EntitySet="HR_KORISNIK_LOKACIJE_MAS" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk" Association="Self.HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_PRERASPODJELA_SATI" EntitySet="HR_KORISNIK_PRERASPODJELA_SATI" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk1" Association="Self.HR_KORISNIK_HR_KORISNIK_PRERASPODJELA_SATI_fk1">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_PRERASPODJELA_SATI" EntitySet="HR_KORISNIK_PRERASPODJELA_SATI" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk" Association="Self.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_PRISUSTVO" EntitySet="HR_KORISNIK_PRISUSTVO" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk1" Association="Self.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_fk1">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_PRISUSTVO" EntitySet="HR_KORISNIK_PRISUSTVO" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk" Association="Self.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" EntitySet="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk1" Association="Self.HR_KORISNIK_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk1">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" EntitySet="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_KORISNIK_RADNO_MJESTO_fk" Association="Self.HR_KORISNIK_HR_KORISNIK_RADNO_MJESTO_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_KORISNIK_RADNO_MJESTO" EntitySet="HR_KORISNIK_RADNO_MJESTO" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_HR_LOG_fk" Association="Self.HR_KORISNIK_HR_LOG_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="HR_LOG" EntitySet="HR_LOG" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_KANDIDAT_fk" Association="Self.HR_KORISNIK_KANDIDAT_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="KANDIDAT" EntitySet="KANDIDAT" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_KONFIGURACIA_VRSTA_PRISUSTVA_fk" Association="Self.HR_KORISNIK_KONFIGURACIA_VRSTA_PRISUSTVA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="KONFIGURACIJA_VRSTA_PRISUSTVA" EntitySet="KONFIGURACIJA_VRSTA_PRISUSTVA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_KONFIGURACIJA_fk" Association="Self.HR_KORISNIK_KONFIGURACIJA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="KONFIGURACIJA" EntitySet="KONFIGURACIJA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_KONFIGURACIJA_fk1" Association="Self.HR_KORISNIK_KONFIGURACIJA_fk1">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="KONFIGURACIJA" EntitySet="KONFIGURACIJA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_LICNI_DOKUMENTI_fk" Association="Self.HR_KORISNIK_LICNI_DOKUMENTI_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="LICNI_DOKUMENTI" EntitySet="LICNI_DOKUMENTI" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_MIROVANJE_RADNOG_ODNOSA_fk" Association="Self.HR_KORISNIK_MIROVANJE_RADNOG_ODNOSA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="MIROVANJE_RADNOG_ODNOSA" EntitySet="MIROVANJE_RADNOG_ODNOSA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_ORGANIZACIONA_JEDINICA_fk" Association="Self.HR_KORISNIK_ORGANIZACIONA_JEDINICA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_PRAVO_GODISNI_ODMOR_fk" Association="Self.HR_KORISNIK_PRAVO_GODISNI_ODMOR_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="PRAVO_GODISNJI_ODMOR" EntitySet="PRAVO_GODISNJI_ODMOR" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_PREBIVALISTE_fk" Association="Self.HR_KORISNIK_PREBIVALISTE_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="PREBIVALISTE_BORAVISTE" EntitySet="PREBIVALISTE_BORAVISTE" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_PRESTANAK_RADNOG_ODNOSA_fk" Association="Self.HR_KORISNIK_PRESTANAK_RADNOG_ODNOSA_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="PRESTANAK_RADNOG_ODNOSA" EntitySet="PRESTANAK_RADNOG_ODNOSA" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_RAD_U_INOSTRANSTVU_fk" Association="Self.HR_KORISNIK_RAD_U_INOSTRANSTVU_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="RAD_U_INOSTRANSTVU" EntitySet="RAD_U_INOSTRANSTVU" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_RADNI_STAZ_fk" Association="Self.HR_KORISNIK_RADNI_STAZ_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="RADNI_STAZ" EntitySet="RADNI_STAZ" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_RADNO_ISKUSTVO_fk" Association="Self.HR_KORISNIK_RADNO_ISKUSTVO_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="RADNO_ISKUSTVO" EntitySet="RADNO_ISKUSTVO" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_TEST_fk" Association="Self.HR_KORISNIK_TEST_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="TEST" EntitySet="TEST" />
+    </AssociationSet>
+    <AssociationSet Name="HR_KORISNIK_ZAKLJUCAVANJE_EVIDENCIJE_fk" Association="Self.HR_KORISNIK_ZAKLJUCAVANJE_EVIDENCIJE_fk">
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+      <End Role="ZAKLJUCAVANJE_EVIDENCIJE" EntitySet="ZAKLJUCAVANJE_EVIDENCIJE" />
+    </AssociationSet>
+    <AssociationSet Name="KANDIDAT_KANDIDAT_ODGOVOR_fk" Association="Self.KANDIDAT_KANDIDAT_ODGOVOR_fk">
+      <End Role="KANDIDAT" EntitySet="KANDIDAT" />
+      <End Role="KANDIDAT_ODGOVOR" EntitySet="KANDIDAT_ODGOVOR" />
+    </AssociationSet>
+    <AssociationSet Name="KANDIDAT_REZULTAT_TESTA_fk" Association="Self.KANDIDAT_REZULTAT_TESTA_fk">
+      <End Role="KANDIDAT" EntitySet="KANDIDAT" />
+      <End Role="REZULTAT_TESTA" EntitySet="REZULTAT_TESTA" />
+    </AssociationSet>
+    <AssociationSet Name="LOKACIJE_MAS_HR_KORISNIK_LOKACIJE_MAS_fk" Association="Self.LOKACIJE_MAS_HR_KORISNIK_LOKACIJE_MAS_fk">
+      <End Role="LOKACIJE_MAS" EntitySet="LOKACIJE_MAS" />
+      <End Role="HR_KORISNIK_LOKACIJE_MAS" EntitySet="HR_KORISNIK_LOKACIJE_MAS" />
+    </AssociationSet>
+    <AssociationSet Name="MENI_PRAVA_PRISTUPA_fk" Association="Self.MENI_PRAVA_PRISTUPA_fk">
+      <End Role="MENI" EntitySet="MENI" />
+      <End Role="PRAVA_PRISTUPA" EntitySet="PRAVA_PRISTUPA" />
+    </AssociationSet>
+    <AssociationSet Name="NARODNOST_HR_KORISNIK_fk" Association="Self.NARODNOST_HR_KORISNIK_fk">
+      <End Role="NARODNOST" EntitySet="NARODNOST" />
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="OBJAKTI_MAS_LOKACIJE_MAS_fk" Association="Self.OBJAKTI_MAS_LOKACIJE_MAS_fk">
+      <End Role="OBJEKTI_MAS" EntitySet="OBJEKTI_MAS" />
+      <End Role="LOKACIJE_MAS" EntitySet="LOKACIJE_MAS" />
+    </AssociationSet>
+    <AssociationSet Name="OBUKA_TEST_fk" Association="Self.OBUKA_TEST_fk">
+      <End Role="OBUKA" EntitySet="OBUKA" />
+      <End Role="TEST" EntitySet="TEST" />
+    </AssociationSet>
+    <AssociationSet Name="OPSTINA_HR_KORISNIK_fk" Association="Self.OPSTINA_HR_KORISNIK_fk">
+      <End Role="OPSTINA" EntitySet="OPSTINA" />
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="OPSTINA_PREBIVALISTE_fk" Association="Self.OPSTINA_PREBIVALISTE_fk">
+      <End Role="OPSTINA" EntitySet="OPSTINA" />
+      <End Role="PREBIVALISTE_BORAVISTE" EntitySet="PREBIVALISTE_BORAVISTE" />
+    </AssociationSet>
+    <AssociationSet Name="OPSTINA_UGOVOR_O_RADU_fk" Association="Self.OPSTINA_UGOVOR_O_RADU_fk">
+      <End Role="OPSTINA" EntitySet="OPSTINA" />
+      <End Role="UGOVOR_O_RADU" EntitySet="UGOVOR_O_RADU" />
+    </AssociationSet>
+    <AssociationSet Name="ORGANIZACIONA_JEDINICA_DODATNI_POTPISNIK_fk" Association="Self.ORGANIZACIONA_JEDINICA_DODATNI_POTPISNIK_fk">
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+      <End Role="DODATNI_POTPISNIK" EntitySet="DODATNI_POTPISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="ORGANIZACIONA_JEDINICA_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk" Association="Self.ORGANIZACIONA_JEDINICA_HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA_fk">
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+      <End Role="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" EntitySet="HR_KORISNIK_PRISUSTVO_PRAVA_PRISTUPA" />
+    </AssociationSet>
+    <AssociationSet Name="ORGANIZACIONA_JEDINICA_ORGANIZACIONA_JEDINICA_fk" Association="Self.ORGANIZACIONA_JEDINICA_ORGANIZACIONA_JEDINICA_fk">
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+      <End Role="ORGANIZACIONA_JEDINICA1" EntitySet="ORGANIZACIONA_JEDINICA" />
+    </AssociationSet>
+    <AssociationSet Name="ORGANIZACIONA_JEDINICA_RADNO_MJESTO_fk" Association="Self.ORGANIZACIONA_JEDINICA_RADNO_MJESTO_fk">
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+      <End Role="RADNO_MJESTO" EntitySet="RADNO_MJESTO" />
+    </AssociationSet>
+    <AssociationSet Name="ORGANIZACIONA_JEDINICA_SIHT_LISTA_PRINT_fk" Association="Self.ORGANIZACIONA_JEDINICA_SIHT_LISTA_PRINT_fk">
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+      <End Role="SIHT_LISTA_PRINT" EntitySet="SIHT_LISTA_PRINT" />
+    </AssociationSet>
+    <AssociationSet Name="ORGANIZACIONA_JEDINICA_ZAKLJUCAVANJE_EVIDENCIJE_fk" Association="Self.ORGANIZACIONA_JEDINICA_ZAKLJUCAVANJE_EVIDENCIJE_fk">
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+      <End Role="ZAKLJUCAVANJE_EVIDENCIJE" EntitySet="ZAKLJUCAVANJE_EVIDENCIJE" />
+    </AssociationSet>
+    <AssociationSet Name="RADNO_MJESTO_HR_KORISNIK_RADNO_MJESTO_fk" Association="Self.RADNO_MJESTO_HR_KORISNIK_RADNO_MJESTO_fk">
+      <End Role="RADNO_MJESTO" EntitySet="RADNO_MJESTO" />
+      <End Role="HR_KORISNIK_RADNO_MJESTO" EntitySet="HR_KORISNIK_RADNO_MJESTO" />
+    </AssociationSet>
+    <AssociationSet Name="RADNO_MJESTO_RADNO_MJESTO_fk" Association="Self.RADNO_MJESTO_RADNO_MJESTO_fk">
+      <End Role="RADNO_MJESTO" EntitySet="RADNO_MJESTO" />
+      <End Role="RADNO_MJESTO1" EntitySet="RADNO_MJESTO" />
+    </AssociationSet>
+    <AssociationSet Name="RADNO_MJESTO_RADNO_MJESTO_SKOLSKA_SPREMA_fk" Association="Self.RADNO_MJESTO_RADNO_MJESTO_SKOLSKA_SPREMA_fk">
+      <End Role="RADNO_MJESTO" EntitySet="RADNO_MJESTO" />
+      <End Role="RADNO_MJESTO_SKOLSKA_SPREMA" EntitySet="RADNO_MJESTO_SKOLSKA_SPREMA" />
+    </AssociationSet>
+    <AssociationSet Name="SISTEMATIZACIJA_ORGANIZACIONA_JEDINICA_fk" Association="Self.SISTEMATIZACIJA_ORGANIZACIONA_JEDINICA_fk">
+      <End Role="SISTEMATIZACIJA" EntitySet="SISTEMATIZACIJA" />
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+    </AssociationSet>
+    <AssociationSet Name="SKOLSKA_SPREMA_HR_KORISNIK_fk" Association="Self.SKOLSKA_SPREMA_HR_KORISNIK_fk">
+      <End Role="SKOLSKA_SPREMA" EntitySet="SKOLSKA_SPREMA" />
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="SKOLSKA_SPREMA_RADNO_MJESTO_SKOLSKA_SPREMA_fk" Association="Self.SKOLSKA_SPREMA_RADNO_MJESTO_SKOLSKA_SPREMA_fk">
+      <End Role="SKOLSKA_SPREMA" EntitySet="SKOLSKA_SPREMA" />
+      <End Role="RADNO_MJESTO_SKOLSKA_SPREMA" EntitySet="RADNO_MJESTO_SKOLSKA_SPREMA" />
+    </AssociationSet>
+    <AssociationSet Name="SPOL_HR_KORISNIK_fk" Association="Self.SPOL_HR_KORISNIK_fk">
+      <End Role="SPOL" EntitySet="SPOL" />
+      <End Role="HR_KORISNIK" EntitySet="HR_KORISNIK" />
+    </AssociationSet>
+    <AssociationSet Name="TEST_KANDIDAT_fk" Association="Self.TEST_KANDIDAT_fk">
+      <End Role="TEST" EntitySet="TEST" />
+      <End Role="KANDIDAT" EntitySet="KANDIDAT" />
+    </AssociationSet>
+    <AssociationSet Name="TEST_ODGOVOR_KANDIDAT_ODGOVOR_fk" Association="Self.TEST_ODGOVOR_KANDIDAT_ODGOVOR_fk">
+      <End Role="TEST_ODGOVOR" EntitySet="TEST_ODGOVOR" />
+      <End Role="KANDIDAT_ODGOVOR" EntitySet="KANDIDAT_ODGOVOR" />
+    </AssociationSet>
+    <AssociationSet Name="TEST_PITANJE_TEST_ODGOVOR_fk" Association="Self.TEST_PITANJE_TEST_ODGOVOR_fk">
+      <End Role="TEST_PITANJE" EntitySet="TEST_PITANJE" />
+      <End Role="TEST_ODGOVOR" EntitySet="TEST_ODGOVOR" />
+    </AssociationSet>
+    <AssociationSet Name="TEST_REZULTAT_TESTA_fk" Association="Self.TEST_REZULTAT_TESTA_fk">
+      <End Role="TEST" EntitySet="TEST" />
+      <End Role="REZULTAT_TESTA" EntitySet="REZULTAT_TESTA" />
+    </AssociationSet>
+    <AssociationSet Name="TEST_TEST_PITANJE_fk" Association="Self.TEST_TEST_PITANJE_fk">
+      <End Role="TEST" EntitySet="TEST" />
+      <End Role="TEST_PITANJE" EntitySet="TEST_PITANJE" />
+    </AssociationSet>
+    <AssociationSet Name="TIP_OBUKE_OBUKA_fk" Association="Self.TIP_OBUKE_OBUKA_fk">
+      <End Role="TIP_OBUKE" EntitySet="TIP_OBUKE" />
+      <End Role="OBUKA" EntitySet="OBUKA" />
+    </AssociationSet>
+    <AssociationSet Name="TIP_ORGANIZACIONE_JEDINICE_ORGANIZACIONA_JEDINICA_fk" Association="Self.TIP_ORGANIZACIONE_JEDINICE_ORGANIZACIONA_JEDINICA_fk">
+      <End Role="TIP_ORGANIZACIONE_JEDINICE" EntitySet="TIP_ORGANIZACIONE_JEDINICE" />
+      <End Role="ORGANIZACIONA_JEDINICA" EntitySet="ORGANIZACIONA_JEDINICA" />
+    </AssociationSet>
+    <AssociationSet Name="TIP_PONAVLJANJA_TESTA_KANDIDAT_fk" Association="Self.TIP_PONAVLJANJA_TESTA_KANDIDAT_fk">
+      <End Role="TIP_PONAVLJANJA_TESTA" EntitySet="TIP_PONAVLJANJA_TESTA" />
+      <End Role="KANDIDAT" EntitySet="KANDIDAT" />
+    </AssociationSet>
+    <AssociationSet Name="UGOVOR_O_RADU_HR_KORISNIK_RADNO_MJESTO_fk" Association="Self.UGOVOR_O_RADU_HR_KORISNIK_RADNO_MJESTO_fk">
+      <End Role="UGOVOR_O_RADU" EntitySet="UGOVOR_O_RADU" />
+      <End Role="HR_KORISNIK_RADNO_MJESTO" EntitySet="HR_KORISNIK_RADNO_MJESTO" />
+    </AssociationSet>
+    <AssociationSet Name="VRSTA_ANGAZMANA_UGOVOR_O_RADU_fk" Association="Self.VRSTA_ANGAZMANA_UGOVOR_O_RADU_fk">
+      <End Role="VRSTA_ANGAZMANA" EntitySet="VRSTA_ANGAZMANA" />
+      <End Role="UGOVOR_O_RADU" EntitySet="UGOVOR_O_RADU" />
+    </AssociationSet>
+    <AssociationSet Name="VRSTA_LICNOG_DOKUMENTA_LICNI_DOKUMENTI_fk" Association="Self.VRSTA_LICNOG_DOKUMENTA_LICNI_DOKUMENTI_fk">
+      <End Role="VRSTA_LICNOG_DOKUMENTA" EntitySet="VRSTA_LICNOG_DOKUMENTA" />
+      <End Role="LICNI_DOKUMENTI" EntitySet="LICNI_DOKUMENTI" />
+    </AssociationSet>
+    <AssociationSet Name="VRSTA_PRAVA_PRISTUPA_PRAVA_PRISTUPA_fk" Association="Self.VRSTA_PRAVA_PRISTUPA_PRAVA_PRISTUPA_fk">
+      <End Role="VRSTA_PRAVA_PRISTUPA" EntitySet="VRSTA_PRAVA_PRISTUPA" />
+      <End Role="PRAVA_PRISTUPA" EntitySet="PRAVA_PRISTUPA" />
+    </AssociationSet>
+    <AssociationSet Name="VRSTA_PRISUSTVA_ODSUSTVA_HR_KORISNIK_PRISUSTVO_fk" Association="Self.VRSTA_PRISUSTVA_ODSUSTVA_HR_KORISNIK_PRISUSTVO_fk">
+      <End Role="VRSTA_PRISUSTVA_ODSUSTVA" EntitySet="VRSTA_PRISUSTVA_ODSUSTVA" />
+      <End Role="HR_KORISNIK_PRISUSTVO" EntitySet="HR_KORISNIK_PRISUSTVO" />
+    </AssociationSet>
+    <AssociationSet Name="VRSTA_PRISUSTVA_ODSUSTVA_KONFIGURACIA_VRSTA_PRISUSTVA_fk" Association="Self.VRSTA_PRISUSTVA_ODSUSTVA_KONFIGURACIA_VRSTA_PRISUSTVA_fk">
+      <End Role="VRSTA_PRISUSTVA_ODSUSTVA" EntitySet="VRSTA_PRISUSTVA_ODSUSTVA" />
+      <End Role="KONFIGURACIJA_VRSTA_PRISUSTVA" EntitySet="KONFIGURACIJA_VRSTA_PRISUSTVA" />
+    </AssociationSet>
+    <AssociationSet Name="VRSTA_RADNOG_ODNOSA_UGOVOR_O_RADU_fk" Association="Self.VRSTA_RADNOG_ODNOSA_UGOVOR_O_RADU_fk">
+      <End Role="VRSTA_RADNOG_ODNOSA" EntitySet="VRSTA_RADNOG_ODNOSA" />
+      <End Role="UGOVOR_O_RADU" EntitySet="UGOVOR_O_RADU" />
+    </AssociationSet>
+    <AssociationSet Name="VRSTA_RADNOG_STAZA_RADNI_STAZ_fk" Association="Self.VRSTA_RADNOG_STAZA_RADNI_STAZ_fk">
+      <End Role="VRSTA_RADNOG_STAZA" EntitySet="VRSTA_RADNOG_STAZA" />
+      <End Role="RADNI_STAZ" EntitySet="RADNI_STAZ" />
+    </AssociationSet>
+    <AssociationSet Name="VSRTA_DODATNOG_OBRAZOVANJA_DODATNO_OBRAZOVANJE_fk" Association="Self.VSRTA_DODATNOG_OBRAZOVANJA_DODATNO_OBRAZOVANJE_fk">
+      <End Role="VRSTA_DODATNOG_OBRAZOVANJA" EntitySet="VRSTA_DODATNOG_OBRAZOVANJA" />
+      <End Role="DODATNO_OBRAZOVANJE" EntitySet="DODATNO_OBRAZOVANJE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
