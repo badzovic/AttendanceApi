@@ -60,7 +60,7 @@ public class AttendanceController : ApiController
                         success = false,
                         id = 0,
                         deviceCode = e.device.code,
-                        message = "Dogodila se greška!"
+                        message = "Nepoznat korisnik!"
                     });
                 }
 
@@ -98,6 +98,29 @@ public class AttendanceController : ApiController
 
                 db.AttendanceEvents.Add(entity);
                 db.SaveChanges();
+
+                var datumOd = datum;
+                var datumDo = datum.AddDays(1);
+
+                var postojiOtvorenRad = db.HR_KORISNIK_PRISUSTVO.Any(x =>
+                    x.HR_KORISNIK_ID == user.ID &&
+                    x.VRIJEME_OD >= datumOd &&
+                    x.VRIJEME_OD < datumDo &&
+                    x.VRIJEME_DO == null &&
+                    x.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1 &&
+                    (x.OBRISANO == null || x.OBRISANO != "Y") &&
+                    x.ISATTENDO == "Y");
+
+                if (reg == "CLOCK_IN" && postojiOtvorenRad)
+                {
+                    return Ok(new
+                    {
+                        success = false,
+                        id = entity.Id,
+                        deviceCode = e.device.code,
+                        message = "Već postoji aktivan dolazak!"
+                    });
+                }
 
                 // ===============================
                 // 2) PRISUSTVO LOGIKA 

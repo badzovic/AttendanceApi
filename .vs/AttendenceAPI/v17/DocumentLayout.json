@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\adzovic berin\\Documents\\GitHub\\AttendanceApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5447C206-7324-4A08-A346-BDFF5F6FBD43}|AttendenceAPI\\AttendenceAPI.csproj|c:\\users\\adzovic berin\\documents\\github\\attendanceapi\\attendenceapi\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5447C206-7324-4A08-A346-BDFF5F6FBD43}|AttendenceAPI\\AttendenceAPI.csproj|solutionrelative:attendenceapi\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5447C206-7324-4A08-A346-BDFF5F6FBD43}|AttendenceAPI\\AttendenceAPI.csproj|C:\\Users\\adzovic berin\\Documents\\GitHub\\AttendanceApi\\attendenceapi\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{5447C206-7324-4A08-A346-BDFF5F6FBD43}|AttendenceAPI\\AttendenceAPI.csproj|solutionrelative:attendenceapi\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\adzovic berin\\Documents\\GitHub\\AttendanceApi\\AttendenceAPI\\Web.config",
+              "RelativeDocumentMoniker": "AttendenceAPI\\Web.config",
+              "ToolTip": "C:\\Users\\adzovic berin\\Documents\\GitHub\\AttendanceApi\\AttendenceAPI\\Web.config",
+              "RelativeToolTip": "AttendenceAPI\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-03-17T15:03:16.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AttendanceController.cs",
+              "DocumentMoniker": "C:\\Users\\adzovic berin\\Documents\\GitHub\\AttendanceApi\\AttendenceAPI\\Controllers\\AttendanceController.cs",
+              "RelativeDocumentMoniker": "AttendenceAPI\\Controllers\\AttendanceController.cs",
+              "ToolTip": "C:\\Users\\adzovic berin\\Documents\\GitHub\\AttendanceApi\\AttendenceAPI\\Controllers\\AttendanceController.cs",
+              "RelativeToolTip": "AttendenceAPI\\Controllers\\AttendanceController.cs",
+              "ViewState": "AgIAANwBAAAAAAAAAAAkwPUBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T14:07:10.12Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
