@@ -67,9 +67,11 @@ public class AttendanceController : ApiController
                 var lokalnoVrijeme = TimeZoneInfo.ConvertTimeFromUtc(dtUtc, BosniaTimeZone);
                 var datum = lokalnoVrijeme.Date;
 
-                var imaAttendoZaDanas = HasAnyAttendoEntryForDay(db, user.ID, datum);
+                var imaAttendoZaDanas = HasAnyAttendoEntryForDay(db, user.ID, datum);          
+                var dozvoliCrossMidnightClockOut = IsCrossMidnightClockOutAllowed(db, user.ID, datum, reg);
+                var dozvoliClockOutPoObrisanomAttendo = IsClockOutAllowedByDeletedAttendo(db, user.ID, datum, reg);
 
-                if (!imaAttendoZaDanas && reg != "CLOCK_IN")
+                if (!imaAttendoZaDanas && reg != "CLOCK_IN" && !dozvoliCrossMidnightClockOut && !dozvoliClockOutPoObrisanomAttendo)
                 {
                     return Ok(new
                     {
@@ -131,21 +133,44 @@ public class AttendanceController : ApiController
                     {
                         ObrisiPostojecePrisustvo(db, user.ID, datum);
                     }
-
+                    if (reg == "CLOCK_OUT" && HasDeletedAttendoForDay(db, user.ID, datum))
+                    {
+                        RestoreDeletedAttendoAndRemoveManualHrmForClockOut(db, user.ID, datum);
+                        db.SaveChanges();
+                    }
                     var isAdministrativno = (user.ADMIINISTRATIVNO ?? "").Trim().ToUpper() == "Y";
+                    var otvoreniAttendoPrijeObrade = GetLatestOpenAttendoEntry(db, user.ID);
+                    var isCrossMidnightClockOut =
+                        reg == "CLOCK_OUT" &&
+                        otvoreniAttendoPrijeObrade != null &&
+                        otvoreniAttendoPrijeObrade.VRIJEME_OD.Date < datum.Date;
                     ApplyToPrisustvo(db, user.ID, lokalnoVrijeme, reg, isAdministrativno);
                     db.SaveChanges();
 
                     if (reg == "CLOCK_OUT" && IsPauseEnabled())
                     {
-                        InsertPauseIfNeeded(db, user.ID, datum);
+                        if (isCrossMidnightClockOut)
+                        {
+                            InsertPauseIfNeeded(db, user.ID, datum.AddDays(-1));
+                        }
+                        else
+                        {
+                            InsertPauseIfNeeded(db, user.ID, datum);
+                        }
+
                         db.SaveChanges();
                     }
-                   
+
                 }
                 catch (Exception ex2)
                 {
-                    
+                    return Ok(new
+                    {
+                        success = false,
+                        id = entity.Id,
+                        deviceCode = e.device.code,
+                        message = "Greška pri obradi evidencije!"
+                    });
                 }
 
                 // ===============================
@@ -194,6 +219,26 @@ public class AttendanceController : ApiController
     }
 
    
+    private static HR_KORISNIK_PRISUSTVO GetLatestOpenAttendoEntry(HRMEntities db, int korisnikId)
+    {
+        return db.HR_KORISNIK_PRISUSTVO
+            .Where(x => x.HR_KORISNIK_ID == korisnikId
+                     && x.VRIJEME_DO == null
+                     && (x.OBRISANO == null || x.OBRISANO != "Y")
+                     && x.ISATTENDO == "Y")
+            .OrderByDescending(x => x.VRIJEME_OD)
+            .FirstOrDefault();
+    }
+
+
+    private static bool IsCrossMidnightClockOutAllowed(HRMEntities db, int korisnikId, DateTime datum, string reg)
+    {
+        if (reg != "CLOCK_OUT")
+            return false;
+
+        var otvoreniRed = GetLatestOpenAttendoEntry(db, korisnikId);
+        return otvoreniRed != null && otvoreniRed.VRIJEME_OD.Date < datum.Date;
+    }
     private static void ApplyToPrisustvo(HRMEntities db, int korisnikId, DateTime lokalnoVrijeme, string reg, bool isAdministrativno)
     {
         var datum = lokalnoVrijeme.Date;
@@ -204,6 +249,14 @@ public class AttendanceController : ApiController
             .Where(x => x.HR_KORISNIK_ID == korisnikId
                      && x.VRIJEME_OD >= datumOd
                      && x.VRIJEME_OD < datumDo
+                     && x.VRIJEME_DO == null
+                     && (x.OBRISANO == null || x.OBRISANO != "Y")
+                     && x.ISATTENDO == "Y")
+            .OrderByDescending(x => x.VRIJEME_OD)
+            .FirstOrDefault();
+
+        var otvoreniRedBiloKojiDan = db.HR_KORISNIK_PRISUSTVO
+            .Where(x => x.HR_KORISNIK_ID == korisnikId
                      && x.VRIJEME_DO == null
                      && (x.OBRISANO == null || x.OBRISANO != "Y")
                      && x.ISATTENDO == "Y")
@@ -332,22 +385,45 @@ public class AttendanceController : ApiController
                 break;
 
             case "CLOCK_OUT":
-                // Ako je otvoren rad, zatvori ga
-                if (otvoreniRed != null && otvoreniRed.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1)
                 {
-                    otvoreniRed.VRIJEME_DO = lokalnoVrijeme;
-                    otvoreniRed.DATUM_IZMJENE = DateTime.Now;
+                    
+                    var redZaZatvaranje = otvoreniRed ?? otvoreniRedBiloKojiDan;
+
+                    if (redZaZatvaranje != null)
+                    {
+                       
+                        // Ako je otvoreni red iz prethodnog dana, presijeci ga na 23:59:59
+                        if (redZaZatvaranje.VRIJEME_OD.Date < lokalnoVrijeme.Date)
+                        {
+                            var midnight = lokalnoVrijeme.Date;                  // 00:00:00 novog dana
+                            var endOfPreviousDay = midnight.AddSeconds(-1);      // 23:59:59 prethodnog dana
+
+                            // zatvori stari red do kraja prethodnog dana
+                            redZaZatvaranje.VRIJEME_DO = endOfPreviousDay;
+                            redZaZatvaranje.DATUM_IZMJENE = DateTime.Now;
+
+                            // otvori novi red od 00:00 do stvarnog CLOCK_OUT vremena
+                            db.HR_KORISNIK_PRISUSTVO.Add(new HR_KORISNIK_PRISUSTVO
+                            {
+                                HR_KORISNIK_ID = korisnikId,
+                                VRSTA_PRISUSTVA_ODSUSTVA_ID = redZaZatvaranje.VRSTA_PRISUSTVA_ODSUSTVA_ID,
+                                VRIJEME_OD = midnight,
+                                VRIJEME_DO = lokalnoVrijeme,
+                                REFERENT_ID = 1168,
+                                ISATTENDO = "Y",
+                                DATUM_KREIRANJA = DateTime.Now
+                            });
+                        }
+                        else
+                        {
+                            // postojeća logika za isti dan
+                            redZaZatvaranje.VRIJEME_DO = lokalnoVrijeme;
+                            redZaZatvaranje.DATUM_IZMJENE = DateTime.Now;
+                        }
+                    }
+
+                    break;
                 }
-
-                // Ako je otvoren izlaz, zatvori i njega na CLOCK_OUT
-                if (otvoreniRed != null &&
-                    (otvoreniRed.VRSTA_PRISUSTVA_ODSUSTVA_ID == 10 || otvoreniRed.VRSTA_PRISUSTVA_ODSUSTVA_ID == 23))
-                {
-                    otvoreniRed.VRIJEME_DO = lokalnoVrijeme;
-                    otvoreniRed.DATUM_IZMJENE = DateTime.Now;
-                }               
-
-                break;
         }
     }
     private static bool HasAnyAttendoEntryForDay(HRMEntities db, int korisnikId, DateTime datum)
@@ -367,7 +443,7 @@ public class AttendanceController : ApiController
         var datumOd = datum.Date;
         var datumDo = datumOd.AddDays(1);
         var pauzaTrajanje = TimeSpan.FromMinutes(30);
-        var minimalnoRada = TimeSpan.FromMinutes(90);
+        var minimalnoRada = TimeSpan.FromMinutes(360);
 
         // Ako pauza već postoji - ne radi ništa
         var vecPostojiPauza = db.HR_KORISNIK_PRISUSTVO.Any(x =>
@@ -529,5 +605,59 @@ public class AttendanceController : ApiController
             korisnikId, datumOd, datumDo);
     }
 
-    
+    private static void RestoreDeletedAttendoAndRemoveManualHrmForClockOut(HRMEntities db, int korisnikId, DateTime datum)
+    {
+        var datumOd = datum.Date;
+        var datumDo = datumOd.AddDays(1);
+
+        // 1) Vrati SVE obrisane Attendo redove za taj dan
+        db.Database.ExecuteSqlCommand(@"
+        UPDATE HR_KORISNIK_PRISUSTVO
+        SET OBRISANO = NULL,
+            DATUM_BRISANJA = NULL,
+            DATUM_IZMJENE = GETDATE()
+        WHERE HR_KORISNIK_ID = @p0
+          AND VRIJEME_OD >= @p1
+          AND VRIJEME_OD < @p2
+          AND REFERENT_ID = 1168
+          AND ISATTENDO = 'Y'
+          AND OBRISANO = 'Y'",
+            korisnikId, datumOd, datumDo);
+
+        // 2) Obriši ručne HRM redove za taj dan
+        db.Database.ExecuteSqlCommand(@"
+        UPDATE HR_KORISNIK_PRISUSTVO
+        SET OBRISANO = 'Y',
+            DATUM_BRISANJA = GETDATE(),
+            DATUM_IZMJENE = GETDATE()
+        WHERE HR_KORISNIK_ID = @p0
+          AND VRIJEME_OD >= @p1
+          AND VRIJEME_OD < @p2
+          AND ISHRM = 'Y'
+          AND ISATTENDO IS NULL
+          AND (OBRISANO IS NULL OR OBRISANO <> 'Y')",
+            korisnikId, datumOd, datumDo);
+    }
+
+    private static bool HasDeletedAttendoForDay(HRMEntities db, int korisnikId, DateTime datum)
+    {
+        var datumOd = datum.Date;
+        var datumDo = datumOd.AddDays(1);
+
+        return db.HR_KORISNIK_PRISUSTVO.Any(x =>
+            x.HR_KORISNIK_ID == korisnikId &&
+            x.VRIJEME_OD >= datumOd &&
+            x.VRIJEME_OD < datumDo &&
+            x.REFERENT_ID == 1168 &&
+            x.ISATTENDO == "Y" &&
+            x.OBRISANO == "Y");
+    }
+    private static bool IsClockOutAllowedByDeletedAttendo(HRMEntities db, int korisnikId, DateTime datum, string reg)
+    {
+        if (reg != "CLOCK_OUT")
+            return false;
+
+        return HasDeletedAttendoForDay(db, korisnikId, datum);
+    }
+
 }
