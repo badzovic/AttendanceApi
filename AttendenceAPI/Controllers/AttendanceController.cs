@@ -105,13 +105,13 @@ public class AttendanceController : ApiController
                 var datumDo = datum.AddDays(1);
 
                 var postojiOtvorenRad = db.HR_KORISNIK_PRISUSTVO.Any(x =>
-                    x.HR_KORISNIK_ID == user.ID &&
-                    x.VRIJEME_OD >= datumOd &&
-                    x.VRIJEME_OD < datumDo &&
-                    x.VRIJEME_DO == null &&
-                    x.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1 &&
-                    (x.OBRISANO == null || x.OBRISANO != "Y") &&
-                    x.ISATTENDO == "Y");
+                   x.HR_KORISNIK_ID == user.ID &&
+                   x.VRIJEME_OD >= datumOd &&
+                   x.VRIJEME_OD < datumDo &&
+                   x.VRIJEME_DO == null &&
+                   (x.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1 || x.VRSTA_PRISUSTVA_ODSUSTVA_ID == 9) &&
+                   (x.OBRISANO == null || x.OBRISANO != "Y") &&
+                   x.ISATTENDO == "Y");
 
                 if (reg == "CLOCK_IN" && postojiOtvorenRad)
                 {
@@ -129,7 +129,7 @@ public class AttendanceController : ApiController
                 // ===============================
                 try
                 {
-                    if (reg == "CLOCK_IN" && IsFirstApiClockInOfDay(db, user.ID, datum))
+                    if (reg == "CLOCK_IN" && ShouldResetForClockIn(db, user.ID, datum))
                     {
                         ObrisiPostojecePrisustvo(db, user.ID, datum);
                     }
@@ -239,6 +239,118 @@ public class AttendanceController : ApiController
         var otvoreniRed = GetLatestOpenAttendoEntry(db, korisnikId);
         return otvoreniRed != null && otvoreniRed.VRIJEME_OD.Date < datum.Date;
     }
+
+    private static int GetWorkTypeForMoment(DateTime time)
+    {
+        var tod = time.TimeOfDay;
+
+        // Noćni rad: 22:00-24:00 i 00:00-06:00
+        if (tod >= new TimeSpan(22, 0, 0) || tod < new TimeSpan(6, 0, 0))
+            return 9;
+
+        return 1;
+    }
+
+    private class WorkSegment
+    {
+        public DateTime Od { get; set; }
+        public DateTime Do { get; set; }
+        public int VrstaId { get; set; }
+    }
+
+    private static List<WorkSegment> SplitWorkInterval(DateTime start, DateTime end)
+    {
+        var result = new List<WorkSegment>();
+
+        if (end <= start)
+            return result;
+
+        var current = start;
+
+        while (current < end)
+        {
+            DateTime nextBoundary;
+
+            var t = current.TimeOfDay;
+
+            if (t < new TimeSpan(6, 0, 0))
+            {
+                nextBoundary = current.Date.AddHours(6); // danas u 06:00
+            }
+            else if (t < new TimeSpan(22, 0, 0))
+            {
+                nextBoundary = current.Date.AddHours(22); // danas u 22:00
+            }
+            else
+            {
+                nextBoundary = current.Date.AddDays(1); // sutra u 00:00
+            }
+
+            var segmentEnd = nextBoundary < end ? nextBoundary : end;
+
+            result.Add(new WorkSegment
+            {
+                Od = current,
+                Do = segmentEnd,
+                VrstaId = GetWorkTypeForMoment(current)
+            });
+
+            current = segmentEnd;
+        }
+
+        return result;
+    }
+
+    private static void ReplaceOpenWorkRowWithSegments(HRMEntities db, HR_KORISNIK_PRISUSTVO openRow, DateTime endTime)
+    {
+        if (openRow == null || endTime <= openRow.VRIJEME_OD)
+            return;
+
+        var startTime = openRow.VRIJEME_OD;
+
+        // OBRIŠI originalni otvoreni red iz contexta/baze
+        db.HR_KORISNIK_PRISUSTVO.Remove(openRow);
+
+        var segments = SplitWorkInterval(startTime, endTime);
+
+        foreach (var seg in segments)
+        {
+            db.HR_KORISNIK_PRISUSTVO.Add(new HR_KORISNIK_PRISUSTVO
+            {
+                HR_KORISNIK_ID = openRow.HR_KORISNIK_ID,
+                VRSTA_PRISUSTVA_ODSUSTVA_ID = seg.VrstaId,
+                VRIJEME_OD = seg.Od,
+                VRIJEME_DO = seg.Do,
+                REFERENT_ID = 1168,
+                ISATTENDO = "Y",
+                DATUM_KREIRANJA = openRow.DATUM_KREIRANJA,
+                DATUM_IZMJENE = DateTime.Now
+            });
+        }
+    }
+
+    private static void AddWorkSegments(HRMEntities db, int korisnikId, DateTime startTime, DateTime endTime)
+    {
+        if (endTime <= startTime)
+            return;
+
+        var segments = SplitWorkInterval(startTime, endTime);
+
+        foreach (var seg in segments)
+        {
+            db.HR_KORISNIK_PRISUSTVO.Add(new HR_KORISNIK_PRISUSTVO
+            {
+                HR_KORISNIK_ID = korisnikId,
+                VRSTA_PRISUSTVA_ODSUSTVA_ID = seg.VrstaId,
+                VRIJEME_OD = seg.Od,
+                VRIJEME_DO = seg.Do,
+                REFERENT_ID = 1168,
+                ISATTENDO = "Y",
+                DATUM_KREIRANJA = DateTime.Now
+            });
+        }
+    }
+
     private static void ApplyToPrisustvo(HRMEntities db, int korisnikId, DateTime lokalnoVrijeme, string reg, bool isAdministrativno)
     {
         var datum = lokalnoVrijeme.Date;
@@ -280,7 +392,7 @@ public class AttendanceController : ApiController
                     x.VRIJEME_OD >= datumOd &&
                     x.VRIJEME_OD < datumDo &&
                     x.VRIJEME_DO == null &&
-                    x.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1 &&
+                    (x.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1 || x.VRSTA_PRISUSTVA_ODSUSTVA_ID == 9) &&
                     (x.OBRISANO == null || x.OBRISANO != "Y") &&
                     x.ISATTENDO == "Y");
 
@@ -318,7 +430,7 @@ public class AttendanceController : ApiController
                     db.HR_KORISNIK_PRISUSTVO.Add(new HR_KORISNIK_PRISUSTVO
                     {
                         HR_KORISNIK_ID = korisnikId,
-                        VRSTA_PRISUSTVA_ODSUSTVA_ID = 1,
+                        VRSTA_PRISUSTVA_ODSUSTVA_ID = GetWorkTypeForMoment(lokalnoVrijeme),
                         VRIJEME_OD = lokalnoVrijeme,
                         VRIJEME_DO = null,
                         REFERENT_ID = 1168,
@@ -337,10 +449,10 @@ public class AttendanceController : ApiController
                 }
 
                 // Zatvori otvoreni rad
-                if (otvoreniRed != null && otvoreniRed.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1)
+                if (otvoreniRed != null &&
+                (otvoreniRed.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1 || otvoreniRed.VRSTA_PRISUSTVA_ODSUSTVA_ID == 9))
                 {
-                    otvoreniRed.VRIJEME_DO = lokalnoVrijeme;
-                    otvoreniRed.DATUM_IZMJENE = DateTime.Now;
+                    ReplaceOpenWorkRowWithSegments(db, otvoreniRed, lokalnoVrijeme);
                 }
 
                 // Otvori privatni izlaz
@@ -364,11 +476,10 @@ public class AttendanceController : ApiController
                     return;
                 }
 
-                // Zatvori otvoreni rad
-                if (otvoreniRed != null && otvoreniRed.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1)
+                if (otvoreniRed != null &&
+                (otvoreniRed.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1 || otvoreniRed.VRSTA_PRISUSTVA_ODSUSTVA_ID == 9))
                 {
-                    otvoreniRed.VRIJEME_DO = lokalnoVrijeme;
-                    otvoreniRed.DATUM_IZMJENE = DateTime.Now;
+                    ReplaceOpenWorkRowWithSegments(db, otvoreniRed, lokalnoVrijeme);
                 }
 
                 // Otvori službeni izlaz
@@ -398,27 +509,47 @@ public class AttendanceController : ApiController
                             var midnight = lokalnoVrijeme.Date;                  // 00:00:00 novog dana
                             var endOfPreviousDay = midnight.AddSeconds(-1);      // 23:59:59 prethodnog dana
 
-                            // zatvori stari red do kraja prethodnog dana
-                            redZaZatvaranje.VRIJEME_DO = endOfPreviousDay;
-                            redZaZatvaranje.DATUM_IZMJENE = DateTime.Now;
-
-                            // otvori novi red od 00:00 do stvarnog CLOCK_OUT vremena
-                            db.HR_KORISNIK_PRISUSTVO.Add(new HR_KORISNIK_PRISUSTVO
+                            if (redZaZatvaranje.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1 || redZaZatvaranje.VRSTA_PRISUSTVA_ODSUSTVA_ID == 9)
                             {
-                                HR_KORISNIK_ID = korisnikId,
-                                VRSTA_PRISUSTVA_ODSUSTVA_ID = redZaZatvaranje.VRSTA_PRISUSTVA_ODSUSTVA_ID,
-                                VRIJEME_OD = midnight,
-                                VRIJEME_DO = lokalnoVrijeme,
-                                REFERENT_ID = 1168,
-                                ISATTENDO = "Y",
-                                DATUM_KREIRANJA = DateTime.Now
-                            });
+                                // ukloni originalni otvoreni red
+                                db.HR_KORISNIK_PRISUSTVO.Remove(redZaZatvaranje);
+
+                                // segmenti do kraja prethodnog dana
+                                AddWorkSegments(db, korisnikId, redZaZatvaranje.VRIJEME_OD, endOfPreviousDay);
+
+                                // segmenti od ponoći do CLOCK_OUT
+                                AddWorkSegments(db, korisnikId, midnight, lokalnoVrijeme);
+                            }
+                            else
+                            {
+                                // zatvori stari red do kraja prethodnog dana
+                                redZaZatvaranje.VRIJEME_DO = endOfPreviousDay;
+                                redZaZatvaranje.DATUM_IZMJENE = DateTime.Now;
+
+                                // otvori novi red od 00:00 do stvarnog CLOCK_OUT vremena
+                                db.HR_KORISNIK_PRISUSTVO.Add(new HR_KORISNIK_PRISUSTVO
+                                {
+                                    HR_KORISNIK_ID = korisnikId,
+                                    VRSTA_PRISUSTVA_ODSUSTVA_ID = redZaZatvaranje.VRSTA_PRISUSTVA_ODSUSTVA_ID,
+                                    VRIJEME_OD = midnight,
+                                    VRIJEME_DO = lokalnoVrijeme,
+                                    REFERENT_ID = 1168,
+                                    ISATTENDO = "Y",
+                                    DATUM_KREIRANJA = DateTime.Now
+                                });
+                            }
                         }
                         else
                         {
-                            // postojeća logika za isti dan
-                            redZaZatvaranje.VRIJEME_DO = lokalnoVrijeme;
-                            redZaZatvaranje.DATUM_IZMJENE = DateTime.Now;
+                            if (redZaZatvaranje.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1 || redZaZatvaranje.VRSTA_PRISUSTVA_ODSUSTVA_ID == 9)
+                            {
+                                ReplaceOpenWorkRowWithSegments(db, redZaZatvaranje, lokalnoVrijeme);
+                            }
+                            else
+                            {
+                                redZaZatvaranje.VRIJEME_DO = lokalnoVrijeme;
+                                redZaZatvaranje.DATUM_IZMJENE = DateTime.Now;
+                            }
                         }
                     }
 
@@ -462,7 +593,7 @@ public class AttendanceController : ApiController
             .Where(x => x.HR_KORISNIK_ID == korisnikId
                      && x.VRIJEME_OD >= datumOd
                      && x.VRIJEME_OD < datumDo
-                     && x.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1
+                     && (x.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1 || x.VRSTA_PRISUSTVA_ODSUSTVA_ID == 9)
                      && x.VRIJEME_DO != null
                      && (x.OBRISANO == null || x.OBRISANO != "Y")
                      && x.ISATTENDO == "Y")
@@ -530,17 +661,7 @@ public class AttendanceController : ApiController
                 DATUM_KREIRANJA = DateTime.Now
             });
 
-            // nastavak rada
-            db.HR_KORISNIK_PRISUSTVO.Add(new HR_KORISNIK_PRISUSTVO
-            {
-                HR_KORISNIK_ID = korisnikId,
-                VRSTA_PRISUSTVA_ODSUSTVA_ID = 1,
-                VRIJEME_OD = pauseEnd,
-                VRIJEME_DO = originalEnd,
-                REFERENT_ID = 1168,
-                ISATTENDO = "Y",
-                DATUM_KREIRANJA = DateTime.Now
-            });
+            AddWorkSegments(db, korisnikId, pauseEnd, originalEnd);
 
             return;
         }
@@ -561,7 +682,7 @@ public class AttendanceController : ApiController
         WHERE HR_KORISNIK_ID = @p0
           AND VRIJEME_OD >= @p1
           AND VRIJEME_OD < @p2
-          AND VRSTA_PRISUSTVA_ODSUSTVA_ID = 1
+          AND VRSTA_PRISUSTVA_ODSUSTVA_ID IN (1, 9)
           AND REFERENT_ID = 1168
           AND ISATTENDO = 'Y'
           AND OBRISANO = 'Y'
@@ -571,7 +692,7 @@ public class AttendanceController : ApiController
               WHERE h2.HR_KORISNIK_ID = HR_KORISNIK_PRISUSTVO.HR_KORISNIK_ID
                 AND h2.VRIJEME_OD >= @p1
                 AND h2.VRIJEME_OD < @p2
-                AND h2.VRSTA_PRISUSTVA_ODSUSTVA_ID = 1
+                AND h2.VRSTA_PRISUSTVA_ODSUSTVA_ID IN (1, 9)
                 AND h2.REFERENT_ID <> 1168
                 AND h2.ISHRM = 'Y'
                 AND (h2.OBRISANO IS NULL OR h2.OBRISANO <> 'Y')
@@ -601,7 +722,7 @@ public class AttendanceController : ApiController
           AND VRIJEME_OD < @p2
           AND ISHRM = 'Y'
           AND ISATTENDO = 'Y'
-          AND VRSTA_PRISUSTVA_ODSUSTVA_ID = 1",
+            AND VRSTA_PRISUSTVA_ODSUSTVA_ID IN (1, 9)",
             korisnikId, datumOd, datumDo);
     }
 
@@ -659,5 +780,23 @@ public class AttendanceController : ApiController
 
         return HasDeletedAttendoForDay(db, korisnikId, datum);
     }
+    private static bool ShouldResetForClockIn(HRMEntities db, int korisnikId, DateTime datum)
+    {
+        var datumOd = datum.Date;
+        var datumDo = datumOd.AddDays(1);
 
+        var imaOtvorenAttendoRad = db.HR_KORISNIK_PRISUSTVO.Any(x =>
+            x.HR_KORISNIK_ID == korisnikId &&
+            x.VRIJEME_OD >= datumOd &&
+            x.VRIJEME_OD < datumDo &&
+            x.VRIJEME_DO == null &&
+            (x.VRSTA_PRISUSTVA_ODSUSTVA_ID == 1 || x.VRSTA_PRISUSTVA_ODSUSTVA_ID == 9) &&
+            x.ISATTENDO == "Y" &&
+            (x.OBRISANO == null || x.OBRISANO != "Y"));
+
+        if (imaOtvorenAttendoRad)
+            return false;
+
+        return true;
+    }
 }
