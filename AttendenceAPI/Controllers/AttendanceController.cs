@@ -67,6 +67,19 @@ public class AttendanceController : ApiController
                 var lokalnoVrijeme = TimeZoneInfo.ConvertTimeFromUtc(dtUtc, BosniaTimeZone);
                 var datum = lokalnoVrijeme.Date;
 
+                var lastRegistrationType = GetLastRegistrationType(db, user.ID);
+
+                if (reg == "CLOCK_OUT" && lastRegistrationType == "CLOCK_OUT")
+                {
+                    return Ok(new
+                    {
+                        success = false,
+                        id = 0,
+                        deviceCode = e.device.code,
+                        message = "Posljednja evidencija je već ODLASAK!"
+                    });
+                }         
+
                 var imaAttendoZaDanas = HasAnyAttendoEntryForDay(db, user.ID, datum);          
                 var dozvoliCrossMidnightClockOut = IsCrossMidnightClockOutAllowed(db, user.ID, datum, reg);
                 var dozvoliClockOutPoObrisanomAttendo = IsClockOutAllowedByDeletedAttendo(db, user.ID, datum, reg);
@@ -725,7 +738,17 @@ public class AttendanceController : ApiController
             AND VRSTA_PRISUSTVA_ODSUSTVA_ID IN (1, 9)",
             korisnikId, datumOd, datumDo);
     }
+    private static bool HasClockInForDay(HRMEntities db, int korisnikId, DateTime datum)
+    {
+        var datumOd = datum.Date;
+        var datumDo = datumOd.AddDays(1);
 
+        return db.AttendanceEvents.Any(x =>
+            x.Hr_korisnik_id == korisnikId &&
+            x.DateTimeUtc >= TimeZoneInfo.ConvertTimeToUtc(datumOd, BosniaTimeZone) &&
+            x.DateTimeUtc < TimeZoneInfo.ConvertTimeToUtc(datumDo, BosniaTimeZone) &&
+            x.RegistrationType == "CLOCK_IN");
+    }
     private static void RestoreDeletedAttendoAndRemoveManualHrmForClockOut(HRMEntities db, int korisnikId, DateTime datum)
     {
         var datumOd = datum.Date;
@@ -779,6 +802,14 @@ public class AttendanceController : ApiController
             return false;
 
         return HasDeletedAttendoForDay(db, korisnikId, datum);
+    }
+    private static string GetLastRegistrationType(HRMEntities db, int korisnikId)
+    {
+        return db.AttendanceEvents
+            .Where(x => x.Hr_korisnik_id == korisnikId)
+            .OrderByDescending(x => x.DateTimeUtc)
+            .Select(x => x.RegistrationType)
+            .FirstOrDefault();
     }
     private static bool ShouldResetForClockIn(HRMEntities db, int korisnikId, DateTime datum)
     {
